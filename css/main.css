@@ -1,0 +1,392 @@
+/*
+ Navigation bar
+*/
+
+nav {
+  min-height: 80px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+}
+
+nav a {
+  font-weight: bold;
+  color: gray !important;
+  font-size: 16px !important;
+}
+
+nav i {
+  font-weight: bold;
+  color: black !important;
+}
+
+ul .active a {
+  color: #363636 !important;
+}
+
+ul .active li a {
+  color: #363636 !important;
+}
+
+nav .container {
+  margin-top: 20px;
+}
+
+
+/*
+* Footer
+*/
+
+footer {
+    max-height: 250px;
+}
+footer .container {
+    max-height: 250px;
+    padding: 15px 15px 15px 15px;
+}
+
+/* Chrome seems to break with height: 100% here so lets fix poor chrome */
+footer .vertical-divider {
+  height: 225px;
+}
+
+footer .nz_outline {
+  width: 150px;
+  height: 200px;
+}
+
+footer .fab {
+  font-size: 80px;
+}
+
+footer .card {
+  width: 100%;
+}
+
+
+
+
+/*
+  General Misc
+*/
+
+body {
+  background-color: #fafafa;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.center {
+  text-align: center;
+  display: block;
+}
+
+.full {
+  height: 100%;
+  width: 100%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.mini-container {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.right {
+  float: right;
+}
+
+.left {
+  float: left;
+}
+
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+.justified {
+  text-align: justify;
+}
+
+@media only screen and (max-width: 1000px)  {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+  h1 {
+    font-size: 5vw;
+  }
+  h2 {
+    font-size: 4vw;
+  }
+}
+
+@media only screen and (max-width: 900px)  {
+  h1 {
+    font-size: 9vw;
+  }
+  h2 {
+    font-size: 7vw;
+  }
+}
+
+.error-message {
+  background-color: red;
+  width: 75vw;
+  text-align: center;
+  margin-left: 12.5vw;
+}
+
+.divider {
+  background-color: gray;
+  height: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.vertical-divider {
+  background-color: gray;
+  height: 100%;
+  width: 2px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.header {
+  width: 100%;
+  background-color: #57BF37 !important;
+  color: white;
+  padding-bottom: 10px;
+  border-bottom: 1px black;
+}
+
+.top-bar {
+  width: 100%;
+  background-color: red;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: white;
+}
+
+/*
+  Website theme colors
+*/
+.primary {
+  color: #57BF37 !important;
+}
+
+.b-primary {
+  background-color: #57BF37 !important;
+  color: white;
+}
+
+.btn-primary {
+  background-color: #57BF37 !important;
+  border: 0px;
+  color: white;
+}
+
+a {
+  color: #57BF37;
+}
+
+.primary-l {
+  color: #AED581 !important;
+}
+
+.secondary {
+  color: #FFC107 !important;
+}
+
+.secondary-l {
+  color: #FFD54F !important;
+}
+
+.gray {
+  color: #e6e6e6;
+}
+
+.b-gray {
+  background-color: #e6e6e6;
+}
+
+.error {
+  color: #B00020 !important;
+}
+
+.white {
+  color: white !important;
+}
+
+.b-white {
+  color: white !important;
+}
+
+.red {
+  color: #ff4d4d !important;
+}
+
+.b-red {
+  background-color: #ff4d4d !important;
+}
+
+.darkgrey {
+  color: #404040 !important;
+}
+
+.b-darkgrey {
+  background-color: #404040 !important;
+}
+
+/*
+  Website popups
+*/
+
+.error-modal {
+  background-color: #f3a1a1;
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  width: 80%;
+  padding: 10px 10px 10px 10px;
+  z-index: 100;
+}
+
+.error-modal h4 {
+  margin-bottom: 0px;
+}
+
+.info-modal {
+  background-color: #d8d8d8;
+  position: absolute;
+  top: 10px;
+  left: 10%;
+  width: 80%;
+  padding: 10px 10px 10px 10px;
+  z-index: 100;
+}
+
+.info-modal h4 {
+  margin-bottom: 0px;
+}
+
+.grey-out {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+  opacity: 0;
+  z-index: 1;
+}
+
+.opinionated-logo {
+  height: 50px;
+  width: 180px;
+}
+
+/*
+  Animations
+*/
+
+@keyframes fadeOut {
+   0%   {opacity: 1;}
+   100% {opacity: 0;}
+}
+
+@keyframes slideLeftIn {
+   0% {
+     transform: translate3d(-100%, 0, 0);
+     opacity: 0;
+   }
+   100% {
+     transform: translate3d(0, 0, 0);
+     opacity: 1;
+   }
+}
+
+@keyframes slideLeftOut {
+   0% {
+     transform: none;
+     opacity: 1;
+   }
+   100% {
+     transform: translate3d(100%, 0, 0);
+     opacity: 0;
+   }
+}
+
+@keyframes slideUpIn {
+   0% {
+     transform: translate3d(0, 100%, 0);
+     opacity: 0;
+   }
+   100% {
+     transform: translate3d(0, 0, 0);
+     opacity: 1;
+   }
+}
+
+@keyframes slideDownOut {
+   0% {
+     transform: translate3d(0, 0, 0);
+     opacity: 1;
+   }
+   100% {
+     transform: translate3d(0, 100%, 0);
+     opacity: 0;
+   }
+}
+
+@keyframes fadeIn {
+   0%   {opacity: 0;}
+   100% {opacity: 0.8;}
+}
+
+/* The element to apply the animation to */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.anim-fast {
+  animation-duration: 0.4s;
+}
+
+.anim-fadeOut {
+  animation-name: fadeOut;
+}
+
+.anim-slideDown {
+  animation-name: slideDown;
+}
+
+.anim-slideLeftIn {
+  animation-name: slideLeftIn;
+}
+
+.anim-slideLeftOut {
+  animation-name: slideLeftOut;
+  animation-duration: 1s;
+}
+
+.anim-fadeIn {
+  animation-name: fadeIn;
+}
+
+.anim-slideUpIn {
+  animation-name: slideUpIn;
+}
+
+.anim-slideDownOut {
+  animation-name: slideDownOut;
+}

@@ -1,0 +1,9 @@
+CREATE TABLE IF NOT EXISTS `polls` (
+	`id` int(10) NOT NULL auto_increment,
+	`name` varchar(255),
+	`description` varchar(550),
+	`upvotes` int(7),
+	`created` int(11),
+	`author` int(7),
+	PRIMARY KEY( `id` )
+);

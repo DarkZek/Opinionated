@@ -1,0 +1,4 @@
+TODO: Bring codebase up to php code standards
+TODO: Finish admin options
+TODO: Finish about page
+TODO: Finish just about everything else

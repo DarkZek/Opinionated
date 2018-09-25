@@ -1,0 +1,295 @@
+body {
+  overflow: hidden;
+}
+
+.skip {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  font-size: 20px;
+}
+
+.slide {
+  position: absolute;
+  top: 10%;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.slide a {
+  display: block
+}
+
+.slide h1 {
+  display: block
+}
+
+.nativator {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  max-width: 100% !important;
+}
+
+.nativator a {
+  font-size: 6vw;
+  font-weight: bold;
+}
+
+.next-col  {
+  padding-left: 0px;
+}
+
+.back-col  {
+  padding-right: 0px;
+}
+
+.circles {
+  padding-right: 0px !important;
+  padding-left: 10%;
+}
+
+.circles .circle {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: gray;
+  float: left;
+  margin-left: 5%;
+  margin-top: 12px;
+}
+
+.circles .active {
+  background-color: #57BF37;
+}
+
+.grey {
+  color: #b9b9b9 !important;
+}
+
+@media only screen and (min-width: 900px) {
+  .nativator a {
+    font-size: 40px;
+  }
+  .next {
+    float: right;
+  }
+  .circles {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+  .circles .circle {
+    margin-left: 8%;
+  }
+  .skip {
+    right: 5%;
+    top: 5%;
+  }
+  #skip {
+    font-size: 30px;
+  }
+  .nativator {
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    left: 5%;
+    max-width: 90% !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900px) {
+  .circles {
+    width: 100%;
+  }
+}
+
+/*
+
+Animations
+
+*/
+
+
+@keyframes popIn {
+   0% {
+     transform: translateY(-100%);
+     transform: scale3d(0, 0, 0);
+     opacity: 0;
+   }
+   80% {
+     transform: translateY(0);
+     transform: scale3d(1.1, 1.1, 1.1);
+     opacity: 0.9;
+   }
+   100% {
+     opacity: 1;
+     transform: translateY(0);
+     transform: scale3d(1, 1, 1);
+   }
+}
+
+@keyframes glideDown {
+   0% {
+     transform: translateY(-40px);
+     opacity: 0;
+   }
+   100% {
+     transform: translateY(0);
+     opacity: 1;
+   }
+}
+
+@keyframes slideRightIn {
+   0% {
+     transform: translate3d(100%, 0, 0);
+     opacity: 0;
+   }
+   100% {
+     transform: translate3d(0, 0, 0);
+     opacity: 1;
+   }
+}
+
+@keyframes slideRightOut {
+   0% {
+     transform: none;
+     opacity: 1;
+   }
+   100% {
+     transform: translate3d(-100%, 0, 0);
+     opacity: 0;
+   }
+}
+
+@keyframes upvote {
+   0% {
+     transform: rotate(-90deg);
+     opacity: 0;
+   }
+   80% {
+     opacity: 1;
+     transform: rotate(-90deg) translateX(30px);
+   }
+   100% {
+     transform: rotate(-90deg) translateX(40px) ;
+     opacity: 0;
+   }
+}
+
+@keyframes long_upvote {
+   0%, 50% {
+     transform: rotate(-90deg);
+     opacity: 0;
+   }
+   90% {
+     opacity: 1;
+     transform: rotate(-90deg) translateX(30px);
+   }
+   100% {
+     transform: rotate(-90deg) translateX(40px) ;
+     opacity: 0;
+   }
+}
+
+@keyframes downvote {
+   0%, 50% {
+     transform: rotate(90deg) translateX(0px);
+     opacity: 0;
+   }
+   95% {
+     opacity: 1;
+     transform: translateY(30px) rotate(90deg);
+   }
+   100% {
+     transform: translateY(40px) rotate(90deg);
+     opacity: 0;
+   }
+}
+
+@keyframes hover {
+   0%{
+     transform: translateX(0px);
+   }
+   25% {
+     transform: translateY(10px);
+   }
+   50% {
+     transform: translateY(0px);
+   }
+   75% {
+     transform: translateY(-10px);
+   }
+   100% {
+     transform: translateY(0px)
+   }
+}
+
+/* The element to apply the animation to */
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.anim-popIn {
+  animation-duration: 0.8s;
+  animation-name: popIn;
+}
+
+.anim-glideDown {
+  opacity: 0;
+  animation-duration: 0.8s;
+  animation-delay: 0.8s;
+  animation-name: glideDown;
+}
+
+.anim-slideRightOut {
+  display: block !important;
+  animation-duration: 0.8s;
+  animation-name: slideRightOut;
+}
+
+.anim-slideRightIn {
+  opacity: 0;
+  display: block !important;
+  animation-duration: 0.8s;
+  animation-name: slideRightIn;
+}
+
+.anim-upvote {
+  opacity: 0;
+  animation-iteration-count: infinite;
+  animation-name: upvote;
+  animation-timing-function: ease-in;
+}
+
+.anim-long-upvote {
+  opacity: 0;
+  animation-duration: 3s;
+  animation-delay: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: long_upvote;
+  animation-timing-function: ease-in;
+}
+
+.anim-downvote {
+  opacity: 0;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-name: downvote;
+  animation-timing-function: ease-in;
+}
+
+.anim-hover {
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-name: hover;
+  animation-timing-function: ease-in-out;
+}

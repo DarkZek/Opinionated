@@ -1,0 +1,14 @@
+Primary color:
+#900090
+
+Lighter primary
+#ac37a4
+
+Secondary color:
+#009000
+
+Secondary lighter:
+#28b11d
+
+Error:
+#B00020

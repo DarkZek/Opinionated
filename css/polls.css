@@ -1,0 +1,242 @@
+.submit {
+  margin-top: -22px;
+  margin-right: 10px;
+  float: right;
+}
+
+.report {
+  font-size: 12px;
+  position: absolute;
+}
+
+.report-button {
+  font-size: 40px;
+  float: right;
+  color: #b1b1b1;
+  cursor: pointer;
+}
+
+.report-button:hover {
+  color: black;
+}
+
+/*
+  Upvoted effect
+*/
+.upvoted div .upvote i {
+  color: orange;
+}
+
+.upvoted div .upvote a {
+  color: orange !important;
+}
+
+.report-div {
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.report-div .background {
+  background-color: black;
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.report-div .card {
+  width: 60%;
+  position: absolute;
+  top: 25%;
+  left: 20%;
+}
+
+.report-div .container .container {
+  padding-top: 10px;
+}
+
+.report-div .material-icons{
+  width: 100%;
+  font-size: 200px;
+  text-align: center;
+}
+
+
+
+.disabled {
+  display: none !important;
+}
+.disabled div {
+  display: none !important;
+}
+
+.share {
+  margin-bottom: 10px;
+}
+
+/*
+  Perspectives
+*/
+
+.perspective {
+  padding: 15px 15px 15px 15px;
+}
+
+.perspective-container {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  a {
+    font-size: 5vw;
+  }
+  .viewed-icon {
+    font-size: 150px !important;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900px) {
+  a {
+    font-size: 20px !important;
+  }
+}
+
+.perspective i {
+  display: flex-block;
+  float: left;
+}
+
+.perspectives-header {
+  width: 100%;
+  background-color: #d7d7d7;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.perspectives-header .container i {
+  vertical-align: center;
+}
+
+.yes-vote {
+  background-color: #57BF37;
+  color: white !important;
+  font-weight: bold;
+}
+
+.no-vote {
+  background-color: #4d4848;
+  color: white !important;
+  font-weight: bold;
+}
+
+.your-perspective {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.perspective-container {
+  animation-fill-mode: none;
+}
+
+.perspective-settings {
+  height: 10px;
+  padding-bottom: 15px;
+}
+
+.perspective-settings .helpful {
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.perspective-settings .helpful .material-icons {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.perspective-settings .perspective-report {
+  font-size: 13px;
+  font-weight: bold;
+  color: #e6e6e6 !important;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.perspective-settings .perspective-report:hover {
+  color: black !important;
+}
+
+.perspective-settings .perspective-report .material-icons {
+  font-size: 20px;
+  margin-right: 5px;
+}
+
+.link-container {
+  position: absolute;
+  width: 40%;
+  top: 20%;
+  left: 30%;
+  padding: 15px 15px 15px 15px;
+  z-index: 2;
+}
+
+.link-container .continue {
+  float: right;
+}
+
+.viewed-icon {
+  font-size: 250px;
+  margin-top: 8vh;
+  height: 100px;
+  text-align: center;
+  display: block;
+}
+
+.no_more_polls .container .text {
+  padding-top: 20%;
+}
+
+.no_more_polls .container .center {
+  width: 100%;
+}
+
+@keyframes viewed-icon-anim {
+   0%   {
+    transform: translate3d(0, 0, 0);
+   }
+   10% {
+    transform: translate3d(0, -100px, 0);
+   }
+   20% {
+    transform: translate3d(0, -100px, 0) rotateZ(20deg);
+   }
+   30% {
+    transform: translate3d(0, -100px, 0) rotateZ(-20deg);
+   }
+   40% {
+    transform: translate3d(0, -100px, 0) rotateZ(0deg);
+   }
+   50% {
+    transform: translate3d(0, 0, 0) rotateZ(0deg);
+   }
+}
+
+.viewed-icon-anim {
+  animation-name: viewed-icon-anim;
+  animation-duration: 4s;
+  animation-delay: 10s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}

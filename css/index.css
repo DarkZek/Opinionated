@@ -1,0 +1,123 @@
+.agree {
+  height: 200px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.disagree {
+  height: 200px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.agree .color {
+  height: 200px;
+  background-color: #ffffc9;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border: yellow solid 3px;
+  border-right: 0px;
+  transition: all .2s ease-in-out;
+}
+
+.disagree .color {
+  height: 200px;
+  background-color: #ffb4b4;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  border: red solid 3px;
+  border-left: 0px;
+  transition: all .2s ease-in-out;
+}
+
+.poll-label {
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  vertical-align: middle;
+  width: 100%;
+  font-size: 100px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .poll-label {
+    font-size: 50px;
+  }
+  .agree {
+    height: 100px;
+  }
+
+  .disagree {
+    height: 100px;
+  }
+
+  .agree .color {
+    height: 100px;
+  }
+
+  .disagree .color {
+    height: 100px;
+  }
+}
+
+.perspective {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.header-d {
+  width: 100%;
+  background-color: #AED581 !important;
+  color: white;
+}
+
+.marker {
+  height: 5px;
+  width: 2px;
+  border-left: 1px black solid;
+  border-right: 1px black solid;
+  flex: 0 0 10%;
+}
+
+.markers {
+  width: 100%;
+  margin: auto;
+}
+
+
+
+/*
+*  Sponsor Spots
+*/
+
+.sponsor {
+  width: 100%;
+}
+
+.sponsor .material-icons {
+  text-align: center;
+  width: 100%;
+  font-size: 80px;
+}
+
+
+
+
+
+
+.btn-yes {
+  font-size: 90px;
+  color: #8c8c2b;
+  background-color: #ffffc9;
+}
+
+.btn-no {
+  font-size: 90px;
+  color: black;
+  background-color: #ffb4b4;
+}

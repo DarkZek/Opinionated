@@ -1,0 +1,330 @@
+
+/*
+Slide #1
+*/
+.slide-1 {
+  padding-top: 30%;
+}
+
+.slide-1 h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 13vw;
+}
+
+.slide-1 a {
+  width: 100%;
+  text-align: center;
+}
+
+
+@media only screen and (min-width: 900px) {
+  .slide-1 {
+    padding-top: 3%;
+  }
+
+  .slide-1 h1 {
+    font-size: 150px;
+  }
+
+  .slide-1 a {
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900px) {
+  .slide-1 {
+    padding-top: 0%;
+  }
+
+  .slide-1 h1 {
+    font-size: 100px !important;
+  }
+
+  .slide-1 a {
+    font-size: 50px;
+  }
+}
+
+
+/*
+Slide #2
+*/
+
+@media only screen and (max-width: 1200px) and (min-width: 900px) {
+  .slide-2 {
+    margin-top: 0% !important;
+  }
+  .poll-animation {
+    margin-bottom: 300px !important;
+  }
+}
+
+.slide-2 {
+  margin-top: 10%;
+}
+
+.poll-animation {
+  margin-bottom: 40%;
+}
+
+.poll-animation .voting {
+  position: absolute;
+  font-size: 30vw;
+  left: 0px;
+  right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.poll-animation .upvote {
+  transform: rotateZ(-90deg);
+  font-size: 15vw;
+  color: gold;
+  position: absolute;
+}
+
+.poll-animation .upvote-1 {
+  animation-delay: 0.5s;
+  left: 70px;
+  top: 30px;
+}
+.poll-animation .upvote-2 {
+  animation-delay: 0.2s;
+  left: 0px;
+  right: 0px;
+  margin-right: auto;
+  margin-left: auto;
+  top: -10px;
+  width: 40px;
+}
+.poll-animation .upvote-3 {
+  right: 60px;
+  top: 40px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .slide-2 {
+    margin-top: 0%;
+  }
+  .poll-animation .voting {
+    font-size: 250px;
+  }
+
+  .poll-animation .upvote {
+    font-size: 80px;
+  }
+  .poll-animation .upvote-1 {
+    left: 43%;
+  }
+  .poll-animation .upvote-3 {
+    right: 43%;
+  }
+}
+
+
+/*
+Slide #3
+*/
+.slide-3 {
+  margin-top: 10%;
+}
+
+.main-poll-animation {
+  margin-bottom: 30%;
+}
+
+.main-poll-animation .face {
+  position: absolute;
+  font-size: 20vw;
+  left: 0px;
+  right: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  text-align: center;
+}
+
+.main-poll-animation .upvote {
+  color: gold;
+  position: absolute;
+  right: 40px;
+  transform: rotateZ(-90deg);
+  font-size: 15vw;
+  animation-fill-mode: backwards;
+}
+
+.main-poll-animation .downvote {
+  position: absolute;
+  left: 40px;
+  color: blue;
+  transform: rotateZ(90deg);
+  font-size: 15vw;
+  animation-fill-mode: backwards;
+}
+
+@media only screen and (min-width: 1000px) {
+  .slide-3 {
+    margin-top: 0% !important;
+  }
+  .main-poll-animation .face {
+    font-size: 300px;
+  }
+  .main-poll-animation .upvote {
+    font-size: 100px;
+    right: 35%;
+    top: 30%;
+  }
+
+  .main-poll-animation .downvote {
+    font-size: 100px;
+    left: 35%;
+    top: 30%;
+  }
+}
+
+/*
+Slide #4
+*/
+
+.slide-4 {
+  margin-top: 10%;
+}
+
+.animation {
+  margin-bottom: 50%;
+}
+
+.animation .material-icons {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900px) {
+  .animation .n2 {
+    padding-left: 55% !important;
+  }
+  .animation .n3 {
+    padding-left: 40% !important;
+  }
+  .animation .n4 {
+    padding-right: 62% !important;
+  }
+  .animation .n5 {
+    padding-right: 35% !important;
+  }
+  .animation {
+    margin-bottom: 50% !important;
+  }
+  .slide-4 {
+    margin-top: 0%;
+  }
+}
+
+.animation .n1 {
+ font-size: 30vw;
+ width: 100px;
+}
+
+.animation .n2 {
+  font-size: 15vw;
+  width: 20px;
+  padding-left: 150px;
+}
+.animation .n3 {
+  font-size: 10vw;
+  width: 20px;
+  padding-left: 90px;
+}
+.animation .n4 {
+  font-size: 15vw;
+  position: absolute;
+  width: 20px;
+  padding-right: 210px;
+}
+.animation .n5 {
+  font-size: 10vw;
+  position: absolute;
+  width: 20px;
+  padding-right: 130px;
+}
+
+@media only screen and (min-width: 1000px) {
+  .slide-4 {
+    margin-top: 0%;
+  }
+  .animation {
+    margin-bottom: 30%;
+  }
+
+  .animation .n1 {
+    font-size: 300px;
+    width: 400px;
+  }
+
+  .animation .n2 {
+    font-size: 150px;
+    padding-left: 8%;
+    width: 200px;
+  }
+  .animation .n3 {
+    font-size: 225px;
+    padding-left: 20%;
+    width: 300px;
+  }
+  .animation .n4 {
+    font-size: 225px;
+    padding-right: 55%;
+    width: 300px;
+  }
+  .animation .n5 {
+    display: none;
+  }
+}
+
+/*
+Slide #4
+*/
+
+.slide-3 {
+  margin-top: 10%;
+}
+
+.social {
+  margin-bottom: 30%;
+}
+
+.social .fab {
+  font-size: 24vw;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 900px) {
+  .social {
+    margin-bottom: 10%;
+  }
+  .social .fab {
+    font-size: 100px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .slide-3 {
+    margin-top: 10%;
+  }
+
+  .social {
+    margin-bottom: 10%;
+  }
+
+  .social .fab {
+    font-size: 200px;
+    width: 100%;
+    text-align: center;
+  }
+}

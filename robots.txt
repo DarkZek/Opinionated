@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /vote
+Disallow: /login
+Disallow: /register
+Disallow: /api/
+Disallow: /css/
+Disallow: /js/
+Disallow: /js/

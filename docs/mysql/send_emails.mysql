@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS `send_emails` (
+	`id` int(10) NOT NULL auto_increment,
+	`content` varchar(10000),
+	`receiver` varchar(200),
+	`title` varchar(200),
+	`sender` int(3) DEFAULT 0,
+	PRIMARY KEY( `id` )
+);

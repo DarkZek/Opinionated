@@ -1,0 +1,81 @@
+.normal-login {
+  width: 100%;
+}
+
+.master {
+  position: absolute;
+  width: 600px;
+  top: 10vh;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.header {
+  padding-bottom: 0px !important;
+  min-height: 0px !important;
+}
+
+.header h2 {
+  margin-top: 20px;
+}
+
+.use-google {
+  width: 100%;
+  background-color: #4285f4;
+  font-weight: bold;
+  color: white !important;
+  float: left;
+}
+
+.use-google i {
+  float: left;
+  color: white;
+  font-size: 20px;
+  margin-top: 2.5px;
+}
+
+.google-divider {
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 1px;
+  background-color: white;
+  float: left;
+}
+
+@media only screen and (max-width: 1000px)  {
+  .card {
+    width: 100vw !important:
+  }
+  .container {
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 0px !important;
+  }
+  .master {
+    width: 98% !important;
+  }
+  .g-recaptcha {
+    margin-left: 0px !important;
+    transform:scale(0.87);
+    -webkit-transform:scale(0.87);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+  }
+}
+
+/* Fancy animations :D */
+/* The animation code */
+
+@keyframes slideDown {
+   0%   {top: -25%;}
+   50%  {opacity: 1;}
+   100% {top: 25vh;opacity: 1;}
+}
+
+.anim-slideDown {
+  animation-name: slideDown;
+}

@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `verify_user_keys` (
+	`id` int(10) NOT NULL auto_increment,
+	`user_id` int(7),
+	`verification_key` varchar(550),
+	PRIMARY KEY( `id` )
+);

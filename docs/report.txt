@@ -1,0 +1,7 @@
+This document shows the report codes
+
+Code     | Report Reason
+---------|--------------------------
+01       | The title is not a poll
+02       | The poll is biased
+03       | The poll is unnecessarily offensive

@@ -1,0 +1,21 @@
+.watch_tutorial {
+  position: absolute;
+  right: 20px;
+  width: 200px;
+  margin-top: 50px;
+  transition: all 0.2s ease-in-out;
+}
+.watch_tutorial:hover {
+  background-color: #dedede;
+  cursor: pointer;
+}
+
+.watch_tutorial h6 {
+  margin-top: 10px;
+}
+
+.watch_tutorial .book {
+  text-align: center;
+  width: 100%;
+  font-size: 125px;
+}
