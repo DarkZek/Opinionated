@@ -5,4 +5,5 @@ composer.lock
 /include/sql/sql.php
 
 /docs/mysql/password.txt
+/docs/mysql/google_secret.txt
 /.project
