@@ -14,7 +14,7 @@ if (!isset($_SESSION["from_nz"])) {
 
 //Check if they're overseas
 if (isset($_SESSION["verified"]) && $_SESSION["verified"] === False) {
-  header("Location: /verify_email");
+  header("Location: /user/verify_email");
   die();
 }
 
