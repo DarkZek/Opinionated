@@ -1,11 +1,11 @@
 <?php
 $TITLE = "Opinionated | Register";
 $HEAD = "<script src='https://www.google.com/recaptcha/api.js'></script>";
-include("/var/www/html/include/html_structure.php");
+require("/var/www/html/include/html/html_structure.php");
 
-include("/var/www/html/include/nz_only.php");
+require("/var/www/html/include/geo/nz_only.php");
 
-require("/var/www/html/include/register_page.php");
+require("/var/www/html/include/html/register_page.php");
 
 ?>
 <script>

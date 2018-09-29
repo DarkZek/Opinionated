@@ -3,7 +3,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 	`username` varchar(255),
 	`display_name` varchar(255),
 	`email` varchar(255),
-	`created` varchar(32) DEFAULT CURRENT_TIMESTAMP,
+	`created` varchar(32),
 	`rank` int(2),
 	`account_type` varchar(255),
 	`password` varchar(255),

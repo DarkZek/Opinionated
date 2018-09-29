@@ -3,7 +3,7 @@
 
 $NAV_TAB = "HOME";
 $TITLE = "Opinionated | How it works";
-include("./include/html_structure.php");
+require("/var/www/html/include/html/html_structure.php");
 ?>
 <script src="/js/tutorial.js"></script>
 <link href="/css/tutorial.css" rel="stylesheet">

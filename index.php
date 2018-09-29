@@ -64,15 +64,20 @@ if ($p_result === True) {
   $perspectives = $p_statement->fetchAll();
 }
 
+if (isset($poll_data->upvotes)) { ?>
+  <script>
+  var upvotes = <?php echo($poll_data->upvotes); ?>;
+  var downvotes = <?php echo($poll_data->downvotes); ?>;
+  var created = <?php echo($poll_data->created); ?>;
+  var vote = "<?php echo($vote); ?>";
+  var xsrf = "<?php if (isset($_SESSION["xsrf_token"])) { echo($_SESSION["xsrf_token"]);} ?>";
+  </script>
+<?php } else {
+  $poll_data = new stdClass();
+  $poll_data->name = "Undefined";
+  $poll_data->description = "There is no main poll right now, try back later!";
+} ?>
 
-?>
-<script>
-var upvotes = <?php echo($poll_data->upvotes); ?>;
-var downvotes = <?php echo($poll_data->downvotes); ?>;
-var created = <?php echo($poll_data->created); ?>;
-var vote = "<?php echo($vote); ?>";
-var xsrf = "<?php if (isset($_SESSION["xsrf_token"])) { echo($_SESSION["xsrf_token"]);} ?>";
-</script>
 <script src="/js/index.js"></script>
 <link href="/css/index.css" rel="stylesheet">
 <div class="header">
