@@ -1,7 +1,5 @@
 <?php
-
 require("/var/www/html/include/run/Runner.php");
-require("/var/www/html/include/html/mail.php");
 
 $TITLE = "404 Page Not Found";
 require("/var/www/html/include/html/html_structure.php");

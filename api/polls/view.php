@@ -40,21 +40,15 @@ if (isset($_SESSION["id"])) {
   if (isset($poll_id)) {
     //Select that post ID if they have not already upvoted it
     $query = "SELECT * FROM polls WHERE id NOT IN (SELECT poll_id FROM poll_upvotes WHERE user_id = ?) AND id NOT IN (SELECT poll_id FROM poll_skips WHERE user_id = ?) AND id = ? ORDER by upvotes DESC LIMIT 1;";
-
     $statement = $conn->prepare($query);
-
     $statement->execute([$_SESSION["id"], $_SESSION["id"], $poll_id]);
-
     $result = $statement->fetchAll();
   }
   //If the previous if statement wasnt ran or returned nothing (they already upvoted the post)
   if ((isset($statement) && (count($result) == 0)) || !isset($poll_id)) {
-
     //Get the top post they have not upvoted,
     $query = "SELECT * FROM polls WHERE id NOT IN (SELECT poll_id FROM poll_upvotes WHERE user_id = ?) AND id NOT IN (SELECT poll_id FROM poll_skips WHERE user_id = ?) ORDER by upvotes DESC LIMIT 1;";
-
     $statement = $conn->prepare($query);
-
     $statement->execute([$_SESSION["id"], $_SESSION["id"]]);
     $result = $statement->fetchAll();
   }
@@ -68,20 +62,14 @@ if (isset($_SESSION["id"])) {
   if (isset($poll_id)) {
     //Create sql query
     $query = "SELECT * FROM polls WHERE id = ?;";
-
     $statement = $conn->prepare($query);
-
     $statement->execute([$poll_id]);
-
     $result = $statement->fetchAll();
   } else {
     //Create sql query
     $query = "SELECT * FROM polls ORDER BY upvotes LIMIT 1;";
-
     $statement = $conn->prepare($query);
-
     $statement->execute();
-
     $result = $statement->fetchAll();
   }
 }
@@ -93,7 +81,7 @@ if (count($result) == 0) {
 $row = $result[0];
 
 //Get perspectives
-$p_query = "SELECT created,poll_id,display_name,upvotes,content FROM poll_perspectives JOIN users ON users.id=user_id WHERE poll_id = ? LIMIT 15;";
+$p_query = "SELECT poll_perspectives.created,poll_id,display_name,upvotes,content FROM poll_perspectives JOIN users ON users.id=user_id WHERE poll_id = ? LIMIT 15;";
 
 $p_statement = $conn->prepare($p_query);
 
