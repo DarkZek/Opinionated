@@ -1,5 +1,6 @@
-<?php
-require("/var/www/html/include/html/html_structure.php");
+<?php namespace Opinionated;
+
+require(__DIR__ . "/html_structure.php");
 
 if (isset($_SESSION["display_name"])) {
   $username = $_SESSION["display_name"];

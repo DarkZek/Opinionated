@@ -1,9 +1,8 @@
-
-<?php
+<?php namespace Opinionated;
 
 $NAV_TAB = "ABOUT";
 $TITLE = "Opinionated | About";
-include("/var/www/html/include/html/default_layout.php");
+include("./include/html/default_layout.php");
 
 ?>
 

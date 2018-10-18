@@ -1,14 +1,18 @@
 <?php
+require(__DIR__ . "/../../vendor/autoload.php");
+//
 //Setup google account linking
+//
 $g_client = new Google_Client();
 $g_client->setClientId("594557677828-ecb05iv4dfhepddc1sg0ovq8ohlq2iod.apps.googleusercontent.com");
-$client_secret = trim(file_get_contents("/var/www/html/docs/mysql/google_secret.txt"));
+$client_secret = trim(file_get_contents(__DIR__ . "/../../docs/accounts/google_secret.txt"));
 $g_client->setClientSecret($client_secret);
 $g_client->setRedirectUri("https://opinionated.nz/api/users/account/google/login");
 $g_client->setScopes("email");
 
 //Step 2 : Create the url
 $auth_url = $g_client->createAuthUrl();
+
 ?>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <script src='/js/signin.js'></script>

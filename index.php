@@ -1,5 +1,4 @@
-
-<?php
+<?php namespace Opinionated;
 //
 // Load page settings
 //
@@ -8,11 +7,11 @@ $TITLE = "Opinionated | Home";
 
 
 //
-// Check if its their first time visiting
+// Include stuff
 //
-require("/var/www/html/include/show_tutorial.php");
-require("/var/www/html/include/sql/sql.php");
-require("/var/www/html/include/html/default_layout.php");
+require("./include/show_tutorial.php");
+require("./include/sql/sql.php");
+require("./include/html/default_layout.php");
 
 //
 // Get main poll data
@@ -52,7 +51,6 @@ if (!isset($vote)) {
   $vote = "None";
 }
 
-
 //
 // Load main poll perspectives
 //
@@ -72,11 +70,7 @@ if (isset($poll_data->upvotes)) { ?>
   var vote = "<?php echo($vote); ?>";
   var xsrf = "<?php if (isset($_SESSION["xsrf_token"])) { echo($_SESSION["xsrf_token"]);} ?>";
   </script>
-<?php } else {
-  $poll_data = new stdClass();
-  $poll_data->name = "Undefined";
-  $poll_data->description = "There is no main poll right now, try back later!";
-} ?>
+<?php } ?>
 
 <script src="/js/index.js"></script>
 <link href="/css/index.css" rel="stylesheet">
@@ -86,6 +80,7 @@ if (isset($poll_data->upvotes)) { ?>
   </div>
 </div>
 <br>
+<?php if (isset($poll_data->upvotes)) { ?>
 <div class="container">
   <h2 class="center"><?php echo($poll_data->name); ?>?</h2>
   <a><?php echo($poll_data->description); ?></a>
@@ -146,10 +141,12 @@ if (isset($perspectives)) {
 
   }
 }
-
+?>
+<br>
+<?php
+}
 ?>
 </div>
-<br>
 <div class="container">
   <h1 class="center">Sponsors</h1>
   <div class="row">
@@ -205,6 +202,6 @@ if (isset($perspectives)) {
 <br>
 <?php
 if (isset($_SESSION["seen_post_register"]) && $_SESSION["seen_post_register"] === "0") {
-  require("/var/www/html/include/html/post_register.php");
+  require("./include/html/post_register.php");
 }
-require("/var/www/html/include/html/footer.php");
+require("./include/html/footer.php");

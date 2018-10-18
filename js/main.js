@@ -5,7 +5,7 @@ function showLoginPage() {
     document.location = "/login";
     return;
   }
-  $.ajax({url: "/api/login_page", async: true, success: function(result){
+  $.ajax({url: "/api/html/login_page", async: true, success: function(result){
       $("body").append(result);
       $("body")[0].style.overflow = "hidden";
       window.scrollTo(0, 0);
@@ -28,7 +28,7 @@ function sendRequest(url, args, callback) {
 
 
 function showRegisterPage(object) {
-  $.ajax({url: "/api/register_page", async: true, success: function(result){
+  $.ajax({url: "/api/html/register_page", async: true, success: function(result){
       var register = $("body").append(result);
       $(".register_page")[0].classList.add("anim-slideLeftIn");
   }});

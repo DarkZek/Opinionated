@@ -1,9 +1,9 @@
 
-<?php
+<?php namespace Opinionated;
 
 $NAV_TAB = "";
 $TITLE = "Opinionated | Sponsorship";
-require("/var/www/html/include/html/default_layout.php");
+require("./include/html/default_layout.php");
 
 ?>
 <div class="header">

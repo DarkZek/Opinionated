@@ -1,9 +1,8 @@
 <?php
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-//Run
-include_once("/var/www/html/include/run/Runner.php");
 
 if (!isset($_GET["code"])) {
   $_SESSION["error"] = "[ERROR] No google account token provided";
@@ -15,7 +14,7 @@ if (!isset($pay_load)) {
   //Get google account info
   $g_client = new Google_Client();
   $g_client->setClientId("594557677828-ecb05iv4dfhepddc1sg0ovq8ohlq2iod.apps.googleusercontent.com");
-  $client_secret = trim(file_get_contents("/var/www/html/docs/mysql/google_secret.txt"));
+  $client_secret = trim(file_get_contents("../../../../docs/accounts/google_secret.txt"));
   $g_client->setClientSecret($client_secret);
   $g_client->setRedirectUri("https://opinionated.nz/api/users/account/google/login");
   $g_client->setScopes(Google_Service_Plus::PLUS_ME);

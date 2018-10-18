@@ -1,18 +1,18 @@
-<?php
+<?php namespace Opinionated;
 
 session_start();
 
 //Make sure xrsf token matches
-require("/var/www/html/include/permissions/check_xsrf.php");
+require("../../include/permissions/check_xsrf.php");
 
 //Make sure user is logged in
-require("/var/www/html/include/permissions/user_only.php");
+require("../../include/permissions/user_only.php");
 
 //Only allow New Zealanders to vote
-require("/var/www/html/include/geo/nz_only.php");
+require("../../include/geo/nz_only.php");
 
-//Make sure user is logged in
-require("/var/www/html/include/sql/sql.php");
+//Connect to MSQL database
+require("../../include/sql/sql.php");
 
 function Error($error) {
   echo($error);

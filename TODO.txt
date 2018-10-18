@@ -1,4 +1,6 @@
+TODO LIST (ORDERED)
 TODO: Bring codebase up to php code standards
+TODO: Clean up code and stop being crappy at code and make functions for repeated stuff
 TODO: Finish admin options
 TODO: Finish about page
 TODO: Finish just about everything else

@@ -1,4 +1,5 @@
-<?php
+<?php namespace Opinionated;
+
 if (!isset($_SESSION["seen_post_register"]) || $_SESSION["seen_post_register"] === 1) {
   return;
 }

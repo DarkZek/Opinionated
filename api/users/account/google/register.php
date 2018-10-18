@@ -2,7 +2,6 @@
 //
 // Load user info
 //
-
 $email = $pay_load["email"];
 $display_name = $userinfo["displayName"];
 

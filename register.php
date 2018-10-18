@@ -1,11 +1,13 @@
-<?php
+<?php namespace Opinionated;
 $TITLE = "Opinionated | Register";
 $HEAD = "<script src='https://www.google.com/recaptcha/api.js'></script>";
-require("/var/www/html/include/html/html_structure.php");
 
-require("/var/www/html/include/geo/nz_only.php");
-
-require("/var/www/html/include/html/register_page.php");
+//Include html data
+require("./include/html/html_structure.php");
+//New zealanders only
+require("./include/geo/nz_only.php");
+//Load register page
+require("./include/html/register_page.php");
 
 ?>
 <script>

@@ -1,5 +1,7 @@
 <?php
 
+//TODO: Convert to DateTime::createFromFormat('d. m. Y', $raw)
+
 session_start();
 
 if (isset($_SESSION["id"])) {
@@ -7,7 +9,7 @@ if (isset($_SESSION["id"])) {
 }
 
 //Load MySQL connection
-require("/var/www/html/include/sql/sql.php");
+require("../../include/sql/sql.php");
 
 if (isset($_GET["id"])) {
   $poll_id = $_GET["id"];
@@ -30,9 +32,6 @@ if (!isset($_GET["page"])) {
     die("[ERROR] Invald page number");
   }
 }
-
-
-
 
 
 if (isset($_SESSION["id"])) {

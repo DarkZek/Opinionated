@@ -1,15 +1,14 @@
-<?php
+<?php namespace Opinionated;
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
+require("../include/permissions/admin_only.php");
 
-include("/var/www/html/include/run/Runner.php");
 
 $TITLE = "Admin Interface";
 $NAV_TAB = "perspective";
-require("/var/www/html/include/html/admin_layout.php");
+require("../include/html/admin_layout.php");
 
 //Load MySQL connection
-require("/var/www/html/include/sql/sql.php");
+require("./include/sql/sql.php");
 
 ?>
 <div class="container">

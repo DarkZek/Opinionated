@@ -1,4 +1,5 @@
-<?php
+<?php namespace Opinionated;
+
 if (!isset($_SESSION["display_name"])) {
   session_start();
 }

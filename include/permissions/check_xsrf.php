@@ -1,4 +1,4 @@
-<?php
+<?php namespace Opinionated;
 
 if (isset($_POST["xsrf"])) {
   $xsrf = $_POST["xsrf"];
