@@ -1,3 +1,42 @@
+
+function showRegister() {
+  var loginPage = $(".login-page");
+
+  loginPage[0].classList.add("anim-slideLeftOut");
+  loginPage[0].classList.remove("anim-slideLeftIn");
+
+  var registerPage = $(".register-page");
+
+  registerPage[0].classList.remove("anim-slideLeftOut");
+  registerPage[0].classList.add("anim-slideLeftIn");
+  registerPage[0].style.display = "block";
+
+  var registerPage = $(".content");
+  registerPage[0].classList.remove("anim-scaleUp");
+  registerPage[0].classList.add("animated");
+  registerPage[0].classList.add("anim-scaleDown");
+}
+
+function showLogin() {
+  var loginPage = $(".login-page");
+
+  loginPage[0].classList.remove("anim-slideLeftOut");
+  loginPage[0].classList.add("anim-slideLeftIn");
+
+  var registerPage = $(".register-page");
+
+  registerPage[0].classList.add("anim-slideLeftOut");
+  registerPage[0].classList.remove("anim-slideLeftIn");
+
+  var registerPage = $(".content");
+  registerPage[0].classList.add("anim-scaleUp");
+}
+
+
+if (screen.width < 1000) {
+  document.location = "/register";
+}
+
 var registering = false;
 
 function sendRegister(obj) {
@@ -18,13 +57,12 @@ function sendRegister(obj) {
   var email = form[4].value;
   var recaptcha = form[5].value;
 
-  console.log("Submitting data..");
   $.post( "/api/users/account/register", {"account_type": "account", email: email, "username": username, "password": "testing", "display_name": display_name, "g-recaptcha-response": recaptcha, "xsrf": xsrf}, function (data) {
     registering = false;
 
     data = data.trim();
 
-    if (data.toUpperCase() == "Success".toUpperCase()) {
+    if (data.toUpperCase() == "SUCCESS") {
       document.location = "/user/verify_email";
       console.log("moving");
       return;
@@ -43,7 +81,6 @@ function sendRegister(obj) {
         break;
       }
     }
-    console.log("Data: " + data);
   });
 
   return false;

@@ -1,15 +1,12 @@
-<?php
+<?php namespace Opinionated;
 
 if (!isset($_SESSION)) {
   session_start();
 }
 
-//Run all the stuff that needs to be ran
-include("/var/www/html/include/run/Runner.php");
-
 //Check if they're overseas
 if (!isset($_SESSION["from_nz"])) {
-  require("/var/www/html/include/geo/check_if_nz.php");
+  require(__DIR__ . "/../geo/check_if_nz.php");
 }
 
 //Check if they're overseas

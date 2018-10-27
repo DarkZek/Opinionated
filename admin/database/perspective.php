@@ -1,7 +1,7 @@
-<?php
+<?php namespace Opinionated;
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
-require("/var/www/html/include/sql/sql.php");
+require("../../include/permissions/admin_only.php");
+require("../../include/sql/sql.php");
 
 
 if (!isset($_GET["id"])) {
@@ -14,7 +14,7 @@ if (!isset($_GET["id"])) {
 //
 $TITLE = "Opinionated | Admin Interface";
 $NAV_TAB = "database";
-include("/var/www/html/include/html/admin_layout.php");
+include("../../include/html/admin_layout.php");
 
 $id = $_GET["id"];
 

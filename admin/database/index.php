@@ -1,13 +1,13 @@
-<?php
+<?php namespace Opinionated;
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
+require("../../include/permissions/admin_only.php");
 
 //
 // Setup page settings
 //
 $TITLE = "Opinionated | Admin Interface";
 $NAV_TAB = "database";
-require("/var/www/html/include/html/admin_layout.php");
+require("../../include/html/admin_layout.php");
 ?>
 <div class="header">
   <div class="container center">

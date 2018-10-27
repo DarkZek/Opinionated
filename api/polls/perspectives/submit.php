@@ -3,13 +3,13 @@
 session_start();
 
 //Run
-include("/var/www/html/include/run/Runner.php");
+include("../../../include/run/Runner.php");
 
 //Make sure xrsf token matches
-require("/var/www/html/include/permissions/check_xsrf.php");
+require("../../../include/permissions/check_xsrf.php");
 
 //Make sure user is logged in
-require("/var/www/html/include/permissions/user_only.php");
+require("../../../include/permissions/user_only.php");
 
 function Error($error) {
   $_SESSION["error"] = $error;
@@ -35,7 +35,7 @@ if (strlen($content) < 50 || strlen($content) > 500) {
 }
 
 #Load MySQL connection
-require("/var/www/html/include/sql/sql.php");
+require("../../../include/sql/sql.php");
 
 //Get the time
 $date = new DateTime();

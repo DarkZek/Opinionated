@@ -1,22 +1,13 @@
-
-<?php
-
-include("/var/www/html/include/run/Runner.php");
-
+<?php namespace Opinionated;
 session_start();
 
-if (!isset($_SESSION["verified"])) {
+if (!isset($_SESSION["verified"] || $_SESSION["verified"] === True)) {
   header("Location: /");
   die();
 }
 
-if ($_SESSION["verified"] === True) {
-  header("Location: /");
-  die();
-}
-
-include("./include/sql/sql.php");
-
+//Load
+include("../include/sql/sql.php");
 
 //
 // Check if page has updated

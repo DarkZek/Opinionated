@@ -1,8 +1,10 @@
-<?php
+<?php namespace Opinionated;
 $TITLE = "Opinionated | Login";
-require("/var/www/html/include/html/html_structure.php");
-require("/var/www/html/include/html/login_page.php");
+
+//Include html bits
+require("./include/html/html_structure.php");
+
+//Actual page html
+require("./include/html/dialogues/login_page.php");
+die('t');
 ?>
-<script>
-$(".grey-out")[0].style.display = "none";
-</script>

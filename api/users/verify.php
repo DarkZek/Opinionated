@@ -1,6 +1,6 @@
 <?php
-include("/var/www/html/include/run/Runner.php");
-include("/var/www/html/include/sql/sql.php");
+
+include("../../include/sql/sql.php");
 session_start();
 
 if (!isset($_GET["key"])) {

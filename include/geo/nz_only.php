@@ -1,4 +1,5 @@
-<?php
+<?php namespace Opinionated;
+
 require("/var/www/html/include/geo/check_if_nz.php");
 
 if (!$from_nz) {
