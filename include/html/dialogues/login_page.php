@@ -1,4 +1,8 @@
 <?php
+<<<<<<< HEAD:include/html/dialogues/login_page.php
+=======
+require(__DIR__ . "/../../vendor/autoload.php");
+>>>>>>> master:include/html/register_page.php
 //
 //Setup google account linking
 //

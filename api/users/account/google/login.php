@@ -1,7 +1,14 @@
 <?php
+<<<<<<< HEAD
 require("/var/www/html/vendor/autoload.php");
 
 session_start();
+=======
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+>>>>>>> master
 
 if (!isset($_GET["code"])) {
   $_SESSION["error"] = "[ERROR] No google account token provided";
