@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php namespace Opinionated;
+>>>>>>> master
 
 //Load Composer's autoloader
 require("../vendor/autoload.php");

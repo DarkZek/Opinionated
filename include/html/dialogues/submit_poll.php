@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php namespace Opinionated;
 
 if (session_status() == PHP_SESSION_NONE) {
@@ -5,6 +6,8 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 ?>
+=======
+>>>>>>> master
 <script>
 var readGuidelines = false;
 
@@ -41,4 +44,7 @@ function submitPoll() {
 </div>
 
 <a class="form-control btn btn-primary anim-fast white animated" onclick="readGuidelines = true; this.classList.add('anim-fadeOut');">Click to unlock submitting</a>
+<<<<<<< HEAD
 <br>
+=======
+>>>>>>> master

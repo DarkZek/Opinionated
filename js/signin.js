@@ -32,6 +32,14 @@ function showLogin() {
   registerPage[0].classList.add("anim-scaleUp");
 }
 
+<<<<<<< HEAD
+=======
+
+if (screen.width < 1000) {
+  document.location = "/register";
+}
+
+>>>>>>> master
 var registering = false;
 
 function sendRegister(obj) {

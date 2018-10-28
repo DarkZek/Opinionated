@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 <?php namespace Opinionated;
 
 $NAV_TAB = "";

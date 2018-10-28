@@ -1,16 +1,25 @@
 <?php
 
 //TODO: Convert to DateTime::createFromFormat('d. m. Y', $raw)
+<<<<<<< HEAD
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+=======
+
+session_start();
+>>>>>>> master
 
 if (isset($_SESSION["id"])) {
   $user_id = $_SESSION["id"];
 }
 
 //Load MySQL connection
+<<<<<<< HEAD
 require(__DIR__ . "/../../include/sql/sql.php");
+=======
+require("../../include/sql/sql.php");
+>>>>>>> master
 
 if (isset($_GET["id"])) {
   $poll_id = $_GET["id"];

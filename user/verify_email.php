@@ -1,7 +1,11 @@
 <?php namespace Opinionated;
 session_start();
 
+<<<<<<< HEAD
 if (!isset($_SESSION["verified"]) || $_SESSION["verified"] === True) {
+=======
+if (!isset($_SESSION["verified"] || $_SESSION["verified"] === True)) {
+>>>>>>> master
   header("Location: /");
   die();
 }
