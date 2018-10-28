@@ -1,20 +1,19 @@
-
-<?php
+<?php namespace Opinionated;
 
 $TITLE = "Opinionated | Vote";
 $NAV_TAB = "VOTE";
-include("/var/www/html/include/html/default_layout.php");
+include("./include/html/default_layout.php");
 
 ?>
 <link href="/css/polls.css" rel="stylesheet">
 <script src="/js/vote.js"></script>
 <div class="header">
   <div class="container">
-    <h1 class="center">VOTE FOR YOUR POLL</h1>
-    <p class="center">You have a say in next months POLL. Yes, YOU! Submit a poll idea or browse through the polls below and upvote polls based on if you want to see change happen in that area. <br>So get voting!</p>
+    <h1 class="center">DISCOVER NEW POLLS</h1>
+    <p class="center">Submit a poll idea or browse through the polls below and upvote polls based on if you want to see change happen in that area. <br>So get voting!</p>
   </div>
   <?php if (isset($_SESSION["display_name"])) { ?>
-    <h5 class="submit" style="cursor: pointer;" onclick="document.location = '/user/polls/submit'"><i class="material-icons">edit</i> SUBMIT POLL</h5>
+    <h5 class="submit" style="cursor: pointer;" onclick="showDialogue('/api/html/submit_poll');"><i class="material-icons">edit</i> SUBMIT POLL</h5>
   <?php } ?>
 </div>
 <a id="id" hidden></a>
@@ -24,7 +23,7 @@ include("/var/www/html/include/html/default_layout.php");
     <br>
     <div class="container">
       <h1 class="center" id="title">
-        <i class="material-icons report-button" onclick="ShowReport($('#id')[0].textContent);">report</i>
+        <i class="material-icons report-button" onclick="currentReportId = id; showDialogue('/api/html/report_poll');">report</i>
       </h1>
     </div>
     <h5 class="center" id="date"></h5>
@@ -87,80 +86,5 @@ include("/var/www/html/include/html/default_layout.php");
     </div>
   </form>
 </div>
-<div style="display: none;" class="no_more_polls">
-  <div class="container">
-    <i class="material-icons viewed-icon viewed-icon-anim">weekend</i>
-    <h1 class="center text">You've viewed everything!</h1>
-    <h6 class="center">Take a break! We're gathering more New Zealand ideas by the minute...</h6>
-  </div>
-</div>
-<div class="perspective-container perspective-container-1 animated" style="overflow: hidden;">
-</div>
-<div class="perspective-container perspective-container-2 animated" style="overflow: hidden;">
-</div>
-<div class="report-div disabled">
-  <div class="background anim-fadeIn animated" onclick="ExitReport();"></div>
-  <div class="card report-card container anim-slideUpIn anim-fast animated">
-    <div class="container">
-      <h1>REPORT A POLL</h1>
-      <a>Please select the reason for reporting this poll.</a>
-      <form action="/api/polls/report" method="POST">
-        <input type="text" name="id" value="" hidden>
-        <div class="form-check">
-          <input class="form-check-input" name="reason" checked type="radio" value="1" id="reason1">
-          <label class="form-check-label" for="defaultCheck1">
-            Its not a poll
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" name="reason" type="radio" value="2" id="reason1">
-          <label class="form-check-label" for="defaultCheck2">
-            The poll is biased
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" name="reason" type="radio" value="3" id="reason1">
-          <label class="form-check-label" for="defaultCheck2">
-            The poll is unnecessarily offensive
-          </label>
-        </div>
-        <div class="form-check">
-          <input class="form-check-input" name="reason" type="radio" value="4" id="reason1">
-          <label class="form-check-label" for="defaultCheck2">
-            Malicious Links
-          </label>
-        </div>
-        <br>
-        <div class="form-group">
-          <input type="submit" onclick="SubmitReport();return false;" class="btn btn-primary form-control" value="SUBMIT REPORT">
-        </div>
-      </form>
-    </div>
-  </div>
-  <div class="after container anim-slideUpIn anim-fast animated" style='display: none;'>
-    <i class="material-icons white">check_circle_outline</i>
-    <h1 class="center white">Submitted report!</h1>
-    <h6 class="center white">Our team will review your report shortly</h6>
-  </div>
-</div>
-<div onclick="
-$('.leaving-grey')[0].style.display = 'none';
-$('.leaving')[0].style.display = 'none';
-$(body)[0].style.overflow = 'visible';" style="display: none;" class="leaving-grey animated anim-fadeIn grey-out"></div>
-<div class="link-container card leaving container" style="display: none;">
-  <h1>You're leaving Opinionated</h1>
-  <h4>This link goes to </h4>
-  <a id="link-loc" style="color: blue;"></a>
-  <br>
-  <br>
-  <div class="row">
-    <div class="col-6">
-      <a onclick="
-      $('.leaving-grey')[0].style.display = 'none';
-      $('.leaving')[0].style.display = 'none';" class="btn btn-primay">BACK</a>
-    </div>
-    <div class="col-6">
-      <a class="btn continue">CONTINUE</a>
-    </div>
-  </div>
-</div>
+<?php
+require("./api/polls/view.php");

@@ -1,6 +1,5 @@
 <?php
 session_start();
-include("/var/www/html/include/run/Runner.php");
 
 if (!isset($_POST["username"])) {
   $_SESSION["error"] = "[ERROR] No username set";

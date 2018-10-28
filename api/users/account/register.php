@@ -1,8 +1,7 @@
 <?php
 session_start();
 //Run
-require("/var/www/html/include/run/Runner.php");
-require("/var/www/html/include/permissions/nz_only.php");
+require(__DIR__ . "/../../../include/geo/nz_only.php");
 
 $secret = "6Le1mWEUAAAAAMgM6Ki8Af6awOoqD8Itrdsd4m3U";
 

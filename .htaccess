@@ -4,6 +4,7 @@ php_value session.gc_maxlifetime 604800
 Options -Indexes
 
 ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
 
 RewriteEngine On
 
@@ -12,7 +13,6 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^(.*)$ $1.php [L]
 
 # Protect composer files
-
 <Files composer.json>
 Order Deny,Allow
 Deny from all

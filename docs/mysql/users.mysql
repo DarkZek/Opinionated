@@ -4,7 +4,7 @@ CREATE TABLE IF NOT EXISTS `users` (
 	`display_name` varchar(255),
 	`email` varchar(255),
 	`created` varchar(32),
-	`rank` int(2),
+	`rank` int(2) default 0,
 	`account_type` varchar(255),
 	`password` varchar(255),
 	`verified` TINYINT(1) default 0,

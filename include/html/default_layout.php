@@ -1,10 +1,11 @@
-<?php
-require("/var/www/html/include/html/html_structure.php");
+<?php namespace Opinionated;
+
+require(__DIR__ . "/html_structure.php");
 
 if (isset($_SESSION["display_name"])) {
   $username = $_SESSION["display_name"];
 }
-//Nav bar
+
 ?>
 
 <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top">
@@ -61,7 +62,7 @@ if (isset($_SESSION["display_name"])) {
         </li>
         <?php } else {?>
         <li class="nav-item active">
-          <a class="nav-link" onclick="showLoginPage();" style="cursor: pointer;">Login</a>
+          <a class="nav-link" onclick="showDialogue('/api/html/login_page');" style="cursor: pointer;">Login</a>
         </li>
       <?php } ?>
       </ul>

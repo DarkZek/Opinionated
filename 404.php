@@ -1,8 +1,8 @@
-<?php
-require("/var/www/html/include/run/Runner.php");
+<?php namespace Opinionated;
 
 $TITLE = "404 Page Not Found";
-require("/var/www/html/include/html/html_structure.php");
+require("./include/html/html_structure.php");
+
 ?>
 <link href="/css/404.css" rel="stylesheet">
 

@@ -1,14 +1,14 @@
-<?php
+<?php namespace Opinionated;
 
 //Make sure only admins can access it
-require("/var/www/html/include/admin_only.php");
+require("../../include/permissions/admin_only.php");
 
 if (!isset($_POST["confirm"]) || !isset($_POST["xsrf"])) {
 
   ?>
   <h1>Are you sure you want to continue?</h1>
   <a>Type "confirm" to confirm</a>
-  <form action="./update_main_poll" method="POST">
+  <form action="" method="POST">
     <input name="confirm">
     <input hidden name="xsrf" value="<?php echo($_SESSION["xsrf_token"]); ?>">
     <br>

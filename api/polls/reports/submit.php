@@ -3,19 +3,19 @@
 session_start();
 
 //Run
-include("/var/www/html/include/run/Runner.php");
+include("../../../include/run/Runner.php");
 
 //Only allow New Zealanders
-require("/var/www/html/include/geo/nz_only.php");
+require("../../../include/geo/nz_only.php");
 
 //Make sure xrsf token matches
-require("/var/www/html/include/permissions/check_xsrf.php");
+require("../../../include/permissions/check_xsrf.php");
 
 //Make sure user is logged in
-require("/var/www/html/include/permissions/user_only.php");
+require("../../../include/permissions/user_only.php");
 
 //Make sure user is logged in
-require("/var/www/html/include/sql/sql.php");
+require("../../../include/sql/sql.php");
 
 function Error($error) {
   echo($error);
