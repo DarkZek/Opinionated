@@ -1,10 +1,11 @@
-<?php
-//Make sure a user is logged in
-require("/var/www/html/include/permissions/user_only.php");
+<?php namespace Opinionated;
+
 
 $NAV_TAB = "";
 $TITLE = "Have it your way";
-require("/var/www/html/include/html/default_layout.php");
+require("../include/html/default_layout.php");
+//Make sure a user is logged in
+require("../include/permissions/user_only.php");
 
 ?>
 <script>

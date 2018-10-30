@@ -2,9 +2,9 @@
 //Start the session
 session_start();
 
-require("/var/www/html/include/permissions/check_xsrf.php");
-require("/var/www/html/include/permissions/user_only.php");
-require("/var/www/html/include/sql/sql.php");
+require("/../../../include/permissions/check_xsrf.php");
+require("/../../../include/permissions/user_only.php");
+require("/../../../include/sql/sql.php");
 
 //
 // Verify password if its not a google account

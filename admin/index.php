@@ -1,4 +1,4 @@
-<?php
+<?php namespace Opinionated;
 //Make sure only admins can access it
 require("/var/www/html/include/permissions/admin_only.php");
 
@@ -49,16 +49,11 @@ $reports_count = $st->fetchColumn();
 
 
 ?>
-<div class="header">
-  <div class="container center">
-    <h1>WEBSITE STATUS</h1>
-  </div>
-</div>
-<div class="container">
+<div>
   <div class="row">
     <div class="col-4">
       <br>
-      <a class="btn btn-primary form-control" href="/api/update_main_poll.php">UPDATE MAIN POLL</a>
+      <a class="btn btn-primary form-control" href="/api/main_poll/update.php">UPDATE MAIN POLL</a>
     </div>
     <div class="col-4">
       <div class="" >

@@ -4,5 +4,76 @@
 .grey-hover {
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
 
+.navbar {
+  padding: 0px !important;
+  max-height: 20px;
+  height: 20px;
+  min-height: 50px;
+}
+
+.navbar .container {
+  margin: 0px !important;
+}
+
+body {
+  overflow: hidden;
+}
+
+.sidebar {
+  margin: 0px !important;
+}
+
+.sidebar .col-2 {
+  height: 100vh;
+}
+
+.search {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100%;
+  margin-left: 0px;
+}
+.search input {
+  background-color: transparent;
+  border: none;
+  vertical-align: middle;
+  margin-top: -12px;
+  width: 85%;
+}
+.search .material-icons {
+  color: white !important;
+  margin-top: 13px;
+  cursor: pointer;
+}
+
+.notifications {
+  height: 100%;
+}
+
+.notification-icon {
+  font-family: sans-serif !important;
+  color: white !important;
+  background-color: red;
+  padding: 2px 2px 2px 2px;
+  border-radius: 10px;
+  position: absolute;
+  top: 8px;
+  left: 15px;
+}
+
+.notifications .material-icons {
+  color: white !important;
+  transition: all 0.2s ease-in-out;
+  font-size: 32px;
+  height: 100%;
+  padding-top: 9px;
+  padding-left: 6px;
+  padding-right: 6px;
+  cursor: pointer;
+}
+
+.notifications .material-icons:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0.75;
 }

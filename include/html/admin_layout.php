@@ -1,40 +1,37 @@
-<?php
-require("/var/www/html/include/html/html_structure.php");
+<?php namespace Opinionated;
+
+require(__DIR__ . "/html_structure.php");
 
 if (isset($_SESSION["display_name"])) {
   $username = $_SESSION["display_name"];
 }
+
 //Nav bar
 ?>
 <script src="/js/admin.js"></script>
 <link href="/css/admin.css" rel="stylesheet">
 <script>var xsrf = "<?php if (isset($_SESSION["xsrf_token"])) {echo($_SESSION["xsrf_token"]);} ?>";</script>
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container">
-      <i class="material-icons">build</i>
-      <a class="navbar-brand primary" href="#"> Opinionated NZ</a>
+<nav class="navbar navbar-expand-lg navbar-light b-primary">
+  <div class="col-2">
+    <img class="opinionated-logo" src="/images/opinionated_black_2.png">
+  </div>
+  <div class="col-3 search">
+    <i class="material-icons">search</i>
+    <input type="text" placeholder="Search User">
+  </div>
+  <div class="col-3">
+  </div>
+  <div class="col-2 notifications">
+    <i class="material-icons"><a class="notification-icon">40</a>supervisor_account</i>
+  </div>
+  <div class="col-2">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">< Back To Main Site <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item <?php if ($NAV_TAB == "main") {echo ("active");} ?>">
-            <a class="nav-link" href="/admin/">Main</a>
-          </li>
-          <li class="nav-item <?php if ($NAV_TAB == "reports") {echo ("active");} ?>">
-            <a class="nav-link" href="/admin/reports">Poll Reports</a>
-          </li>
-          <li class="nav-item <?php if ($NAV_TAB == "perspective_reports") {echo ("active");} ?>">
-            <a class="nav-link" href="/admin/perspective_reports">Perspective Reports</a>
-          </li>
-          <li class="nav-item <?php if ($NAV_TAB == "database") {echo ("active");} ?>">
-            <a class="nav-link" href="/admin/database/">Database</a>
-          </li>
-          <li class="nav-item dropdown mobile-only active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <ul class="navbar-nav ">
+          <li class="nav-item dropdown mobile-only">
+            <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php echo($username);?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -48,8 +45,8 @@ if (isset($_SESSION["display_name"])) {
         </ul>
       </div>
       <ul class="navbar-nav right desktop-only">
-        <li class="nav-item dropdown active ">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item dropdown ">
+          <a class="nav-link dropdown-toggle white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <?php echo($username);?>
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -64,3 +61,10 @@ if (isset($_SESSION["display_name"])) {
       </ul>
   </div>
 </nav>
+<div class="sidebar row">
+  <div class="col-2 b-primary">
+    <div class="row menu-item selected" onclick="">
+      <a>Dashboard</a>
+    </div>
+  </div>
+  <div class="col-10">

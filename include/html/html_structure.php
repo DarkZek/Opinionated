@@ -1,2 +1,4 @@
-<html>
-<?php require("/var/www/html/include/html/head.php"); ?>
+<?php namespace Opinionated;
+echo("<html>");
+require(__DIR__ . "/head.php");
+?>

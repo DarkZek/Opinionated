@@ -1,8 +1,8 @@
 <?php
 //Make sure only admins can access it
-require("/var/www/html/include/admin_only.php");
-require("/var/www/html/include/check_xsrf.php");
-require("/var/www/html/include/sql/sql.php");
+require("../../../include/admin_only.php");
+require("../../../include/check_xsrf.php");
+require("../../../include/sql/sql.php");
 
 if (!isset($_POST["id"])) {
   die("[ERROR] No input id");

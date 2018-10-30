@@ -1,15 +1,15 @@
 <?php
 
 //Run
-require("/var/www/html/include/run/Runner.php");
+require("../../../include/run/Runner.php");
 
 //Only allow New Zealanders to use
-require("/var/www/html/include/geo/nz_only.php");
+require("../../../include/geo/nz_only.php");
 
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
-require("/var/www/html/include/permissions/check_xsrf.php");
-require("/var/www/html/include/sql/sql.php");
+require("../../../include/permissions/admin_only.php");
+require("../../../include/permissions/check_xsrf.php");
+require("../../../include/sql/sql.php");
 
 if (!isset($_POST["id"])) {
   die("[ERROR] No input post id");

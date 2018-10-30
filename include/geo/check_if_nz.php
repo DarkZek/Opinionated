@@ -1,4 +1,5 @@
-<?php
+<?php namespace Opinionated;
+
 $_SESSION["from_nz"] = True;
 $from_nz = True;
 return;

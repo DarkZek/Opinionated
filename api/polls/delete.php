@@ -1,11 +1,12 @@
-<?php
+<?php namespace Opinionated;
+
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
+require("../../include/permissions/admin_only.php");
 
 //Only allow New Zealanders to vote
-require("/var/www/html/include/geo/nz_only.php");
+require("../../include/geo/nz_only.php");
 
-require("/var/www/html/include/permissions/check_xsrf.php");
+require("../../permissions/check_xsrf.php");
 
 if (!isset($_POST["id"])) {
   die("[ERROR] No input post id");

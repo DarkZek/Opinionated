@@ -31,43 +31,11 @@
   color: orange !important;
 }
 
-.report-div {
-  z-index: 0;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 100vh;
-}
-
-.report-div .background {
-  background-color: black;
-  z-index: 0;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  opacity: 0.8;
-}
-
-.report-div .card {
-  width: 60%;
-  position: absolute;
-  top: 25%;
-  left: 20%;
-}
-
-.report-div .container .container {
-  padding-top: 10px;
-}
-
-.report-div .material-icons{
+#submitted_report .material-icons{
   width: 100%;
   font-size: 200px;
   text-align: center;
 }
-
 
 
 .disabled {
