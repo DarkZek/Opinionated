@@ -326,6 +326,24 @@ a {
   padding-left: 28px;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+.dialogue-card .exit {
+  position: absolute;
+  right: 15px;
+  top: 3px;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 .dialogue-card .content {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -334,6 +352,13 @@ a {
   overflow-x: hidden;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
+>>>>>>> master
 .dialogue-card .exit-circle {
   border-radius: 100px;
   height: 40px;
@@ -358,6 +383,14 @@ a {
   opacity: 1;
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 /*
   Animations
 */

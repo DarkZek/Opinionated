@@ -1,15 +1,26 @@
 <?php namespace Opinionated;
 //Make sure only admins can access it
+<<<<<<< HEAD:admin/database/reports.php
 require("../../include/permissions/admin_only.php");
+=======
+require("../include/permissions/admin_only.php");
+>>>>>>> master:admin/reports.php
 
 
 
 $TITLE = "Admin Interface";
 $NAV_TAB = "reports";
+<<<<<<< HEAD:admin/database/reports.php
 require("../../include/html/admin_layout.php");
 
 //Load MySQL connection
 require("../../include/sql/sql.php");
+=======
+require("../include/html/admin_layout.php");
+
+//Load MySQL connection
+require("../include/sql/sql.php");
+>>>>>>> master:admin/reports.php
 
 ?>
 <style>

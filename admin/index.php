@@ -39,6 +39,7 @@ $st->execute();
 $poll_count = $st->fetchColumn();
 
 ?>
+<<<<<<< HEAD
 <style>
 .admin-menu-dashboard {
   background-color: rgba(0, 0, 0, 0.25) !important;
@@ -54,6 +55,13 @@ $poll_count = $st->fetchColumn();
       <div class="card cursor" onclick="document.location = '/api/main_poll/update.php';">
         <a>UPDATE MAIN POLL</a>
       </div>
+=======
+<div>
+  <div class="row">
+    <div class="col-4">
+      <br>
+      <a class="btn btn-primary form-control" href="/api/main_poll/update.php">UPDATE MAIN POLL</a>
+>>>>>>> master
     </div>
     <div class="col-4">
       <div class="card center dashboard-stat cursor" onclick="document.location = '/admin/database/user';">

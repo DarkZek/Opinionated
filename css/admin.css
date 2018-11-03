@@ -25,7 +25,11 @@ body {
   margin: 0px !important;
 }
 
+<<<<<<< HEAD
 .sidebar .sideselector {
+=======
+.sidebar .col-2 {
+>>>>>>> master
   height: 100vh;
 }
 
@@ -72,6 +76,7 @@ body {
   padding-right: 6px;
   cursor: pointer;
 }
+<<<<<<< HEAD
 
 .notifications .material-icons:hover {
   background-color: rgba(0, 0, 0, 0.25);
@@ -98,4 +103,10 @@ body {
 
 .dashboard-stat {
   height: 100px;
+=======
+
+.notifications .material-icons:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0.75;
+>>>>>>> master
 }

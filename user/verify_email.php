@@ -1,7 +1,19 @@
 <?php namespace Opinionated;
 session_start();
 
+<<<<<<< HEAD
 if (!isset($_SESSION["verified"]) || $_SESSION["verified"] === True) {
+=======
+<<<<<<< HEAD
+if (!isset($_SESSION["verified"]) || $_SESSION["verified"] === True) {
+=======
+<<<<<<< HEAD
+if (!isset($_SESSION["verified"]) || $_SESSION["verified"] === True) {
+=======
+if (!isset($_SESSION["verified"] || $_SESSION["verified"] === True)) {
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
   header("Location: /");
   die();
 }

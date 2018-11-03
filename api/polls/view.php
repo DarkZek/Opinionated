@@ -1,21 +1,75 @@
 <?php
 
+<<<<<<< HEAD
 //Load MySQL connection
 require(__DIR__ . "/../../include/sql/sql.php");
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+=======
+//TODO: Convert to DateTime::createFromFormat('d. m. Y', $raw)
+<<<<<<< HEAD
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+=======
+<<<<<<< HEAD
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+=======
+
+session_start();
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 
 if (isset($_SESSION["id"])) {
   $user_id = $_SESSION["id"];
 }
 
+<<<<<<< HEAD
 //Check for requested id
+=======
+//Load MySQL connection
+<<<<<<< HEAD
+require(__DIR__ . "/../../include/sql/sql.php");
+=======
+<<<<<<< HEAD
+require(__DIR__ . "/../../include/sql/sql.php");
+=======
+require("../../include/sql/sql.php");
+>>>>>>> master
+>>>>>>> master
+
+>>>>>>> master
 if (isset($_GET["id"])) {
   $poll_id = $_GET["id"];
 }
 
+<<<<<<< HEAD
+=======
+
+//
+//Get the page number
+//
+if (!isset($_GET["page"])) {
+  $page = 0;
+} else {
+  try {
+    if (is_numeric($_GET["page"])) {
+      $page = (int) $_GET["page"];
+    } else {
+      $page = 0;
+    }
+  } catch (Exception $e) {
+    die("[ERROR] Invald page number");
+  }
+}
+
+
+>>>>>>> master
 if (isset($_SESSION["id"])) {
   //If they already have a post Id they want to view
   if (isset($poll_id)) {
@@ -65,11 +119,14 @@ $p_results = $p_statement->fetchAll();
 
 //Return the posts in HTML
 ?>
+<<<<<<< HEAD
 <script>
 //Adjust the url
 console.log(window.location);
 window.history.pushState("", "", window.location.origin + window.location.pathname + "?id=<?php echo($row->id); ?>");
 </script>
+=======
+>>>>>>> master
 <div class="perspective-container animated anim-slideLeftIn" style="overflow: hidden; display: block;">
 <div id="title-prefab" style="display: block;">
     <br class="desktop-only">
@@ -108,14 +165,37 @@ window.history.pushState("", "", window.location.origin + window.location.pathna
   </form><div style="display: block;" id="" class="container vote">
     <div class="row">
       <div class="col-6">
+<<<<<<< HEAD
         <a class="center yes-vote btn" onclick="UpvotePost(<?php echo($row->id); ?>);" style="width: 100%;">LETS VOTE</a>
       </div>
       <div class="col-6">
         <a class="center no-vote btn" onclick="SkipPoll('<?php echo($row->id); ?>');" style="width: 100%;">NEXT POLL</a>
+=======
+        <a class="center yes-vote btn" onclick="if (UpvotePost($('#id')[0].textContent)) {LoadNewPoll();}" style="width: 100%;">LETS VOTE</a>
+      </div>
+      <div class="col-6">
+        <a class="center no-vote btn" onclick="LoadNewPoll();" style="width: 100%;">NEXT POLL</a>
+>>>>>>> master
       </div>
     </div>
     <br>
   </div>
   <a>
+<<<<<<< HEAD
+=======
+  <?php
+  for ($number = 0; $number < count($p_results); $number++) {
+    $perspective = $p_results[$number];
+    ?>
+    {
+      "author": "<?php echo(htmlspecialchars($perspective->display_name)); ?>",
+      "content": "<?php echo(htmlspecialchars($perspective->content)); ?>"
+    }
+    <?php
+    if ($number < (count($p_results) - 1)) {
+      echo(",");
+    }
+  }?>
+>>>>>>> master
 </a>
 </div>

@@ -1,6 +1,7 @@
 //Load poll to show
 function LoadPolls() {
   var url = "/api/polls/view";
+<<<<<<< HEAD
   var savedId = window.location.search.substr(4);
 
   if (savedId == "") {
@@ -11,6 +12,12 @@ function LoadPolls() {
     url += "?id=" + savedId;
   }
 
+=======
+  var savedId = getCookie("poll_id");
+  if (savedId != "") {
+    url += "?id=" + savedId;
+  }
+>>>>>>> master
   $.ajax({url: url, async: true, success: function(result){
       $("body").append(result);
   }});
@@ -80,7 +87,10 @@ function perspectiveFilledOut(object) {
 
   if (xsrf == "") {
     showDialogue('/api/html/login_page');
+<<<<<<< HEAD
     return;
+=======
+>>>>>>> master
   }
 
   var text = $(object.parentNode.parentNode).find("textarea")[0].value;
@@ -100,6 +110,61 @@ function perspectiveFilledOut(object) {
   return true;
 }
 
+<<<<<<< HEAD
+=======
+var usingPContainer1 = true;
+
+function SkipPoll() {
+  if (xsrf == "") {
+    showDialogue('/api/html/login_page');
+    return false;
+  }
+  SendUpvoteAPIRequest($("#id")[0].textContent, "/api/polls/skip");
+  deletePerspectiveCookie();
+}
+
+function LoadNewPoll() {
+
+  SkipPoll();
+
+  if (xsrf == "") {
+    showDialogue('/api/html/login_page');
+    return;
+  }
+
+  var container1 = $(".perspective-container-1");
+  var container2 = $(".perspective-container-2");
+
+  var newPollContainer = "";
+  var oldPollContainer = "";
+  if (usingPContainer1) {
+    newPollContainer = container2;
+    oldPollContainer = container1;
+  } else {
+    newPollContainer = container1;
+    oldPollContainer = container2;
+  }
+
+  //Remove old animations
+  newPollContainer[0].classList.remove("anim-slideLeftOut");
+  oldPollContainer[0].classList.remove("anim-slideLeftIn");
+
+  //Hide old one
+  oldPollContainer[0].classList.add("anim-slideLeftOut");
+
+  hideObject(oldPollContainer[0]);
+
+  //Delete all children
+  while (newPollContainer[0].hasChildNodes()) {
+    newPollContainer[0].removeChild(newPollContainer[0].lastChild);
+  }
+
+  //Load new poll
+  LoadPolls(newPollContainer);
+
+  usingPContainer1 = !usingPContainer1;
+}
+>>>>>>> master
 
 function onType(object) {
   var text = object.value;
@@ -114,11 +179,20 @@ function onType(object) {
   document.cookie = "perspective=" + base64 + ";" + expires + ";path=/";
 }
 
+<<<<<<< HEAD
 function ApiResult(result) {
   if (result != "Success") {
     alert(result);
   }
 }
+=======
+
+
+
+
+
+
+>>>>>>> master
 
 var currentReportId = -1;
 
@@ -140,6 +214,7 @@ function SubmitReport() {
   setTimeout(ExitReport, 3000);
 }
 
+<<<<<<< HEAD
 var showingViewed = false;
 function ShowViewedAnimation() {
   if (showingViewed) {
@@ -154,4 +229,8 @@ function ShowViewedAnimation() {
     viewedIcon.classList.remove("viewed-icon-anim");
     showingViewed = false;
   }, 1500);
+=======
+function ExitReport() {
+  hideDialogue($(".grey-out")[0]);
+>>>>>>> master
 }
