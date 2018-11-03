@@ -1,9 +1,9 @@
-
-<?php
+<?php  namespace Opinionated;
 
 $NAV_TAB = "HOME";
 $TITLE = "Opinionated | How it works";
-require("/var/www/html/include/html/html_structure.php");
+require("./include/html/html_structure.php");
+
 ?>
 <script src="/js/tutorial.js"></script>
 <link href="/css/tutorial.css" rel="stylesheet">

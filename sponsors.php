@@ -1,10 +1,10 @@
-
-<?php
+<?php namespace Opinionated;
 
 $NAV_TAB = "";
 $TITLE = "Opinionated | Sponsorship";
-require("/var/www/html/include/html/default_layout.php");
+require("./include/html/default_layout.php");
 
+//TODO: Actually need to do this
 ?>
 <div class="header">
   <div class="container center">

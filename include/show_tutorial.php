@@ -1,4 +1,4 @@
-<?php
+<?php namespace Opinionated;
 
 if (isset($_COOKIE["TUTORIAL_SHOWN"])) {
   return;
@@ -11,4 +11,3 @@ setcookie(
 );
 
 header("Location: /tutorial_slideshow");
-die();

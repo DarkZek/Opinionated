@@ -1,10 +1,15 @@
 <?php
+//
+// DEPRECIATED IN FAVOR OF FORM ON VOTE PAGE
+//
+
+
 //Make sure a user is logged in
-require("/var/www/html/include/permissions/user_only.php");
+require("../../include/permissions/user_only.php");
 
 $NAV_TAB = "";
 $TITLE = "Have it your way";
-require("/var/www/html/include/html/default_layout.php");
+require("../../include/html/default_layout.php");
 
 ?>
 

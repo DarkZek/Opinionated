@@ -2,16 +2,16 @@
 
 session_start();
 //Make sure xrsf token matches
-require("/var/www/html/include/permissions/check_xsrf.php");
+require("../../include/permissions/check_xsrf.php");
 
 //Only allow New Zealanders to vote
-require("/var/www/html/include/geo/nz_only.php");
+require("../../include/geo/nz_only.php");
 
 //Make sure user is logged in
-require("/var/www/html/include/permissions/user_only.php");
+require("../../include/permissions/user_only.php");
 
 //Make sure user is logged in
-require("/var/www/html/include/sql/sql.php");
+require("../../include/sql/sql.php");
 
 function Error($error) {
   echo($error);
@@ -36,7 +36,7 @@ $user_upvoted_statement = $conn->prepare($user_upvoted_query);
 $result = $user_upvoted_statement->execute([$_SESSION["id"], $id]);
 
 if (count($user_upvoted_statement->fetchAll()) > 0) {
-  Error("[ERROR] Already upvoted that post!");
+  die("Success");
 }
 
 

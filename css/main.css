@@ -86,6 +86,10 @@ body {
   width: 100%;
 }
 
+.cursor {
+  cursor: pointer;
+}
+
 .bold {
   font-weight: bold;
 }
@@ -164,8 +168,13 @@ body {
   width: 100%;
   background-color: #57BF37 !important;
   color: white;
-  padding-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-bottom: 1px black;
+}
+
+.header .container h1 {
+  margin-bottom: 0px;
 }
 
 .top-bar {
@@ -249,7 +258,6 @@ a {
 /*
   Website popups
 */
-
 .error-modal {
   background-color: #f3a1a1;
   position: absolute;
@@ -292,6 +300,62 @@ a {
 .opinionated-logo {
   height: 50px;
   width: 180px;
+}
+
+.dialogue {
+  top: 100px;
+  left: 0px;
+  right: 0px;
+  position: absolute;
+}
+
+.dialogue-card {
+  border-color: transparent;
+  border: 0px !important;
+}
+
+.dialogue-card .header {
+  border-radius: .26rem .26rem 0px 0px !important;
+  height: 60px;
+}
+
+.dialogue-card .header h1 {
+  padding-top: 6px;
+}
+.dialogue-card .header .row {
+  padding-left: 28px;
+}
+
+.dialogue-card .content {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: auto;
+  max-height: 70vh;
+  overflow-x: hidden;
+}
+
+.dialogue-card .exit-circle {
+  border-radius: 100px;
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.dialogue-card .exit-circle:hover {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.dialogue-card .exit {
+  position: absolute;
+  top: -7px;
+  right: 11px;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: 300;
+  opacity: 1;
 }
 
 /*

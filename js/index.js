@@ -12,6 +12,12 @@ function Load() {
     percentageDownvotes = (downvotes / (upvotes + downvotes)) * 100;
   }
 
+  //No votes yet
+  if (percentageDownvotes == 0 && percentageUpvotes == 0) {
+    percentageUpvotes = 50;
+    percentageDownvotes = 50;
+  }
+
   $(".agree")[0].style.width = percentageUpvotes + "%";
   $(".disagree")[0].style.width = percentageDownvotes + "%";
   $(".agree")[0].style.flex = "0 0 " + percentageUpvotes + "%";
@@ -24,7 +30,7 @@ function Load() {
 
 function voteYes() {
   if (xsrf == "") {
-    showLoginPage();
+    showDialogue('/api/html/login_page');
     return;
   }
 
@@ -46,7 +52,7 @@ function voteYes() {
 
 function voteNo() {
   if (xsrf == "") {
-    showLoginPage();
+    showDialogue('/api/html/login_page');
     return;
   }
 

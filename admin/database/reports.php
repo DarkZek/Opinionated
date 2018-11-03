@@ -1,17 +1,22 @@
-<?php
+<?php namespace Opinionated;
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
+require("../../include/permissions/admin_only.php");
 
-include("/var/www/html/include/run/Runner.php");
+
 
 $TITLE = "Admin Interface";
 $NAV_TAB = "reports";
-require("/var/www/html/include/html/admin_layout.php");
+require("../../include/html/admin_layout.php");
 
 //Load MySQL connection
-require("/var/www/html/include/sql/sql.php");
+require("../../include/sql/sql.php");
 
 ?>
+<style>
+.admin-menu-reports {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+</style>
 <div class="container">
   <h1 class="center">POLL REPORTS</h1>
   <table class="table">

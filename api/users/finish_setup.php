@@ -2,10 +2,9 @@
 //Start the session
 session_start();
 
-include("/var/www/html/include/run/Runner.php");
-require("/var/www/html/include/permissions/check_xsrf.php");
-require("/var/www/html/include/permissions/user_only.php");
-require("/var/www/html/include/sql/sql.php");
+require("../../include/permissions/check_xsrf.php");
+require("../../include/permissions/user_only.php");
+require("../../include/sql/sql.php");
 
 if (!isset($_POST["email"])) {
   die("[ERROR] No email preference set");

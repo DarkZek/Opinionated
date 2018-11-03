@@ -1,7 +1,7 @@
-<?php
+<?php namespace Opinionated;
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
-require("/var/www/html/include/sql/sql.php");
+require("../../include/permissions/admin_only.php");
+require("../../include/sql/sql.php");
 
 
 if (!isset($_GET["id"])) {
@@ -14,7 +14,7 @@ if (!isset($_GET["id"])) {
 //
 $TITLE = "Opinionated | Admin Interface";
 $NAV_TAB = "database";
-include("/var/www/html/include/html/admin_layout.php");
+include("../../include/html/admin_layout.php");
 
 $id = $_GET["id"];
 
@@ -25,10 +25,13 @@ $st->execute([$id]);
 $row = $st->fetch();
 
 ?>
-<div class="header">
-  <div class="container center">
-    <h1>USER #<?php echo($id); ?></h1>
-  </div>
+<style>
+.admin-menu-users {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+</style>
+<div class="container center">
+  <h1>USER #<?php echo($id); ?></h1>
 </div>
 <div class="container">
   <div class="row">

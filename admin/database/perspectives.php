@@ -1,8 +1,7 @@
-<?php
+<?php namespace Opinionated;
 //Make sure only admins can access it
-require("/var/www/html/include/permissions/admin_only.php");
-require("/var/www/html/include/sql/sql.php");
-require("/var/www/html/include/run/Runner.php");
+require("../../include/permissions/admin_only.php");
+require("../../include/sql/sql.php");
 
 
 //
@@ -10,7 +9,7 @@ require("/var/www/html/include/run/Runner.php");
 //
 $TITLE = "Opinionated | Admin Interface";
 $NAV_TAB = "database";
-include("/var/www/html/include/html/admin_layout.php");
+include("../../include/html/admin_layout.php");
 
 
 if ($_GET["search"] === "") {
@@ -31,10 +30,8 @@ if (isset($_GET["search"])) {
 }
 
 ?>
-<div class="header">
-  <div class="container center">
-    <h1>DATABASE - PERSPECTIVES</h1>
-  </div>
+<div class="center">
+  <h1>DATABASE - PERSPECTIVES</h1>
 </div>
 <br>
 <div class="container">
