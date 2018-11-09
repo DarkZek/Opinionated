@@ -1,21 +1,88 @@
 <?php
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
 //Load MySQL connection
 require(__DIR__ . "/../../include/sql/sql.php");
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
+<<<<<<< HEAD
+=======
+=======
+//TODO: Convert to DateTime::createFromFormat('d. m. Y', $raw)
+<<<<<<< HEAD
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+=======
+<<<<<<< HEAD
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+=======
+
+session_start();
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 
 if (isset($_SESSION["id"])) {
   $user_id = $_SESSION["id"];
 }
 
+<<<<<<< HEAD
 //Check for requested id
+=======
+<<<<<<< HEAD
+//Check for requested id
+=======
+//Load MySQL connection
+<<<<<<< HEAD
+require(__DIR__ . "/../../include/sql/sql.php");
+=======
+<<<<<<< HEAD
+require(__DIR__ . "/../../include/sql/sql.php");
+=======
+require("../../include/sql/sql.php");
+>>>>>>> master
+>>>>>>> master
+
+>>>>>>> master
+>>>>>>> master
 if (isset($_GET["id"])) {
   $poll_id = $_GET["id"];
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+//
+//Get the page number
+//
+if (!isset($_GET["page"])) {
+  $page = 0;
+} else {
+  try {
+    if (is_numeric($_GET["page"])) {
+      $page = (int) $_GET["page"];
+    } else {
+      $page = 0;
+    }
+  } catch (Exception $e) {
+    die("[ERROR] Invald page number");
+  }
+}
+
+
+>>>>>>> master
+>>>>>>> master
 if (isset($_SESSION["id"])) {
   //If they already have a post Id they want to view
   if (isset($poll_id)) {
@@ -83,9 +150,38 @@ function httpLinks($link) {
 // Groups
 //
 
+<<<<<<< HEAD
 function yourPerspective() {
   ?>
   <form class="your-perspective vote">
+=======
+//Return the posts in HTML
+?>
+<<<<<<< HEAD
+<script>
+//Adjust the url
+console.log(window.location);
+window.history.pushState("", "", window.location.origin + window.location.pathname + "?id=<?php echo($row->id); ?>");
+</script>
+=======
+>>>>>>> master
+<div class="perspective-container animated anim-slideLeftIn" style="overflow: hidden; display: block;">
+<div id="title-prefab" style="display: block;">
+    <br class="desktop-only">
+    <br>
+    <div class="container">
+      <h1 class="center" id="title">
+        <i class="material-icons report-button" onclick="currentReportId = <?php echo($row->id); ?>; showDialogue('/api/html/report_poll');">report</i>
+      <?php echo(htmlspecialchars($row->name)); ?></h1>
+    </div>
+    <h5 class="center" id="date"></h5>
+    <div class="container">
+        <a class="center" name="description" id="description"><?php echo(htmlspecialchars($row->description)); ?></a>
+    </div>
+    <br>
+    <br>
+  </div><form action="/api/polls/perspectives/submit" method="POST" style="display: block;" id="" class="your-perspective vote">
+>>>>>>> master
     <div class="container">
       <br>
       <div class="row">
@@ -94,19 +190,53 @@ function yourPerspective() {
       <br>
       <div class="row">
         <div class="form-group" style="width: 100%;">
+<<<<<<< HEAD
           <textarea minlength="50" maxlength="498" name="content" class="form-control" onkeydown="onType(this);" rows="5" id="comment"></textarea>
           <script>document.currentScript.parentNode.children[0].value = atob(getCookie("perspective"));</script>
           <input name="xsrf" id="xsrf" value="" hidden type="text">
           <input name="poll_id" id="poll_id" value="" hidden type="text">
+=======
+          <textarea minlength="50" maxlength="498" name="content" class="form-control" onchange="onType(this);" style="width: 100%;" rows="5" id="comment"></textarea>
+          <input name="xsrf" id="xsrf" value="" type="text" hidden="">
+          <input name="poll_id" id="poll_id" value="" type="text" hidden="">
+>>>>>>> master
           <a style="color: gray">(50) min       (500) max</a>
         </div>
       </div>
       <div class="row">
+<<<<<<< HEAD
         <input type="submit" class="center no-vote btn" onclick="perspectiveFilledOut(this); return false;" style="width: 100%;" value="SUBMIT PERSPECTIVE">
       </div>
       <br>
     </div>
   </form>
+=======
+        <input type="submit" class="center no-vote btn" onclick="return perspectiveFilledOut(this);" style="width: 100%;" value="SUBMIT PERSPECTIVE">
+      </div>
+      <br>
+    </div>
+  </form><div style="display: block;" id="" class="container vote">
+    <div class="row">
+      <div class="col-6">
+<<<<<<< HEAD
+        <a class="center yes-vote btn" onclick="UpvotePost(<?php echo($row->id); ?>);" style="width: 100%;">LETS VOTE</a>
+      </div>
+      <div class="col-6">
+        <a class="center no-vote btn" onclick="SkipPoll('<?php echo($row->id); ?>');" style="width: 100%;">NEXT POLL</a>
+=======
+        <a class="center yes-vote btn" onclick="if (UpvotePost($('#id')[0].textContent)) {LoadNewPoll();}" style="width: 100%;">LETS VOTE</a>
+      </div>
+      <div class="col-6">
+        <a class="center no-vote btn" onclick="LoadNewPoll();" style="width: 100%;">NEXT POLL</a>
+>>>>>>> master
+      </div>
+    </div>
+    <br>
+  </div>
+  <a>
+<<<<<<< HEAD
+=======
+>>>>>>> master
   <?php
 }
 
@@ -189,6 +319,7 @@ var id = <?php echo($row->id); ?>;
       $yourPerspective++;
       $vote++;
     }
+<<<<<<< HEAD
 
     if (!$yourPerspectived) {
       yourPerspective();
@@ -199,4 +330,9 @@ var id = <?php echo($row->id); ?>;
     }
     ?>
 </div>
+=======
+  }?>
+>>>>>>> master
+</a>
+>>>>>>> master
 </div>

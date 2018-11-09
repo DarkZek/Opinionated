@@ -53,6 +53,30 @@ include("./include/html/default_layout.php");
     </div>
     <br>
   </div>
+<<<<<<< HEAD
+=======
+  <form action="/api/polls/perspectives/submit" method="POST" style="display: none;" id="your-perspective-prefab" class="your-perspective vote">
+    <div class="container">
+      <br>
+      <div class="row">
+        <a class="center yes-vote btn" style="width: 100%;">Whats your perspective?</a>
+      </div>
+      <br>
+      <div class="row">
+        <div class="form-group" style="width: 100%;">
+          <textarea minlength="50" maxlength="498" name="content" class="form-control" onchange="onType(this);" style="width: 100%;" rows="5" id="comment"></textarea>
+          <input name="xsrf" id="xsrf" value="" hidden type="text">
+          <input name="poll_id" id="poll_id" value="" hidden type="text">
+          <a style="color: gray">(50) min       (500) max</a>
+        </div>
+      </div>
+      <div class="row">
+        <input type="submit" class="center no-vote btn" onclick="return perspectiveFilledOut(this);" style="width: 100%;" value="SUBMIT PERSPECTIVE">
+      </div>
+      <br>
+    </div>
+  </form>
+>>>>>>> master
 </div>
 <?php
 require("./api/polls/view.php");

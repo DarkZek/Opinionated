@@ -39,12 +39,17 @@ $st->execute();
 $poll_count = $st->fetchColumn();
 
 ?>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
 <style>
 .admin-menu-dashboard {
   background-color: rgba(0, 0, 0, 0.25) !important;
 }
 </style>
 <div>
+<<<<<<< HEAD
   <div class="row">
     <div class="col-4">
       <div class="card center dashboard-stat">
@@ -54,6 +59,24 @@ $poll_count = $st->fetchColumn();
       <div class="card cursor" onclick="document.location = '/api/main_poll/update.php';">
         <a>UPDATE MAIN POLL</a>
       </div>
+=======
+  <div class="row">
+    <div class="col-4">
+      <div class="card center dashboard-stat">
+        <h2>Current Leading Poll</h2>
+        <a><?php echo($top_poll); ?></a>
+      </div>
+      <div class="card cursor" onclick="document.location = '/api/main_poll/update.php';">
+        <a>UPDATE MAIN POLL</a>
+      </div>
+=======
+<div>
+  <div class="row">
+    <div class="col-4">
+      <br>
+      <a class="btn btn-primary form-control" href="/api/main_poll/update.php">UPDATE MAIN POLL</a>
+>>>>>>> master
+>>>>>>> master
     </div>
     <div class="col-4">
       <div class="card center dashboard-stat cursor" onclick="document.location = '/admin/database/user';">
@@ -64,7 +87,11 @@ $poll_count = $st->fetchColumn();
     <div class="col-4">
       <div class="card center dashboard-stat">
         <br>
+<<<<<<< HEAD
         <h2><?php echo($poll_count); ?> Polls</h2>
+=======
+        <h2><?php echo($user_count); ?> Polls</h2>
+>>>>>>> master
       </div>
     </div>
   </div>

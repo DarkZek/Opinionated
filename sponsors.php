@@ -1,3 +1,16 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 <?php namespace Opinionated;
 
 $NAV_TAB = "";

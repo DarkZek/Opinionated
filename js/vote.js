@@ -1,6 +1,10 @@
 //Load poll to show
 function LoadPolls() {
   var url = "/api/polls/view";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
   var savedId = window.location.search.substr(4);
 
   if (savedId == "") {
@@ -11,6 +15,15 @@ function LoadPolls() {
     url += "?id=" + savedId;
   }
 
+<<<<<<< HEAD
+=======
+=======
+  var savedId = getCookie("poll_id");
+  if (savedId != "") {
+    url += "?id=" + savedId;
+  }
+>>>>>>> master
+>>>>>>> master
   $.ajax({url: url, async: true, success: function(result){
       $("body").append(result);
   }});
@@ -26,6 +39,15 @@ var main_link = "";
 function clickLink(link) {
   main_link = link
   showDialogue("/api/html/redirect.php");
+<<<<<<< HEAD
+=======
+  $(".leaving #link-loc")[0].textContent += link;
+
+  $(".leaving .continue").click(function() {
+    document.location = main_link;
+      $("body")[0].style.overflow = "hidden";
+  });
+>>>>>>> master
 }
 
 function UpvotePost(id) {
@@ -38,6 +60,25 @@ function UpvotePost(id) {
 
   LoadNewPoll();
   return true;
+<<<<<<< HEAD
+}
+
+function SkipPoll(poll) {
+  if (xsrf == "") {
+    showDialogue('/api/html/login_page');
+    return false;
+  }
+  sendRequest("/api/polls/skip", {'id': poll});
+
+  LoadNewPoll();
+}
+
+function LoadNewPoll() {
+
+  if (xsrf == "") {
+    showDialogue('/api/html/login_page');
+    return;
+=======
 }
 
 function SkipPoll(poll) {
@@ -72,6 +113,59 @@ function LoadNewPoll() {
 
 function perspectiveFilledOut(object) {
 
+  if (xsrf == "") {
+    showDialogue('/api/html/login_page');
+<<<<<<< HEAD
+    return;
+=======
+>>>>>>> master
+>>>>>>> master
+  }
+
+  window.history.pushState("", "", window.location.origin + window.location.pathname);
+
+<<<<<<< HEAD
+  var oldPost = $(".perspective-container");
+  oldPost[0].classList.remove("anim-slideLeftIn");
+  oldPost[0].classList.add("anim-slideLeftOut");
+=======
+  if (text.length < 50) {
+    //Invalid
+    $(object.parentNode.parentNode).find("textarea")[0].setCustomValidity("Minimum of 50 characters");
+    return false;
+  }
+
+  //Set xsrf
+  $(object.parentNode.parentNode).find("#xsrf")[0].value = xsrf;
+  $(object.parentNode.parentNode).find("#poll_id")[0].value = poll_id;
+>>>>>>> master
+
+  Destroy1s(oldPost);
+
+  //Load new poll
+  LoadPolls();
+}
+
+<<<<<<< HEAD
+
+function perspectiveFilledOut(object) {
+=======
+<<<<<<< HEAD
+=======
+var usingPContainer1 = true;
+
+function SkipPoll() {
+  if (xsrf == "") {
+    showDialogue('/api/html/login_page');
+    return false;
+  }
+  SendUpvoteAPIRequest($("#id")[0].textContent, "/api/polls/skip");
+  deletePerspectiveCookie();
+}
+
+function LoadNewPoll() {
+>>>>>>> master
+
 
   if (xsrf == "") {
     showDialogue('/api/html/login_page');
@@ -94,6 +188,7 @@ function perspectiveFilledOut(object) {
     }
   });
 }
+>>>>>>> master
 
 
 function onType(object) {
@@ -109,11 +204,26 @@ function onType(object) {
   document.cookie = "perspective=" + base64 + ";" + expires + ";path=/";
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
 function ApiResult(result) {
   if (result != "Success") {
     alert(result);
   }
 }
+<<<<<<< HEAD
+=======
+=======
+
+
+
+
+
+
+>>>>>>> master
+>>>>>>> master
 
 var currentReportId = -1;
 
@@ -135,8 +245,25 @@ function SubmitReport() {
   setTimeout(ExitReport, 3000);
 }
 
+<<<<<<< HEAD
+var showingViewed = false;
+function ShowViewedAnimation() {
+  if (showingViewed) {
+    return;
+  }
+  
+  var viewedIcon = $(".viewed-icon")[0];
+  viewedIcon.classList.add("viewed-icon-anim");
+  showingViewed = true;
+
+  setTimeout(function () {
+    viewedIcon.classList.remove("viewed-icon-anim");
+    showingViewed = false;
+  }, 1500);
+=======
 function ExitReport() {
   hideDialogue($(".grey-out")[0]);
+<<<<<<< HEAD
 }
 
 var showingViewed = false;
@@ -153,4 +280,7 @@ function ShowViewedAnimation() {
     viewedIcon.classList.remove("viewed-icon-anim");
     showingViewed = false;
   }, 1500);
+=======
+>>>>>>> master
+>>>>>>> master
 }

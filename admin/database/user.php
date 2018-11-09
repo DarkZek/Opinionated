@@ -32,9 +32,12 @@ $email = $row->email;
   background-color: rgba(0, 0, 0, 0.25) !important;
 }
 </style>
+<<<<<<< HEAD
 <script>
 var id = <?php echo($row->id); ?>;
 </script>
+=======
+>>>>>>> master
 <div class="container center">
   <h1>USER #<?php echo($id); ?></h1>
 </div>

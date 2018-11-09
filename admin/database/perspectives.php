@@ -2,6 +2,13 @@
 //Make sure only admins can access it
 require("../../include/permissions/admin_only.php");
 require("../../include/sql/sql.php");
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+require("../../include/run/Runner.php");
+>>>>>>> master
+>>>>>>> master
 
 
 //

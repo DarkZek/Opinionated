@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 <?php
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<?php namespace Opinionated;
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 
 //Load Composer's autoloader
 require("../vendor/autoload.php");

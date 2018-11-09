@@ -1,7 +1,24 @@
 <?php
 session_start();
 //Run
+<<<<<<< HEAD
 require(__DIR__ . "/../../../include/geo/nz_only.php");
+=======
+<<<<<<< HEAD
+require(__DIR__ . "/../../../include/geo/nz_only.php");
+=======
+<<<<<<< HEAD
+require(__DIR__ . "/../../../include/geo/nz_only.php");
+=======
+<<<<<<< HEAD
+require(__DIR__ . "/../../../include/geo/nz_only.php");
+=======
+require("/../../../include/run/Runner.php");
+require("/../../../include/permissions/nz_only.php");
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
+>>>>>>> master
 
 $secret = "6Le1mWEUAAAAAMgM6Ki8Af6awOoqD8Itrdsd4m3U";
 

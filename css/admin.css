@@ -25,7 +25,15 @@ body {
   margin: 0px !important;
 }
 
+<<<<<<< HEAD
 .sidebar .sideselector {
+=======
+<<<<<<< HEAD
+.sidebar .sideselector {
+=======
+.sidebar .col-2 {
+>>>>>>> master
+>>>>>>> master
   height: 100vh;
 }
 
@@ -72,6 +80,10 @@ body {
   padding-right: 6px;
   cursor: pointer;
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> master
 
 .notifications .material-icons:hover {
   background-color: rgba(0, 0, 0, 0.25);
@@ -95,7 +107,19 @@ body {
 .navbar-nav .nav-item .nav-link {
   color: white !important;
 }
+<<<<<<< HEAD
 
 .dashboard-stat {
   height: 100px;
+=======
+
+.dashboard-stat {
+  height: 100px;
+=======
+
+.notifications .material-icons:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  opacity: 0.75;
+>>>>>>> master
+>>>>>>> master
 }
