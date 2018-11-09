@@ -4,12 +4,13 @@ CREATE TABLE IF NOT EXISTS `users` (
 	`display_name` varchar(255),
 	`email` varchar(255),
 	`created` varchar(32),
-	`rank` int(2),
+	`rank` int(2) default 0,
 	`account_type` varchar(255),
 	`password` varchar(255),
 	`verified` TINYINT(1) default 0,
 	`reports_blocked` TINYINT(1) default 0,
 	`seen_post_register` TINYINT(1) default 0,
 	`subscribed_emails` TINYINT(1) default 0,
+	`banned` TINYINT(1) default 0,
 	PRIMARY KEY( `id` )
 );

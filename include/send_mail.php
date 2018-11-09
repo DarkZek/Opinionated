@@ -1,7 +1,8 @@
 <?php
+
 //Load Composer's autoloader
-require("/var/www/html/vendor/autoload.php");
-require("/var/www/html/include/sql/sql.php");
+require("../vendor/autoload.php");
+require("../include/sql/sql.php");
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
@@ -26,13 +27,13 @@ try {
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
-    $mail->Username = 'opinionatednz@gmail.com';
-    $mail->Password = 'mpHRynUjm5GuC7oC';
+    $mail->Username = trim(file_get_contents("../docs/accounts/email/username.txt"));
+    $mail->Password = trim(file_get_contents("../docs/accounts/email/password.txt"));
     $mail->SMTPSecure = 'tls';
     $mail->Port = 587;
 
 } catch (Exception $e) {
-    die('Message could not be sent. Mailer Error: ', $mail->ErrorInfo);
+    die('Message could not be sent. Mailer Error: ' . $mail->ErrorInfo);
 }
 
 echo("Sending " . count($emails) . " emails\n");
@@ -59,7 +60,7 @@ function sendNoReply($mail, $recipient, $subject, $message) {
   $mail->addReplyTo('admin@opinionated.nz', 'Opinionated Help Desk');
 
   //Content
-  $mail->isHTML(true);                                  // Set email format to HTML
+  $mail->isHTML(true);
   $mail->Subject = $subject;
   $mail->Body    = $message;
   $mail->AltBody = $message;

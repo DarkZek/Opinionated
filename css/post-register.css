@@ -23,7 +23,7 @@
 }
 
 .m-container .col-12 {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 100%;
 }
 

@@ -1,8 +1,10 @@
 <?php
-
+//
+// Connect to google and check
+//
 $g_client = new Google_Client();
 $g_client->setClientId("594557677828-ecb05iv4dfhepddc1sg0ovq8ohlq2iod.apps.googleusercontent.com ");
-$client_secret = trim(file_get_contents("/var/www/html/docs/mysql/google_secret.txt"));
+$client_secret = trim(file_get_contents("../docs/google_secret.txt"));
 $g_client->setClientSecret($client_secret);
 $g_client->setRedirectUri("http://haveityourway.co.nz:595/api/login");
 $g_client->setScopes("email");

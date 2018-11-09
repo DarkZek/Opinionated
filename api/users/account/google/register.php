@@ -1,8 +1,9 @@
 <?php
+require("/var/www/html/vendor/autoload.php");
+
 //
 // Load user info
 //
-
 $email = $pay_load["email"];
 $display_name = $userinfo["displayName"];
 
@@ -17,7 +18,7 @@ $password = $pay_load["sub"];
 //
 // Insert user into database
 //
-$query = "INSERT INTO users (username, display_name, email, rank, account_type, password, verified, reports_blocked, seen_post_register) VALUES (?, ?, ?, 0, 'google', ?, 1, 0, 0);";
+$query = "INSERT INTO users (username, display_name, email, account_type, password, verified) VALUES (?, ?, ?, 'google', ?, 1);";
 $statement = $conn->prepare($query);
 $result = $statement->execute([$email, $display_name, $email, $password]);
 
@@ -46,6 +47,8 @@ $_SESSION["account_type"] = "google";
 $_SESSION["seen_post_register"] = "0";
 $_SESSION["verified"] = True;
 $_SESSION["rank"] = 0;
+
+//Generate xsrf token
 $_SESSION["xsrf_token"] = md5(uniqid(rand(), true));
 
 //Redirect

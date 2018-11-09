@@ -3,16 +3,16 @@
 session_start();
 
 //Run
-include("/var/www/html/include/run/Runner.php");
+include("../../include/run/Runner.php");
 
 //Only allow New Zealanders to vote
-require("/var/www/html/include/geo/nz_only.php");
+require("../../include/geo/nz_only.php");
 
 //Make sure xrsf token matches
-require("/var/www/html/include/permissions/check_xsrf.php");
+require("../../include/permissions/check_xsrf.php");
 
 //Make sure user is logged in
-require("/var/www/html/include/permissions/user_only.php");
+require("../../include/permissions/user_only.php");
 
 function Error($error) {
   $_SESSION["error"] = $error;
@@ -43,7 +43,7 @@ if (strlen($name) < 10 || strlen($name) > 150) {
 $filter = "/^[a-zA-Z0-9\ ,!.'_\-\(\)]*$/";
 
 #Load MySQL connection
-require("/var/www/html/include/sql/sql.php");
+require("../../include/sql/sql.php");
 
 if (preg_match($filter, $name) !== 1) {
   Error("[ERROR] Invalid characters used. Please use only numbers, letters, spaces and ._',-()!");
@@ -70,13 +70,12 @@ $date = new DateTime();
 //
 //Build SQL Query
 //
-$sql = "INSERT INTO polls (name, upvotes, created, author, description) VALUES (?, 0, ?, ?, ?);";
+$sql = "INSERT INTO polls (name, upvotes, created, author, description) VALUES (?, 0, ?, ?, ?);SELECT SCOPE_IDENTITY();";
 $statement = $conn->prepare($sql);
 $result = $statement->execute([$name, $date->getTimestamp(), $_SESSION["id"], $desc]);
 
-if ($result === True) {
-  $_SESSION["info"] = "Successfully submitted poll";
-  header("Location: /user");
-} else {
+if ($result === False) {
   echo("There was an error submitting your poll");
 }
+
+var_dump($result->fetch());
