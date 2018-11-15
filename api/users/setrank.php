@@ -4,29 +4,28 @@ require("../../include/permissions/admin_only.php");
 require("../../include/permissions/check_xsrf.php");
 require("../../include/sql/sql.php");
 
-if (!isset($_POST["username"])) {
+if (!isset($_POST["id"])) {
   die("[ERROR] No input id");
 }
 
 if (!isset($_POST["rank"])) {
-  die("[ERROR] No input id");
+  die("[ERROR] No input rank");
 }
 
-$username = $_POST["username"];
+$id = $_POST["id"];
 $rank = $_POST["rank"];
 
 //Create sql query
-$query = "UPDATE users SET rank = ? WHERE username=?;";
+$query = "UPDATE users SET rank = ? WHERE id = ?;";
 
 $statement = $conn->prepare($query);
-$result = $statement->execute([$rank, $username]);
+$result = $statement->execute([$rank, $id]);
 
 if ($statement->rowCount() !== 1) {
-  die("[ERROR] Either there was no user with that username or they already have admin");
+  die("There was no user with that username or they already have that rank");
 }
 
-if ($result === True) {
-  die("Success");
-} else {
+if ($result !== True) {
   die("[ERROR] Could not complete the action");
 }
+die("Success");

@@ -52,6 +52,14 @@ if (!isset($vote)) {
 }
 
 //
+// Load sponsor spots
+//
+$q = "SELECT * FROM sponsor_spots LIMIT 6;";
+$st = $conn->prepare($q);
+$st->execute();
+$sponsors = $st->fetchAll();
+
+//
 // Load main poll perspectives
 //
 $p_query = "SELECT * FROM main_poll_perspectives JOIN users ON users.id=user_id ORDER BY upvotes LIMIT 15;";
@@ -138,10 +146,10 @@ if (isset($perspectives)) {
     <div class="col-4">
       <div class="container sponsor">
         <div class="card">
-          <div class="img-contraint" style="background-image: url('/images/placeholders/people.jpg');"></div>
+          <div class="img-contraint" style="background-image: url('<?php echo($sponsors[0]->image_url); ?>');"></div>
           <div class="container">
-            <h6 class="center" href="/sponsors">Your company here</h6>
-            <p>Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.</p>
+            <h6 class="center" href="/sponsors"><?php echo($sponsors[0]->title); ?></h6>
+            <p><?php echo($sponsors[0]->message); ?></p>
           </div>
         </div>
       </div>
@@ -149,10 +157,10 @@ if (isset($perspectives)) {
     <div class="col-4">
       <div class="container sponsor">
         <div class="card">
-          <div class="img-contraint" style="background-image: url('/images/placeholders/wobweb.jpg');"></div>
+          <div class="img-contraint" style="background-image: url('<?php echo($sponsors[1]->image_url); ?>');"></div>
           <div class="container">
-            <h6 class="center" href="/sponsors">Your company here</h6>
-            <p>Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.</p>
+            <h6 class="center" href="/sponsors"><?php echo($sponsors[1]->title); ?></h6>
+            <p><?php echo($sponsors[1]->message); ?></p>
           </div>
         </div>
       </div>
@@ -160,10 +168,10 @@ if (isset($perspectives)) {
     <div class="col-4">
       <div class="container sponsor">
         <div class="card">
-          <div class="img-contraint" style="background-image: url('/images/placeholders/server.jpg');"></div>
+          <div class="img-contraint" style="background-image: url('<?php echo($sponsors[2]->image_url); ?>');"></div>
           <div class="container">
-            <h6 class="center" href="/sponsors">Your company here</h6>
-            <p>Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.</p>
+            <h6 class="center" href="/sponsors"><?php echo($sponsors[2]->title); ?></h6>
+            <p><?php echo($sponsors[2]->message); ?></p>
           </div>
         </div>
       </div>
@@ -175,10 +183,10 @@ if (isset($perspectives)) {
     <div class="col-4">
       <div class="container sponsor">
         <div class="card">
-          <div class="img-contraint" style="background-image: url('/images/placeholders/student.jpg');"></div>
+          <div class="img-contraint" style="background-image: url('<?php echo($sponsors[3]->image_url); ?>');"></div>
           <div class="container">
-            <h6 class="center" href="/sponsors">Your company here</h6>
-            <p>Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.</p>
+            <h6 class="center" href="/sponsors"><?php echo($sponsors[3]->title); ?></h6>
+            <p><?php echo($sponsors[3]->message); ?></p>
           </div>
         </div>
       </div>
@@ -186,10 +194,10 @@ if (isset($perspectives)) {
     <div class="col-4">
       <div class="container sponsor">
         <div class="card">
-          <div class="img-contraint" style="background-image: url('/images/placeholders/email.png');"></div>
+          <div class="img-contraint" style="background-image: url('<?php echo($sponsors[4]->image_url); ?>');"></div>
           <div class="container">
-            <h6 class="center" href="/sponsors">Your company here</h6>
-            <p>Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.</p>
+            <h6 class="center" href="/sponsors"><?php echo($sponsors[4]->title); ?></h6>
+            <p><?php echo($sponsors[4]->message); ?></p>
           </div>
         </div>
       </div>
@@ -197,10 +205,10 @@ if (isset($perspectives)) {
     <div class="col-4">
       <div class="container sponsor">
         <div class="card">
-          <div class="img-contraint" style="background-image: url('/images/placeholders/mountains.png');"></div>
+          <div class="img-contraint" style="background-image: url('<?php echo($sponsors[5]->image_url); ?>');"></div>
           <div class="container">
-            <h6 class="center" href="/sponsors">Your company here</h6>
-            <p>Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.</p>
+            <h6 class="center" href="/sponsors"><?php echo($sponsors[5]->title); ?></h6>
+            <p><?php echo($sponsors[5]->message); ?></p>
           </div>
         </div>
       </div>

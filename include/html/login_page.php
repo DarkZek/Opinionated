@@ -30,18 +30,19 @@ $(body)[0].style.overflow = 'visible';" class="anim-fast animated anim-fadeIn gr
     <div class="container">
      <div class="container">
        <br>
-      <form class="normal-login" action="/api/users/account/login" method="POST">
+      <form class="normal-login">
        <input id="account_type" name="account_type" value="account" hidden=""/>
        <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" class="form-control" id="username" name="username" />
+        <input type="text" class="form-control" id="login_username" name="username" />
+        <a class="red" id="login_username_error" style="display: none;"></a>
        </div>
        <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" class="form-control" id="password" name="password" />
+        <input type="password" class="form-control" id="login_password" name="password" />
        </div>
        <div class="form-group">
-        <input type="submit" class="form-control" value="LOGIN" />
+        <input type="submit" onclick="return sendLogin();" class="form-control" value="LOGIN" />
        </div>
       </form>
       <h4 class="back" hidden onclick="document.location = '/';">BACK &gt;</h4>

@@ -1,0 +1,18 @@
+CREATE TABLE IF NOT EXISTS `sponsor_spots` (
+	`id` int(10) NOT NULL auto_increment,
+	`message` varchar(255),
+	`title` varchar(255),
+	`image_url` varchar(255),
+	PRIMARY KEY( `id` )
+);
+INSERT INTO sponsor_spots (message, title, image_url) VALUES ("Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.", "Your company here", "/images/placeholders/people.jpg");
+
+INSERT INTO sponsor_spots (message, title, image_url) VALUES ("Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.", "Your company here", "/images/placeholders/wobweb.jpg");
+
+INSERT INTO sponsor_spots (message, title, image_url) VALUES ("Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.", "Your company here", "/images/placeholders/server.jpg");
+
+INSERT INTO sponsor_spots (message, title, image_url) VALUES ("Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.", "Your company here", "/images/placeholders/student.jpg");
+
+INSERT INTO sponsor_spots (message, title, image_url) VALUES ("Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.", "Your company here", "/images/placeholders/email.png");
+
+INSERT INTO sponsor_spots (message, title, image_url) VALUES ("Non natus quia recusandae. Dicta architecto nisi dolor non nihil sed qui consequatur. Deserunt maxime molestiae quam ducimus libero. Quaerat et corporis magnam voluptatem qui aliquam.", "Your company here", "/images/placeholders/mountains.png");

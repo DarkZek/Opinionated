@@ -39,44 +39,21 @@ $st->execute();
 $poll_count = $st->fetchColumn();
 
 ?>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
 <style>
 .admin-menu-dashboard {
   background-color: rgba(0, 0, 0, 0.25) !important;
 }
 </style>
 <div>
-<<<<<<< HEAD
   <div class="row">
     <div class="col-4">
       <div class="card center dashboard-stat">
-        <h2>Current Leading Poll</h2>
+        <h2 style="margin-top: 10px;">Current Leading Poll</h2>
         <a><?php echo($top_poll); ?></a>
       </div>
-      <div class="card cursor" onclick="document.location = '/api/main_poll/update.php';">
+      <div class="card cursor" hidden onclick="document.location = '/api/main_poll/update.php';">
         <a>UPDATE MAIN POLL</a>
       </div>
-=======
-  <div class="row">
-    <div class="col-4">
-      <div class="card center dashboard-stat">
-        <h2>Current Leading Poll</h2>
-        <a><?php echo($top_poll); ?></a>
-      </div>
-      <div class="card cursor" onclick="document.location = '/api/main_poll/update.php';">
-        <a>UPDATE MAIN POLL</a>
-      </div>
-=======
-<div>
-  <div class="row">
-    <div class="col-4">
-      <br>
-      <a class="btn btn-primary form-control" href="/api/main_poll/update.php">UPDATE MAIN POLL</a>
->>>>>>> master
->>>>>>> master
     </div>
     <div class="col-4">
       <div class="card center dashboard-stat cursor" onclick="document.location = '/admin/database/user';">
@@ -87,12 +64,38 @@ $poll_count = $st->fetchColumn();
     <div class="col-4">
       <div class="card center dashboard-stat">
         <br>
-<<<<<<< HEAD
         <h2><?php echo($poll_count); ?> Polls</h2>
-=======
-        <h2><?php echo($user_count); ?> Polls</h2>
->>>>>>> master
       </div>
     </div>
+  </div>
+  <br>
+  <div class="row">
+    <canvas id="myChart" width="400" height="125px"></canvas>
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var myChart = new Chart(ctx, {
+    type: 'line',
+      data: {
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        datasets: [{
+            label: 'Number of unique visits per day',
+            data: [5, 6, 3, 5, 2, 15, 21],
+            fill: true,
+            backgroundColor: "rgba(74, 205, 205, 0.1)",
+            borderColor: "rgba(74, 205, 205, 0.6)"
+
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+</script>
   </div>
 </div>

@@ -16,26 +16,31 @@ $auth_url = $g_client->createAuthUrl();
 <link href="/css/login.css" rel="stylesheet" />
 <script src='/js/signin.js'></script>
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+var loginWithGoogle = "<?php echo($auth_url); ?>";
+</script>
 
 
 <div class="login-page animated">
- <form class="normal-login" action="/api/users/account/login" method="POST">
+ <form class="normal-login">
   <input id="account_type" name="account_type" value="account" hidden=""/>
   <div class="form-group">
    <label for="username">Username</label>
-   <input type="text" class="form-control" id="username" name="username" />
+   <input type="text" class="form-control" id="login_username" name="username" />
+   <a class="red" id="login_username_error" style="display: none;"></a>
   </div>
   <div class="form-group">
    <label for="password">Password</label>
-   <input type="password" class="form-control" id="password" name="password" />
+   <input type="password" class="form-control" id="login_password" name="password" />
+   <a class="red" id="login_password_error" style="display: none;"></a>
   </div>
   <div class="form-group">
-   <input type="submit" class="form-control" value="LOGIN" />
+   <input type="submit" onclick="return sendLogin();" class="form-control" value="LOGIN" />
   </div>
  </form>
  <h4 class="back" hidden onclick="document.location = '/';">BACK &gt;</h4>
  <div class="form-group">
-   <a href="<?php echo($auth_url); ?>" type="submit" class="use-google form-control"><i class="fab fa-google"></i> <div class="google-divider"></div> LOGIN WITH GOOGLE</a>
+   <a onclick="document.location = loginWithGoogle;" type="submit" class="use-google form-control"><i class="fab fa-google"></i> <div class="google-divider"></div> LOGIN WITH GOOGLE</a>
  </div>
  <br>
  <br>

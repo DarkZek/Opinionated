@@ -256,6 +256,29 @@ a {
 }
 
 /*
+  Notification stuff
+*/
+.notification {
+  width: auto;
+  height: 40px;
+  position: absolute;
+  left: 10px;
+  bottom: 40px;
+  animation-name: notification;
+  animation-duration: 5s !important;
+  z-index: 11;
+}
+
+.notification .container {
+  padding: 20px;
+}
+
+.notification b {
+  color: blue;
+}
+
+
+/*
   Website popups
 */
 .error-modal {
@@ -326,27 +349,6 @@ a {
   padding-left: 28px;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-.dialogue-card .exit {
-  position: absolute;
-  right: 15px;
-  top: 3px;
-  font-size: 40px;
-  cursor: pointer;
-  font-weight: 300;
-}
-
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
 .dialogue-card .content {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -355,16 +357,6 @@ a {
   overflow-x: hidden;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
->>>>>>> master
->>>>>>> master
 .dialogue-card .exit-circle {
   border-radius: 100px;
   height: 40px;
@@ -389,17 +381,6 @@ a {
   opacity: 1;
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
 /*
   Animations
 */
@@ -449,6 +430,25 @@ a {
    }
    100% {
      transform: translate3d(0, 100%, 0);
+     opacity: 0;
+   }
+}
+
+@keyframes notification {
+   0% {
+     transform: translate3d(0, 80px, 0);
+     opacity: 0;
+   }
+   4% {
+     transform: translate3d(0, 0, 0);
+     opacity: 1;
+   }
+   96% {
+     transform: translate3d(0, 0, 0);
+     opacity: 1;
+   }
+   100% {
+     transform: translate3d(0, 80px, 0);
      opacity: 0;
    }
 }

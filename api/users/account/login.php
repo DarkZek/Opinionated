@@ -2,29 +2,18 @@
 session_start();
 
 if (!isset($_POST["username"])) {
-  $_SESSION["error"] = "[ERROR] No username set";
-  header("Location: /login");
+  die("No user with that username/email");
   die();
 }
 if (!isset($_POST["password"])) {
-  $_SESSION["error"] = "[ERROR] No password set";
-  header("Location: /login");
-  die();
+  die("Incorrect Password");
 }
 
 $username = htmlspecialchars($_POST["username"]);
 $password = $_POST["password"];
 
 if ($username === "") {
-  $_SESSION["error"] = "[ERROR] No username set";
-  header("Location: /login");
-  die();
-}
-
-if ($password === "") {
-  $_SESSION["error"] = "[ERROR] No password set";
-  header("Location: /login");
-  die();
+  die("No user with that username/email");
 }
 
 //Connect to mysql database
@@ -45,17 +34,22 @@ $statement->execute([$username]);
 $result = $statement->fetchAll();
 
 if (count($result) == 0) {
-  $_SESSION["error"] = "[ERROR] No user named " . $username;
-  header("Location: /login");
-  die();
+  die("No user with that username/email");
+}
+
+//Check if its a google account
+if ($result[0]->account_type === "google") {
+  die("Your account is a google account");
 }
 
 $checked = password_verify($password, $result[0]->password);
 
 if ($checked === False) {
-  $_SESSION["error"] = "[ERROR] Incorrect password";
-  header("Location: /login");
-  die();
+  die("Incorrect Password");
+}
+
+if ($result[0]->banned == "1") {
+  die("Your account has been banned");
 }
 
 $_SESSION["username"] = $result[0]->username;
@@ -71,5 +65,4 @@ if ($result[0]->verified === 1) {
 $_SESSION["verified"] = $verified;
 $_SESSION["xsrf_token"] = md5(uniqid(rand(), true));
 
-echo("Successfully logged in...");
-header("Location: /");
+echo("Success");

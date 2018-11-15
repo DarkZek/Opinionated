@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-//This only loads the login screen when its needed to save bandwidth :)
-function showLoginPage() {
-  //If its mobile just redirect
-  if (screen.width < 1000) {
-    document.location = "/login";
-    return;
-  }
-  $.ajax({url: "/api/html/login_page", async: true, success: function(result){
-      $("body").append(result);
-      $("body")[0].style.overflow = "hidden";
-      window.scrollTo(0, 0);
-  }});
-}
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
 
 //
 // Utils
@@ -44,19 +16,6 @@ function sendRequest(url, args, callback) {
   });
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
 function showDialogue(url) {
   args = {};
   args.xsrf = xsrf;
@@ -65,46 +24,6 @@ function showDialogue(url) {
     $("body")[0].style.overflow = "hidden";
     window.scrollTo(0, 0);
   });
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-=======
-
-function showRegisterPage(object) {
-  $.ajax({url: "/api/html/register_page", async: true, success: function(result){
-      var register = $("body").append(result);
-      $(".register_page")[0].classList.add("anim-slideLeftIn");
-  }});
-
-  var parent = object.parentNode.parentNode.parentNode.parentNode;
-  parent.classList.remove("anim-slideDown");
-  parent.classList.add("anim-slideLeftOut");
-  hideObject(".login_page");
-}
-
-function reshowLogin() {
-  showObject(".login_page");
-  $('.login_page')[0].classList.remove("anim-slideLeftOut");
-  $('.login_page')[0].classList.add("anim-slideLeftIn");
-
-  $('.register_page')[0].classList.add("anim-slideLeftOut");
-  $('.register_page')[0].classList.remove("anim-slideLeftIn");
-
-  $('#login-register-button')[0].onclick = function() {
-      reshowRegister();
-  };
-
-  hideObject(".register_page");
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
 }
 
 function hideDialogue(obj) {
@@ -141,8 +60,56 @@ function getCookie(cname) {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
+            return atob(c.substring(name.length, c.length));
         }
     }
     return "";
 }
+
+function setCookie(name, value) {
+  var d = new Date();
+  d.setTime(d.getTime() + (31*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + btoa(value) + ";" + expires + ";path=/";
+}
+
+//
+// Notification System
+//
+$.get( "/api/html/notification", function( data ) {
+  notificationHTML = data;
+});
+var notificationHTML = "";
+
+function showNotification(text, actionText, actionCallback) {
+  $('body').append(notificationHTML);
+
+  //Set info
+  $("#notification-message")[0].textContent = text;
+  if (actionText != "") {
+    $("#notification-action")[0].textContent = actionText;
+  }
+  if (actionCallback != null) {
+    $("#notification-action").click(function() {
+      $("notification").remove();
+      actionCallback();
+    });
+  }
+
+  //Hide after 5 seconds
+  setTimeout(function () {
+    $(".notification").remove();
+  }, 5000)
+}
+
+
+//
+// Show statistics
+//
+$(document).ready(function() {
+  var stats = getCookie("statistics");
+  if (stats == "") {
+    setCookie("statistics", "true");
+    sendRequest("/api/statistics/user", {})
+  }
+});

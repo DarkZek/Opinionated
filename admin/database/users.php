@@ -63,7 +63,11 @@ if (isset($_GET["search"])) {
       <tbody>
         <?php
         while (($row = $st->fetch()) != null) {
-            echo('<tr >');
+            echo('<tr');
+            if ($row->banned == "1") {
+              echo(" style='background-color: #fbe5ef;' ");
+            }
+            echo(">");
             echo("<td class=\"grey-hover\" onclick=\"document.location = './user?id=" . $row->id . "'\">" . $row->id . "</td>");
             echo("<td>" . htmlspecialchars($row->username) . "</td>");
             echo("<td>" . htmlspecialchars($row->display_name) . "</td>");

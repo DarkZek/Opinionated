@@ -1,4 +1,3 @@
-
 function showRegister() {
   var loginPage = $(".login-page");
 
@@ -32,28 +31,52 @@ function showLogin() {
   registerPage[0].classList.add("anim-scaleUp");
 }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
-if (screen.width < 1000) {
-  document.location = "/register";
+function sendLogin() {
+
+    var username = $("#login_username")[0].value;
+    var password = $("#login_password")[0].value;
+
+    sendRequest("/api/users/account/login", {username: username, password: password}, function (data) {
+      data = data.trim();
+
+      if (data.toUpperCase() == "SUCCESS") {
+        location.reload();
+      } else {
+        switch(data) {
+          case "No user with that username/email": {
+            var obj = $("#login_username_error")[0];
+            obj.textContent = "Incorrect Username/Email";
+            obj.style.display = "block";
+            hideObject(obj);
+            break;
+          }
+          case "Incorrect Password": {
+            var obj = $("#login_password_error")[0];
+            obj.textContent = "Incorrect password";
+            obj.style.display = "block";
+            hideObject(obj);
+            break;
+          }
+          case "Your account is a google account": {
+            document.location = loginWithGoogle;
+            return;
+          }
+          default: {
+            showNotification(data);
+          }
+        }
+      }
+    });
+
+    return false;
 }
 
->>>>>>> master
->>>>>>> master
->>>>>>> master
->>>>>>> master
 var registering = false;
 
 function sendRegister(obj) {
 
-  if (registering == true) {
+  if (registering === true) {
     return;
   }
   //registering = true;
@@ -69,7 +92,7 @@ function sendRegister(obj) {
   var email = form[4].value;
   var recaptcha = form[5].value;
 
-  $.post( "/api/users/account/register", {"account_type": "account", email: email, "username": username, "password": "testing", "display_name": display_name, "g-recaptcha-response": recaptcha, "xsrf": xsrf}, function (data) {
+  $.post( "/api/users/account/register", {"account_type": "account", email: email, "username": username, "password": passwd, "display_name": display_name, "g-recaptcha-response": recaptcha, "xsrf": xsrf}, function (data) {
     registering = false;
 
     data = data.trim();
