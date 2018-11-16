@@ -21,9 +21,10 @@ $st->execute();
 $sponsors = $st->fetchAll();
 
 ?>
+<script src="/js/sponsors.js"></script>
 <style>
 .sponsor {
-  background-color: #e4e4e4;
+  background-color: rgba(0, 0, 0, 0.1);
   padding: 20px;
   padding-bottom: 5px;
   padding-top: 5px;
@@ -33,6 +34,13 @@ $sponsors = $st->fetchAll();
   height: 100%;
   overflow-x: hidden;
 }
+.admin-menu-sponsors {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+.down_arrow {
+  margin-top: 10px;
+  margin-right: 10px;
+}
 </style>
 <div class="">
   <?php
@@ -40,17 +48,30 @@ $sponsors = $st->fetchAll();
     $sponsor = $sponsors[$i];
     ?>
     <div>
-      <h2 class="cursor sponsor rounded" data-toggle="collapse" data-target="#spot<?php echo($i); ?>">Sponsor Spot #<?php echo($i); ?></h2>
+      <div class="sponsor row">
+        <div class="col-8">
+          <div class="row cursor" data-toggle="collapse" data-target="#spot<?php echo($i); ?>">
+            <i class="material-icons down_arrow">keyboard_arrow_down</i>
+            <h2>Sponsor Spot #<?php echo($i); ?></h2>
+          </div>
+        </div>
+        <div class="col-4">
+          <a class="btn btn-primary white right" onclick="saveChanges(<?php echo($i); ?>);" id="apply<?php echo($i); ?>" style="margin-top: 5px;display: none;">APPLY CHANGES</a>
+        </div>
+      </div>
+      <br>
       <div id="spot<?php echo($i); ?>" class="collapse <?php if ($i === 0) {echo("show"); } ?>">
         <div class="row">
           <div class="col-2">
-            <img src="<?php echo($sponsor->image_url); ?>" style="width: 100%;">
+            <img id="image<?php echo($i); ?>" style="width: 100%;">
           </div>
           <div class="col-10">
-            <label class="primary" for="sponsor<?php echo($i); ?>message">Sponsor Message:</label>
-            <textarea class="form-control" id="sponsor<?php echo($i); ?>message"><?php echo($sponsor->message); ?></textarea>
-            <label class="primary" for="sponsor<?php echo($i); ?>image">Sponsor Image URL</label>
-            <input type="text" class="form-control" id="sponsor1image" value="<?php echo($sponsor->image_url); ?>">
+            <label for="sponsor<?php echo($i); ?>title">Sponsor Title</label>
+            <input type="text" class="form-control" onkeydown="dataChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>title" value="<?php echo($sponsor->title); ?>">
+            <label for="sponsor<?php echo($i); ?>message">Sponsor Message:</label>
+            <textarea class="form-control" onkeydown="dataChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>message"><?php echo($sponsor->message); ?></textarea>
+            <label for="sponsor<?php echo($i); ?>image">Sponsor Image URL</label>
+            <input type="text" class="form-control" onkeyup="imageChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>image" value="<?php echo($sponsor->image_url); ?>">
           </div>
         </div>
       </div>

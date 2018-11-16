@@ -46,7 +46,7 @@ if (isset($_GET["search"])) {
       <input type="text" name="search" <?php if(isset($_GET["search"])) { echo("value=\"" . $_GET["search"] . "\""); } ?> placeholder="Search User" class="form-control">
     </div>
     <div class="col-2">
-        <input type="submit" value="Search" class="b-primary form-control">
+        <input type="submit" value="Search" class="btn-primary form-control">
     </div>
   </form>
   <div class="row">

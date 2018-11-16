@@ -81,8 +81,8 @@ $poll_count = $st->fetchColumn();
             label: 'Number of unique visits per day',
             data: [5, 6, 3, 5, 2, 15, 21],
             fill: true,
-            backgroundColor: "rgba(74, 205, 205, 0.1)",
-            borderColor: "rgba(74, 205, 205, 0.6)"
+            backgroundColor: "rgba(87, 191, 55, 0.3)",
+            borderColor: "rgba(87, 191, 55, 0.6)"
 
         }]
     },

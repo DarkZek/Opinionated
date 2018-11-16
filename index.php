@@ -5,9 +5,8 @@
 $NAV_TAB = "HOME";
 $TITLE = "Opinionated | Home";
 
-
 //
-// Include stuff
+// Includes
 //
 require("./include/show_tutorial.php");
 require("./include/sql/sql.php");
@@ -20,8 +19,6 @@ $poll_query = "SELECT * FROM main_polls ORDER BY id ASC LIMIT 1;";
 $poll_statement = $conn->prepare($poll_query);
 $poll_statement->execute();
 $poll_data = $poll_statement->fetch();
-
-
 
 //
 // Check if user has voted in main poll
@@ -36,7 +33,7 @@ if (isset($_SESSION["id"])) {
     $vote = "Up";
   } else {
 
-    //Remove downvotes
+    //Its a downvote!
     $sql = "SELECT * FROM main_poll_downvotes WHERE user_id = ?;";
     $statement = $conn->prepare($sql);
     $result = $statement->execute([$_SESSION["id"]]);
@@ -94,20 +91,20 @@ if (isset($poll_data->upvotes)) { ?>
   <a><?php echo($poll_data->description); ?></a>
 </div>
 <br>
-<div class="mini-container">
+<div class="mini-container animated anim-fadeUpIn">
   <div class="row center" style="display: flex;">
     <div class="col agree">
       <div class="color">
-        <h1 style="color: #8c8c2b;" class="poll-label">YES</h1>
+        <h1 class="poll-label">YES</h1>
         <br><br><br><br><br>
-        <h2 style="color: #8c8c2b;"  class="agree-text center">67%</h2>
+        <h2  class="agree-text center">67%</h2>
       </div>
     </div>
     <div class="col disagree">
       <div class="color">
-        <h1 style="color: #b62525;" class="poll-label">NO</h1>
+        <h1 class="poll-label">NO</h1>
         <br><br><br><br><br>
-        <h2 style="color: #b62525;" class="disagree-text center">67%</h2>
+        <h2 class="disagree-text center">67%</h2>
       </div>
     </div>
   </div>
@@ -121,7 +118,6 @@ if (isset($poll_data->upvotes)) { ?>
 //
 if (isset($perspectives)) {
   foreach($perspectives as $perspective) {
-
 
     ?>
     <div class="perspective card container">

@@ -91,7 +91,7 @@ function showNotification(text, actionText, actionCallback) {
   }
   if (actionCallback != null) {
     $("#notification-action").click(function() {
-      $("notification").remove();
+      $(".notification").remove();
       actionCallback();
     });
   }
@@ -113,3 +113,21 @@ $(document).ready(function() {
     sendRequest("/api/statistics/user", {})
   }
 });
+
+//
+//Dynamic loading of pages
+//
+function loadPage(page) {
+  window.history.pushState(page, page, page);
+
+  $.post( page, {dynamic: true}, function(data) {
+    var html = $("html")[0];
+    //Remove all other children except head
+    for (var i = 1; i < html.children.length; i++) {
+      var child = html.children[i];
+      child.parentNode.removeChild(child);
+    }
+
+    $("html").append(data);
+  });
+}

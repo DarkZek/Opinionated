@@ -6,7 +6,8 @@ require("../../include/permissions/admin_only.php");
 //Only allow New Zealanders to vote
 require("../../include/geo/nz_only.php");
 
-require("../../permissions/check_xsrf.php");
+require("../../include/permissions/check_xsrf.php");
+require("../../include/sql/sql.php");
 
 if (!isset($_POST["id"])) {
   die("[ERROR] No input post id");

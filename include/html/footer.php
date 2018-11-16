@@ -21,7 +21,7 @@
           <div class="col-4">
             <a class="bold white" href="/about">About Us</a>
             <br>
-            <a class="bold white" href="/tutorial_slideshow">Opinionated Tutorial</a>
+            <a class="bold white" href="/tutorial">Opinionated Tutorial</a>
             <br>
             <a class="bold white" href="/sponsors">Sponsorship</a>
             <br>
@@ -41,7 +41,7 @@
         <div class="row">
           <div class="">
             <div class="row">
-              <i class="fab col-4 pointer center fa-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://opinionated.nz/tutorial_slideshow', '_blank');" target="_blank" style="color: #3B5998;"></i>
+              <i class="fab col-4 pointer center fa-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://opinionated.nz/tutorial', '_blank');" target="_blank" style="color: #3B5998;"></i>
               <i class="fab col-4 pointer center fa-reddit-square" style="color: #ff4500;"></i>
               <i class="fab col-4 pointer center fa-twitter cursor" onclick="window.open('https://twitter.com/intent/tweet?text=Opinionated%20is%20a%20New%20Zealand%20website%20to%20share%20your%20ideas%20to%20make%20NZ%20a%20better%20place!%20Learn%20more%20here:%20https://opinionated.nz/tutorial_slideshow', '_blank');" style="color: #1DA1F2;"></i>
             </div>
@@ -52,7 +52,7 @@
         <h1 class="white center">Share Us!</h1>
         <div class="">
           <div class="row">
-            <i class="fab col-4 pointer center fa-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://opinionated.nz/tutorial_slideshow', '_blank');" target="_blank" style="color: #3B5998;"></i>
+            <i class="fab col-4 pointer center fa-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://opinionated.nz/tutorial', '_blank');" target="_blank" style="color: #3B5998;"></i>
             <i class="fab col-4 pointer center fa-reddit-square" style="color: #ff4500;"></i>
             <i class="fab col-4 pointer center fa-twitter cursor" onclick="window.open('https://twitter.com/intent/tweet?text=Opinionated%20is%20a%20New%20Zealand%20website%20to%20share%20your%20ideas%20to%20make%20NZ%20a%20better%20place!%20Learn%20more%20here:%20https://opinionated.nz/tutorial_slideshow', '_blank');" style="color: #1DA1F2;"></i>
           </div>

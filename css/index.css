@@ -20,18 +20,20 @@
   border-right: 0px;
   transition: all .2s ease-in-out;
   border-radius: 10px 10px 10px 10px;
+  color: #8c8c2b;
 }
 
 .disagree .color {
   height: 200px;
-  background-color: #ffb4b4;
+  background-color: #b4daff;
   width: 100%;
   position: absolute;
   bottom: 0px;
-  border: red solid 3px;
+  border: #0027ff solid 3px;
   border-left: 0px;
   transition: all .2s ease-in-out;
-  border-radius: 10px 10px 10px 10px ;
+  border-radius: 10px 10px 10px 10px;
+  color: #0027ff;
 }
 
 .poll-label {
@@ -124,7 +126,6 @@
   font-size: 12px;
   text-align: justify;
 }
-
 
 
 

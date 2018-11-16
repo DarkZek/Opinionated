@@ -434,6 +434,17 @@ a {
    }
 }
 
+@keyframes fadeUpIn {
+   0% {
+     transform: translate3d(0, 50px, 0);
+     opacity: 0;
+   }
+   100% {
+     transform: translate3d(0, 0, 0);
+     opacity: 1;
+   }
+}
+
 @keyframes notification {
    0% {
      transform: translate3d(0, 80px, 0);
@@ -495,4 +506,8 @@ a {
 
 .anim-slideDownOut {
   animation-name: slideDownOut;
+}
+
+.anim-fadeUpIn {
+  animation-name: fadeUpIn;
 }
