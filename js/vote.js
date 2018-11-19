@@ -28,7 +28,7 @@ function clickLink(link) {
   showDialogue("/api/html/redirect.php");
 }
 
-function UpvotePost(id) {
+function UpvotePost() {
   if (xsrf == "") {
     showDialogue('/api/html/login_page');
     return false;
@@ -40,12 +40,12 @@ function UpvotePost(id) {
   return true;
 }
 
-function SkipPoll(poll) {
+function SkipPoll() {
   if (xsrf == "") {
     showDialogue('/api/html/login_page');
     return false;
   }
-  sendRequest("/api/polls/skip", {'id': poll});
+  sendRequest("/api/polls/skip", {'id': id});
 
   LoadNewPoll();
 }

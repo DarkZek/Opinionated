@@ -1,6 +1,10 @@
 TODO LIST (ORDERED)
-TODO: Bring codebase up to php code standards
 TODO: Clean up code and stop being crappy at code and make functions for repeated stuff
 TODO: Finish admin options
 TODO: Finish about page
+TODO: Allow people to change username and passwords
+TODO: Allow admins to edit peeps stuff
+TODO: MOBILE
 TODO: Finish just about everything else
+TODO: https://neilpatel.com/blog/open-graph-meta-tags/
+TODO: FIND OUT WHY THE STUFF RESET

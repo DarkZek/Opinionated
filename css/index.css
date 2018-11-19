@@ -12,28 +12,28 @@
 
 .agree .color {
   height: 200px;
-  background-color: #ffffc9;
   width: 100%;
+  background-color: #57BF37;
   position: absolute;
   bottom: 0px;
-  border: yellow solid 3px;
+  border: #57BF37 solid 3px;
   border-right: 0px;
   transition: all .2s ease-in-out;
-  border-radius: 10px 10px 10px 10px;
-  color: #8c8c2b;
+  border-radius: 10px 0px 0px 10px;
+  color: white;
 }
 
 .disagree .color {
   height: 200px;
-  background-color: #b4daff;
   width: 100%;
+  background-color: #ff4d4d;
   position: absolute;
   bottom: 0px;
-  border: #0027ff solid 3px;
+  border: #ff4d4d solid 3px;
   border-left: 0px;
   transition: all .2s ease-in-out;
-  border-radius: 10px 10px 10px 10px;
-  color: #0027ff;
+  border-radius: 0px 10px 10px 0px;
+  color: #ff4d4d;
 }
 
 .poll-label {
@@ -127,18 +127,12 @@
   text-align: justify;
 }
 
-
-
-
-
 .btn-yes {
-  font-size: 90px;
-  color: #8c8c2b;
-  background-color: #ffffc9;
+  color: white;
+  background-color: #57BF37;
 }
 
 .btn-no {
-  font-size: 90px;
-  color: black;
-  background-color: #ffb4b4;
+  color: white;
+  background-color: #ff4d4d;
 }

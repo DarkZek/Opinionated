@@ -75,20 +75,19 @@ function sendLogin() {
 var registering = false;
 
 function sendRegister(obj) {
-
   if (registering === true) {
-    return;
+    //return;
   }
   //registering = true;
   var form = obj.parentNode.parentNode;
 
   if (!form.checkValidity()) {
-    return;
+    //return;
   }
 
   var username = form[1].value;
   var display_name = form[2].value;
-  var psswd = form[3].value;
+  var passwd = form[3].value;
   var email = form[4].value;
   var recaptcha = form[5].value;
 

@@ -1,0 +1,52 @@
+/*
+  Dark Theme
+*/
+.admin-black {
+  background-color: #2a2a2a;
+}
+
+h1,h2,h3,h4,h5,h6,p,b,label,i,td,tr {
+  color: white;
+}
+
+ul .active a {
+  color: white !important;
+}
+
+a {
+  color: white !important;
+}
+
+textarea,input[type=text],input[type=submit],input[type=password],input[type=email] {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+  color: white !important;
+  border-color: transparent;
+  border: 1px solid transparent !important;
+}
+
+.btn-primary {
+  border: 1px solid transparent !important;
+  border-color: transparent !important;
+}
+
+.primary {
+  color: #57BF37 !important;
+}
+
+/* Darker objects */
+.dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Fixed normal items */
+.dropdown-menu {
+  background-color: #414040;
+}
+
+.admin-content, .card, body {
+  background-color: #414040;
+}
+
+.opinionated-logo {
+  filter: brightness(1) !important;
+}

@@ -91,16 +91,17 @@ if (isset($poll_data->upvotes)) { ?>
   <a><?php echo($poll_data->description); ?></a>
 </div>
 <br>
-<div class="mini-container animated anim-fadeUpIn">
+
+<div class="mini-container animated anim-fadeUpIn main-vote-results" <?php if($vote === "None") { echo("style=\"display: none;\""); }?>>
   <div class="row center" style="display: flex;">
-    <div class="col agree">
+    <div class="col agree yes-bar">
       <div class="color">
         <h1 class="poll-label">YES</h1>
         <br><br><br><br><br>
         <h2  class="agree-text center">67%</h2>
       </div>
     </div>
-    <div class="col disagree">
+    <div class="col disagree no-bar">
       <div class="color">
         <h1 class="poll-label">NO</h1>
         <br><br><br><br><br>
@@ -109,6 +110,25 @@ if (isset($poll_data->upvotes)) { ?>
     </div>
   </div>
 </div>
+
+<?php if($vote === "None") { ?>
+
+<div class="mini-container animated anim-fadeUpIn main-vote">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="white col-4 card cursor btn-yes" onclick="voteYes();">
+      <h1 class="center">VOTE YES</h1>
+    </div>
+    <div class="col-2"></div>
+    <div class="white col-4 card cursor btn-no" onclick="voteNo();">
+      <h1 class="center">VOTE NO</h1>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+
+<?php } ?>
+
 <br>
 <div class="perspectives">
   <h1 class="center">Perspectives</h1>

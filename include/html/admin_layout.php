@@ -17,6 +17,7 @@ $reports = $reports_st->rowCount();
 <script src="/js/admin.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 <link href="/css/admin.css" rel="stylesheet">
+<link href="/css/dark_theme.css" rel="stylesheet">
 <script>var xsrf = "<?php if (isset($_SESSION["xsrf_token"])) {echo($_SESSION["xsrf_token"]);} ?>";</script>
 <nav class="navbar navbar-expand-lg navbar-light admin-black">
   <div class="col-2 ">
@@ -24,7 +25,7 @@ $reports = $reports_st->rowCount();
   </div>
   <div class="col-3 search">
     <i class="material-icons">search</i>
-    <input type="text" class="white" placeholder="Search User" id="user_search">
+    <input type="text" class="white" placeholder="Search User" id="user_search" style="background-color: transparent !important;">
     <script>
     $("#user_search").on("keydown", function search(e) {
       if(e.keyCode == 13) {
@@ -68,6 +69,12 @@ $reports = $reports_st->rowCount();
     </div>
     <div class="row white menu-item admin-menu-users" onclick="document.location = '/admin/database/users';">
       <a>Users</a>
+    </div>
+    <div class="row white menu-item admin-menu-perspectives" onclick="document.location = '/admin/database/perspectives';">
+      <a>Perspectives</a>
+    </div>
+    <div class="row white menu-item admin-menu-polls" onclick="document.location = '/admin/database/polls';">
+      <a>Polls</a>
     </div>
     <div class="row white menu-item admin-menu-sponsors" onclick="document.location = '/admin/sponsors';">
       <a>Sponsors</a>

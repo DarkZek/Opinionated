@@ -67,11 +67,11 @@ $sponsors = $st->fetchAll();
           </div>
           <div class="col-10">
             <label for="sponsor<?php echo($i); ?>title">Sponsor Title</label>
-            <input type="text" class="form-control" onkeydown="dataChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>title" value="<?php echo($sponsor->title); ?>">
+            <input type="text" class="form-control" onkeydown="dataChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>title" value="<?php echo(htmlspecialchars($sponsor->title)); ?>">
             <label for="sponsor<?php echo($i); ?>message">Sponsor Message:</label>
-            <textarea class="form-control" onkeydown="dataChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>message"><?php echo($sponsor->message); ?></textarea>
+            <textarea class="form-control" onkeydown="dataChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>message"><?php echo(htmlspecialchars($sponsor->message)); ?></textarea>
             <label for="sponsor<?php echo($i); ?>image">Sponsor Image URL</label>
-            <input type="text" class="form-control" onkeyup="imageChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>image" value="<?php echo($sponsor->image_url); ?>">
+            <input type="text" class="form-control" onkeyup="imageChanged(<?php echo($i); ?>);" id="sponsor<?php echo($i); ?>image" value="<?php echo(htmlspecialchars($sponsor->image_url)); ?>">
           </div>
         </div>
       </div>

@@ -20,23 +20,23 @@ if ($_GET["search"] === "") {
 //Load perspectives
 //
 if (isset($_GET["search"])) {
-  $q = "SELECT * FROM poll_perspectives WHERE content LIKE ?;";
+  $q = "SELECT * FROM polls WHERE content LIKE ?;";
   $st = $conn->prepare($q);
   $st->execute(["%" . $_GET["search"] . "%"]);
 } else {
-  $q = "SELECT * FROM poll_perspectives ORDER BY upvotes LIMIT 15;";
+  $q = "SELECT * FROM polls ORDER BY upvotes LIMIT 15;";
   $st = $conn->prepare($q);
   $st->execute();
 }
 
 ?>
 <style>
-.admin-menu-perspectives {
+.admin-menu-polls {
   background-color: rgba(0, 0, 0, 0.25) !important;
 }
 </style>
 <div class="center">
-  <h1>DATABASE - PERSPECTIVES</h1>
+  <h1>DATABASE - POLLS</h1>
 </div>
 <br>
 <div class="container">
@@ -53,21 +53,23 @@ if (isset($_GET["search"])) {
       <thead>
         <tr>
           <th>ID</th>
+          <th>Title</th>
+          <th>Description</th>
           <th>Upvotes</th>
           <th>Created</th>
-          <th>User</th>
-          <th>Content</th>
+          <th>Author Id</th>
         </tr>
       </thead>
       <tbody>
         <?php
         while (($row = $st->fetch()) != null) {
             echo('<tr >');
-            echo("<td class=\"grey-hover\" onclick=\"document.location = './perspective?id=" . $row->id . "'\">" . $row->id . "</td>");
+            echo("<td class=\"grey-hover\" onclick=\"document.location = './poll?id=" . $row->id . "'\">" . $row->id . "</td>");
+            echo("<td>" . htmlspecialchars($row->name) . "</td>");
+            echo("<td>" . htmlspecialchars($row->description) . "</td>");
             echo("<td>" . $row->upvotes . "</td>");
             echo("<td>" . date("d/m/y", $row->created) . "</td>");
-            echo("<td class=\"grey-hover\" onclick=\"document.location = './user?id=" . $row->user_id . "'\">" . $row->user_id . "</td>");
-            echo("<td>" . htmlspecialchars($row->content) . "</td>");
+            echo("<td class=\"grey-hover\" onclick=\"document.location = './user?id=" . $row->author . "'\">" . $row->author . "</td>");
             echo('<tr>');
         }
         ?>

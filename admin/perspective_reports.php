@@ -75,12 +75,12 @@ require("./include/sql/sql.php");
       <td><?php echo(getName($conn, $row->poll_id)); ?></td>
       <td><?php echo(reportIDToString($row->reason)); ?></td>
       <td>
-        <button onclick="deleteFunction(this, '<?php echo($row->id); ?>', '<?php echo($row->reason); ?>');" class="inline btn-primary btn">DELETE</button>
+        <button onclick="deleteFunction(this, '<?php echo($row->id); ?>', '<?php echo(htmlspecialchars($row->reason)); ?>');" class="inline btn-primary btn">DELETE</button>
         <button onclick="dismissFunction(this, '<?php echo($row->id); ?>');" class="inline btn-secondary btn">DISMISS</button>
-        <button onclick="blockFunction(this, '<?php echo($row->id); ?>', '<?php echo($row->user_id); ?>');" class="inline btn-primary btn">BLOCK USER</button>
+        <button onclick="blockFunction(this, '<?php echo($row->id); ?>', '<?php echo(htmlspecialchars($row->user_id)); ?>');" class="inline btn-primary btn">BLOCK USER</button>
       </td>
     </tr>
-    <td colspan="4"><?php echo($row->description); ?></td><br><br>
+    <td colspan="4"><?php echo(htmlspecialchars($row->description)); ?></td><br><br>
   <?php $number = $number + 1;
     } ?>
   </tbody>

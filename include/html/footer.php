@@ -49,7 +49,7 @@
         </div>
       </div>
       <div class="col-12 mobile-only">
-        <h1 class="white center">Share Us!</h1>
+        <h2 class="white center">Share!</h2>
         <div class="">
           <div class="row">
             <i class="fab col-4 pointer center fa-facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://opinionated.nz/tutorial', '_blank');" target="_blank" style="color: #3B5998;"></i>

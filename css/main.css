@@ -9,7 +9,7 @@ nav {
 
 nav a {
   font-weight: bold;
-  color: gray !important;
+  color: gray;
   font-size: 16px !important;
 }
 
@@ -19,7 +19,7 @@ nav i {
 }
 
 ul .active a {
-  color: #363636 !important;
+  color: black;
 }
 
 ul .active li a {
@@ -67,10 +67,6 @@ footer .card {
 /*
   General Misc
 */
-
-body {
-  background-color: #fafafa;
-}
 
 .pointer {
   cursor: pointer;
@@ -185,6 +181,11 @@ body {
   color: white;
 }
 
+input[disabled] {
+  color: grey !important;
+  cursor: not-allowed;
+}
+
 /*
   Website theme colors
 */
@@ -255,6 +256,38 @@ a {
   background-color: #404040 !important;
 }
 
+.blue-l {
+  color: #b4daff;
+}
+
+.b-blue-l {
+  background-color: #b4daff;
+}
+
+.blue {
+  color: #0027ff;
+}
+
+.b-blue {
+  background-color: #0027ff;
+}
+
+.b-gold-l {
+  background-color: #F9DD89 !important;
+}
+
+.gold-l {
+  color: #F9DD89 !important;
+}
+
+.gold {
+  color: #FFC107 !important;
+}
+
+.b-gold {
+  background-color: #FFC107 !important;
+}
+
 /*
   Notification stuff
 */
@@ -323,6 +356,7 @@ a {
 .opinionated-logo {
   height: 50px;
   width: 180px;
+  filter: brightness(0);
 }
 
 .dialogue {

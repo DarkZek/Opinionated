@@ -18,10 +18,10 @@ function Load() {
     percentageDownvotes = 50;
   }
 
-  $(".agree")[0].style.width = percentageUpvotes + "%";
-  $(".disagree")[0].style.width = percentageDownvotes + "%";
-  $(".agree")[0].style.flex = "0 0 " + percentageUpvotes + "%";
-  $(".disagree")[0].style.flex = "0 0 " + percentageDownvotes + "%";
+  $(".yes-bar")[0].style.width = percentageUpvotes + "%";
+  $(".no-bar")[0].style.width = percentageDownvotes + "%";
+  $(".yes-bar")[0].style.flex = "0 0 " + percentageUpvotes + "%";
+  $(".no-bar")[0].style.flex = "0 0 " + percentageDownvotes + "%";
 
   $(".agree-text")[0].textContent = (Math.round( percentageUpvotes * 10 ) / 10) + "%";
   $(".disagree-text")[0].textContent = (Math.round( percentageDownvotes * 10 ) / 10) + "%";
@@ -35,6 +35,7 @@ function voteYes() {
   }
 
   if (vote == "Up") {
+    sendNotification("You've already voted yes to this poll");
     return;
   }
 
@@ -42,12 +43,13 @@ function voteYes() {
   vote = "Up";
   Load();
 
-  $.ajax({url: "/api/main_poll/upvote?xsrf=" + xsrf, success: function(result) {
-    if (result == "[ERROR] Already upvoted/downvoted that post!") {
-      currentVote = "yes";
-      removeVotes();
+  sendRequest("/api/main_poll/upvote", {}, function(data) {
+    if (data != "Success") {
+      sendNotification(data);
     }
-  }});
+  });
+
+  showResults();
 }
 
 function voteNo() {
@@ -57,6 +59,7 @@ function voteNo() {
   }
 
   if (vote == "Down") {
+    sendNotification("You've already voted no to this poll");
     return;
   }
 
@@ -64,33 +67,21 @@ function voteNo() {
   vote = "Down";
   Load();
 
-  $.ajax({url: "/api/main_poll/downvote?xsrf=" + xsrf, success: function(result) {
-    if (result == "[ERROR] Already upvoted/downvoted that post!") {
-      currentVote = "no";
-      removeVotes();
+  sendRequest("/api/main_poll/downvote", {}, function(data) {
+    if (data != "Success") {
+      sendNotification(data);
     }
-  }});
+  });
+
+  showResults();
+}
+
+function showResults() {
+  $(".main-vote")[0].style.display = "none";
+  $(".main-vote-results")[0].style.display = "block";
 }
 
 var currentVote = "";
-
-function removeVotes() {
-
-  if (vote == "Up") {
-    upvotes -= 1;
-  } else {
-    downvotes -= 1;
-  }
-  Load();
-
-  $.ajax({url: "/api/main_poll/remove_vote?xsrf=" + xsrf, success: function(result) {
-    if (currentVote == "yes") {
-      voteYes();
-    } else {
-      voteNo();
-    }
-  }});
-}
 
 $(document).ready(function() {
   Load();

@@ -131,3 +131,24 @@ function loadPage(page) {
     $("html").append(data);
   });
 }
+
+var darkTheme = false;
+
+if (getCookie("dark-theme") != "false") {
+  setDarkTheme(true);
+}
+
+function setDarkTheme(bool) {
+  if (bool) {
+    //Make sure its not already dark
+    if ($("#dark-theme").length == 0) {
+      $('head').append('<link rel="stylesheet" id="dark-theme" type="text/css" href="/css/dark_theme.css">');
+    }
+    setCookie("dark-theme", "true");
+  } else {
+    $("#dark-theme").remove();
+    setCookie("dark-theme", "false");
+  }
+
+  darkTheme = bool;
+}

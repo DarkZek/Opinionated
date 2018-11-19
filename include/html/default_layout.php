@@ -10,7 +10,7 @@ if (isset($_SESSION["display_name"])) {
 <nav class="navbar navbar-expand-lg navbar-light navbar-fixed-top">
   <div class="container">
       <a class="navbar-brand primary" hidden href="#"> Opinionated NZ</a>
-          <i><img class="opinionated-logo" src="/images/opinionated_black_2.png"></i>
+          <i><img class="opinionated-logo" src="/images/opinionated_white_2.png"></i>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>

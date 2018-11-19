@@ -15,7 +15,7 @@ if (!isset($pay_load)) {
   $g_client->setClientId("594557677828-ecb05iv4dfhepddc1sg0ovq8ohlq2iod.apps.googleusercontent.com");
   $client_secret = trim(file_get_contents("../../../../docs/accounts/google_secret.txt"));
   $g_client->setClientSecret($client_secret);
-  $g_client->setRedirectUri("https://opinionated.nz/api/users/account/google/login");
+  $g_client->setRedirectUri("https://" . $_SERVER['SERVER_NAME'] . "/api/users/account/google/login");
   $g_client->setScopes(Google_Service_Plus::PLUS_ME);
 
   try {

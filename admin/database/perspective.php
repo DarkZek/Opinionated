@@ -25,6 +25,11 @@ $st->execute([$id]);
 $row = $st->fetch();
 
 ?>
+<style>
+.admin-menu-perspectives {
+  background-color: rgba(0, 0, 0, 0.25) !important;
+}
+</style>
 <div class="header">
   <div class="container center">
     <h1>PERSPECTIVE #<?php echo($id); ?></h1>
@@ -46,7 +51,7 @@ $row = $st->fetch();
         <td><?php echo($row->upvotes) ?></td>
         <td><?php echo($row->created) ?></td>
         <td <?php echo("class=\"grey-hover\" onclick=\"document.location = './user?id=" . $row->user_id . "'\">" . $row->user_id); ?> </td>
-        <td><?php echo($row->content) ?></td>
+        <td><?php echo(htmlspecialchars($row->content)) ?></td>
       </tr>
     </tbody>
   </table>

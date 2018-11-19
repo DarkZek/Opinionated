@@ -78,8 +78,8 @@ require("../../include/sql/sql.php");
       ?>
     <tr>
       <th scope="row"><?php echo($row->id); ?></th>
-      <td><?php echo(getName($conn, $row->poll_id)); ?></td>
-      <td><?php echo(reportIDToString($row->reason)); ?></td>
+      <td><?php echo(htmlspecialchars(getName($conn, $row->poll_id))); ?></td>
+      <td><?php echo(htmlspecialchars(reportIDToString($row->reason))); ?></td>
       <td>
         <button onclick="deleteFunction(this, '<?php echo($row->id); ?>', '<?php echo($row->reason); ?>');" class="inline btn-primary btn">DELETE</button>
         <button onclick="dismissFunction(this, '<?php echo($row->id); ?>');" class="inline btn-secondary btn">DISMISS</button>

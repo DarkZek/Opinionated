@@ -11,6 +11,7 @@ if (isset($username)) { ?>
       <?php if (isset($_SESSION["rank"]) && $_SESSION["rank"] > 0) { echo("<a class=\"dropdown-item\" href=\"/admin/\">Administration Panel</a>"); } ?>
       <a class="dropdown-item" href="/user">Profile Information</a>
       <a class="dropdown-item" href="/user/settings">Settings</a>
+      <a class="dropdown-item cursor" onclick="setDarkTheme(!darkTheme);">Dark Theme</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#" onclick="sendRequest('/api/users/account/logout', {}, function(data) {document.location = '/';} );">Log Out</a>
     </div>
@@ -40,6 +41,7 @@ if (isset($username)) { ?>
     <?php if (isset($_SESSION["rank"]) && $_SESSION["rank"] > 0) { echo("<a class=\"dropdown-item\" href=\"/admin/\">Administration Panel</a>"); } ?>
     <a class="dropdown-item" href="/user">Profile Information</a>
     <a class="dropdown-item" href="/user/settings">Settings</a>
+    <a class="dropdown-item cursor" onclick="setDarkTheme(!darkTheme);">Dark Theme</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="#" onclick="sendRequest('/api/users/account/logout', {}, function(data) {document.location = '/';} );">Log Out</a>
   </div>

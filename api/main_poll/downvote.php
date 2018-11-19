@@ -30,7 +30,7 @@ $result = $user_upvoted_statement->execute([$_SESSION["id"]]);
 
 //Make sure they have not already voted
 if (count($user_upvoted_statement->fetchAll()) > 0) {
-  Error("[ERROR] Already upvoted/downvoted that post!");
+  Error("Already upvoted/downvoted that post!");
 }
 
 
