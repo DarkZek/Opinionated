@@ -12,12 +12,13 @@
 .report-button {
   font-size: 40px;
   float: right;
-  color: #b1b1b1;
+  color: rgba(0, 0, 0, 0.15);
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
 .report-button:hover {
-  color: black;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 /*

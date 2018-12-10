@@ -98,10 +98,41 @@ body {
 .dashboard-stat {
   height: 100px;
 }
+<<<<<<< HEAD
 
 .made-by {
   position: absolute;
   left: 21px;
   bottom: 50px;
   font-size: 13px;
+}
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+  height: 100%;
+}
+
+.nav-button {
+  transition: all 0.2s ease-in-out;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 11px;
+  width: auto;
+  height: 100%;
+}
+
+.options {
+  height: 100%;
+}
+
+.options .row {
+  height: 100%;
+=======
+
+.made-by {
+  position: absolute;
+  left: 21px;
+  bottom: 50px;
+  font-size: 13px;
+>>>>>>> master
 }

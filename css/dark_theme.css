@@ -22,6 +22,10 @@ textarea,input[type=text],input[type=submit],input[type=password],input[type=ema
   color: white !important;
   border-color: transparent;
   border: 1px solid transparent !important;
+<<<<<<< HEAD
+  box-shadow: none !important;
+=======
+>>>>>>> master
 }
 
 .btn-primary {
@@ -38,15 +42,33 @@ textarea,input[type=text],input[type=submit],input[type=password],input[type=ema
   background-color: rgba(0, 0, 0, 0.25) !important;
 }
 
+<<<<<<< HEAD
+.grey-out {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
+
+=======
+>>>>>>> master
 /* Fixed normal items */
 .dropdown-menu {
   background-color: #414040;
 }
 
+<<<<<<< HEAD
+.admin-content, .card {
+  background-color: #414040;
+}
+
+body {
+  background-color: #414040 !important;
+}
+
+=======
 .admin-content, .card, body {
   background-color: #414040;
 }
 
+>>>>>>> master
 .opinionated-logo {
   filter: brightness(1) !important;
 }

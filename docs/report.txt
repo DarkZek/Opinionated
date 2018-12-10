@@ -1,7 +1,19 @@
 This document shows the report codes
 
+Polls
+
 Code     | Report Reason
 ---------|--------------------------
 01       | The title is not a poll
 02       | The poll is biased
 03       | The poll is unnecessarily offensive
+
+
+Perspectives
+
+Code     | Report Reason
+---------|--------------------------
+01       | Its not a perspective
+02       | The perspective is unnecessarily offensive
+03       | Malicious Links
+04       | Other reason

@@ -96,16 +96,28 @@ if (isset($poll_data->upvotes)) { ?>
   <div class="row center" style="display: flex;">
     <div class="col agree yes-bar">
       <div class="color">
+<<<<<<< HEAD
+        <h1 class="poll-label white">YES</h1>
+        <br><br><br><br><br>
+        <h2  class="agree-text center white">50%</h2>
+=======
         <h1 class="poll-label">YES</h1>
         <br><br><br><br><br>
         <h2  class="agree-text center">67%</h2>
+>>>>>>> master
       </div>
     </div>
     <div class="col disagree no-bar">
       <div class="color">
+<<<<<<< HEAD
+        <h1 class="poll-label white">NO</h1>
+        <br><br><br><br><br>
+        <h2 class="disagree-text center white">50%</h2>
+=======
         <h1 class="poll-label">NO</h1>
         <br><br><br><br><br>
         <h2 class="disagree-text center">67%</h2>
+>>>>>>> master
       </div>
     </div>
   </div>

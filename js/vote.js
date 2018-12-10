@@ -94,6 +94,12 @@ function perspectiveFilledOut(object) {
     }
   });
 }
+<<<<<<< HEAD
+
+window.onbeforeunload = function() {
+  setCookie("perspective", $("#comment")[0].value);
+};
+=======
 
 
 function onType(object) {
@@ -101,6 +107,7 @@ function onType(object) {
 
   setCookie("perspective", text);
 }
+>>>>>>> master
 
 function ApiResult(result) {
   if (result != "Success") {
@@ -110,14 +117,22 @@ function ApiResult(result) {
 
 var currentReportId = -1;
 
+<<<<<<< HEAD
+function SubmitReport(url) {
+=======
 function SubmitReport() {
+>>>>>>> master
 
   //Get report reason
   var response = $('input[name=reason]:checked').val();
   var params = {id: currentReportId, reason: response};
 
   //Send report to server
+<<<<<<< HEAD
+  sendRequest(url, params);
+=======
   sendRequest("/api/polls/reports/submit", params);
+>>>>>>> master
 
   //Set animations
   $(".report-div")[0].style.display = "none";

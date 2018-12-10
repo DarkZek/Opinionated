@@ -56,23 +56,30 @@ $user = $user_statement->fetch();
         <div class="divider"></div>
         <a> When you delete your Opinionated account all of your personal details (email, name, perspectives, votes) will be <b class="red">deleted</b>. Polls you have voted on will not be affected by your votes being deleted as only the record of you voting on the poll is removed - not the amount of votes.</a>
         <br>
-        <div class="password" <?php if ($_SESSION["account_type"] === "google") {echo("hidden");} ?>>
+        <br>
+        <a class="btn b-red white form-control" onclick="showDialogue('/api/html/delete_account');">DELETE ACCOUNT</a>
+      </div>
+      <div id="user" style="display: none;">
+        <br>
+        <h1>User Settings</h1>
+        <div class="divider"></div>
+        <div>
+          <label for="username" class="primary">Username</label>
+          <input type="text" class="form-control" disabled name="username" value="<?php echo(htmlspecialchars($user->username)); ?>">
+          <label for="display_name" class="primary">Display Name</label>
+          <input type="text" class="form-control" name="display_name" value="<?php echo(htmlspecialchars($user->display_name)); ?>">
+          <label for="email" class="primary">Email</label>
+          <input type="text" class="form-control" name="email" value="<?php echo(htmlspecialchars($user->email)); ?>">
+          <div class="divider"></div>
           <br>
-          <label class="form-check-label" for="delete-password">Password</label>
-          <input type="password" id="delete-password" required name="delete-password" class="form-control">
-          <a class="red delete-password-error"></a>
+          <form>
+            <label for="password" class="primary">Password</label>
+            <input type="password" class="form-control" name="password">
+            <br>
+            <input class="btn btn-primary form-control" type="submit" onclick="" value="APPLY CHANGES">
+          <form>
         </div>
         <br>
-        <a class="btn b-red white form-control" onclick="sendRequest('/api/users/account/delete', {password: $('#delete-password')[0].value}, onDelete);">DELETE ACCOUNT</a>
-        <script>
-        function onDelete(data) {
-          if (data == "[ERROR] Invalid Password") {
-            $(".delete-password-error")[0].textContent = "Invalid Password! Please try again";
-          } else if (data == "Success") {
-            document.location = "/";
-          }
-        }
-        </script>
       </div>
       <div id="user" style="display: none;">
         <br>

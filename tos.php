@@ -15,7 +15,11 @@ include("./include/html/default_layout.php");
   <p>By accessing this Website, accessible from https://opinionated.nz/, you are agreeing to be bound by these Website Terms and Conditions of Use and agree that you are responsible for the agreement with any applicable local laws. If you disagree with any of these terms, you are prohibited from accessing this site. The materials contained in this Website are protected by copyright and trade mark law.</p>
   <h2>2. Use License</h2>
   <p>Permission is granted to temporarily download one copy of the materials on Opinionated's Website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+<<<<<<< HEAD
+  <ul class="white">
+=======
   <ul>
+>>>>>>> master
       <li>modify or copy the materials;</li>
       <li>use the materials for any commercial purpose or for any public display;</li>
       <li>attempt to reverse engineer any software contained on Opinionated's Website;</li>

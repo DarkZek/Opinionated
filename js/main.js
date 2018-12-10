@@ -31,6 +31,7 @@ function hideDialogue(obj) {
   obj.parentNode.removeChild(obj);
   $('body')[0].style.overflow = 'visible';
 }
+<<<<<<< HEAD
 
 //
 // Misc
@@ -73,6 +74,50 @@ function setCookie(name, value) {
   document.cookie = name + "=" + btoa(value) + ";" + expires + ";path=/";
 }
 
+=======
+
+//
+// Misc
+//
+function hideObject(identifier) {
+  setTimeout(function () {
+    $(identifier)[0].style.display = "none";
+  }, 1000);
+}
+function showObject(identifier) {
+  setTimeout(function () {
+    $(identifier)[0].style.display = "block";
+  }, 1000);
+}
+function Destroy1s(obj) {
+  setTimeout(function () {
+    obj.remove();
+  }, 1000);
+}
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return atob(c.substring(name.length, c.length));
+        }
+    }
+    return "";
+}
+
+function setCookie(name, value) {
+  var d = new Date();
+  d.setTime(d.getTime() + (31*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + btoa(value) + ";" + expires + ";path=/";
+}
+
+>>>>>>> master
 //
 // Notification System
 //
@@ -119,6 +164,7 @@ $(document).ready(function() {
 //
 function loadPage(page) {
   window.history.pushState(page, page, page);
+<<<<<<< HEAD
 
   $.post( page, {dynamic: true}, function(data) {
     var html = $("html")[0];
@@ -128,13 +174,28 @@ function loadPage(page) {
       child.parentNode.removeChild(child);
     }
 
+=======
+
+  $.post( page, {dynamic: true}, function(data) {
+    var html = $("html")[0];
+    //Remove all other children except head
+    for (var i = 1; i < html.children.length; i++) {
+      var child = html.children[i];
+      child.parentNode.removeChild(child);
+    }
+
+>>>>>>> master
     $("html").append(data);
   });
 }
 
 var darkTheme = false;
 
+<<<<<<< HEAD
+if (getCookie("dark-theme") == "true") {
+=======
 if (getCookie("dark-theme") != "false") {
+>>>>>>> master
   setDarkTheme(true);
 }
 
@@ -151,4 +212,61 @@ function setDarkTheme(bool) {
   }
 
   darkTheme = bool;
+<<<<<<< HEAD
+}
+
+
+/*
+  Time converter
+  Convert from unix timestamp to "2 days ago"
+*/
+
+$(document).ready(function() {
+  $('time').each(function(i, obj) {
+    var time = obj.attributes.value.value;
+    obj.textContent = convertTime(time)
+  });
+});
+
+function convertTime(time) {
+  var timeDifference = (Date.now() / 1000) - time;
+
+  //Calculate days
+  var years = timeDifference / 31536000;
+  if (years >= 1) {
+    return Math.round(years) + " years ago";
+  }
+
+  var months = timeDifference / 2678400;
+  if (months >= 1) {
+    return Math.round(months) + " months ago";
+  }
+
+  var weeks = timeDifference / 604800;
+  if (weeks >= 1) {
+    return Math.round(weeks) + " weeks ago";
+  }
+
+  var days = timeDifference / 86400;
+  if (days >= 1) {
+    return Math.round(days) + " days ago";
+  }
+
+  var hours = timeDifference / 3600;
+  if (hours >= 1) {
+    return Math.round(hours) + " hours ago";
+  }
+
+  var minutes = timeDifference / 60;
+  if (minutes >= 1) {
+    return Math.round(minutes) + " minutes ago";
+  }
+
+  if (timeDifference >= 1) {
+    return Math.round(timeDifference) + " seconds ago";
+  }
+
+  return "Just now";
+=======
+>>>>>>> master
 }

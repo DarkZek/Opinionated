@@ -12,20 +12,40 @@ function Load() {
     percentageDownvotes = (downvotes / (upvotes + downvotes)) * 100;
   }
 
+<<<<<<< HEAD
+  console.log(downvotes + " " + upvotes);
+
+=======
+>>>>>>> master
   //No votes yet
   if (percentageDownvotes == 0 && percentageUpvotes == 0) {
     percentageUpvotes = 50;
     percentageDownvotes = 50;
+  }
+<<<<<<< HEAD
+=======
+
+  $(".yes-bar")[0].style.width = percentageUpvotes + "%";
+  $(".no-bar")[0].style.width = percentageDownvotes + "%";
+  $(".yes-bar")[0].style.flex = "0 0 " + percentageUpvotes + "%";
+  $(".no-bar")[0].style.flex = "0 0 " + percentageDownvotes + "%";
+>>>>>>> master
+
+  $(".agree-text")[0].textContent = (Math.round( percentageUpvotes * 10 ) / 10) + "%";
+  $(".disagree-text")[0].textContent = (Math.round( percentageDownvotes * 10 ) / 10) + "%";
+
+  if (percentageUpvotes < 5) {
+    percentageUpvotes = 15;
+    percentageDownvotes = 85;
+  } else if (percentageDownvotes < 5) {
+    percentageDownvotes = 15;
+    percentageUpvotes = 85;
   }
 
   $(".yes-bar")[0].style.width = percentageUpvotes + "%";
   $(".no-bar")[0].style.width = percentageDownvotes + "%";
   $(".yes-bar")[0].style.flex = "0 0 " + percentageUpvotes + "%";
   $(".no-bar")[0].style.flex = "0 0 " + percentageDownvotes + "%";
-
-  $(".agree-text")[0].textContent = (Math.round( percentageUpvotes * 10 ) / 10) + "%";
-  $(".disagree-text")[0].textContent = (Math.round( percentageDownvotes * 10 ) / 10) + "%";
-
 }
 
 function voteYes() {

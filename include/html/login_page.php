@@ -51,7 +51,7 @@ $(body)[0].style.overflow = 'visible';" class="anim-fast animated anim-fadeIn gr
       <div class="social-l">
        <div class="form-group">
         <br>
-        <a href="<?php echo($auth_url); ?>" type="submit" class="use-google form-control"><i class="fab fa-google"></i> <div class="google-divider"></div> LOGIN WITH GOOGLE</a>
+        <a href="<?php echo($auth_url); ?>" type="submit" class="use-google pointer form-control"><i class="fab fa-google"></i> <div class="google-divider"></div> LOGIN WITH GOOGLE</a>
        </div>
       </div>
      </div>

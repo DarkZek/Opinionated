@@ -43,7 +43,11 @@ $views = $st->fetchColumn();
 var id = <?php echo($row->id); ?>;
 </script>
 <div class="container center">
+<<<<<<< HEAD
+  <h1>POLL #<?php echo($id); ?></h1>
+=======
   <h1>USER #<?php echo($id); ?></h1>
+>>>>>>> master
 </div>
 <div class="container">
   <div class="row">
@@ -66,13 +70,29 @@ var id = <?php echo($row->id); ?>;
         <td><?php echo(htmlspecialchars($row->description)); ?></td>
         <td><?php echo($row->upvotes); ?></td>
         <td><?php echo(date("d/m/y", $row->created))?></td>
+<<<<<<< HEAD
+        <?php echo("<td class=\"grey-hover\" onclick=\"document.location = './user?id= " . $row->author . "'\">" . $row->author . "</td>"); ?>
+=======
         <td class="grey-hover" onclick="document.location = './user?id= <?php echo($row->author. "'\">" . $row->author);  ?></td>
+>>>>>>> master
         <td><?php echo($views); ?></td>
       </tr>
     </tbody>
   </table>
   </div>
   <div class="row actions">
+<<<<<<< HEAD
+    <div class="col-6">
+      <h6 onclick="showAction('edit');" id="btn-action1" class="center cursor full btn btn-primary">Edit</h6>
+    </div>
+    <div class="col-6">
+      <h6 onclick="showAction('delete');" id="btn-action2" class="center cursor full btn btn-primary">Delete</h6>
+    </div>
+  </div>
+  <script>
+  var content = "<?php echo(htmlspecialchars($row->description)); ?>";
+  var title = "<?php echo(htmlspecialchars($row->name)); ?>";
+=======
     <?php if ($row->banned == "0") { ?>
     <div class="col-4">
       <h6 onclick="showAction('ban');" id="btn-action1" class="center cursor full btn btn-primary">Ban User</h6>
@@ -90,11 +110,41 @@ var id = <?php echo($row->id); ?>;
     <?php } ?>
   </div>
   <script>
+>>>>>>> master
   function showAction(action) {
     $("#" + action)[0].style.display = "block";
 
     $(".actions")[0].style.display = "none";
   }
+<<<<<<< HEAD
+  function editText() {
+    //Send request to save
+    sendRequest("/api/polls/admin_edit", {id: id, title: $("#edit-tile")[0].value, content: $("#edit-content")[0].value}, function(data) {
+      //Was the resuest successful
+      if (data == "Success") {
+        //Send the success notification
+        showNotification("Saved changes", "UNDO", function() {
+          //If they choose to undo, send undo request
+          sendRequest("/api/polls/admin_edit", {id: id, title: title, content: content}, function (data) {
+            //Show successful undo
+            showNotification("Undid changes");
+          });
+        });
+      }
+    });
+
+    $("#edit")[0].style.display = "none";
+  }
+  </script>
+  <form method="post" action="" id="edit" style="display: none;" class="row">
+    <label for="edit-title" class="primary">Title</label>
+    <input class="form-control btn-primary" id="edit-title" type="text" value="<?php echo(htmlspecialchars($row->name)); ?>">
+    <label for="edit-content" class="primary">Content</label>
+    <textarea form="delete" id="edit-content" rows="15" class="text form-control" name="content"><?php echo(htmlspecialchars($row->description)); ?></textarea>
+    <br>
+    <a class="form-control btn btn-primary" type="submit" onclick="editText();">UPDATE POLL</a>
+  </form>
+=======
   function reportAction(button, action) {
     var reason = button.form.children[1].textContent;
 
@@ -152,4 +202,5 @@ var id = <?php echo($row->id); ?>;
     }
     </script>
   </div>
+>>>>>>> master
 </div>

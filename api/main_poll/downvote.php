@@ -38,7 +38,7 @@ if (count($user_upvoted_statement->fetchAll()) > 0) {
 //
 // Set new poll upvotes count
 //
-$sql = "UPDATE main_polls SET upvotes = upvotes-1 ORDER BY id DESC limit 1;";
+$sql = "UPDATE main_polls SET downvotes = downvotes+1 ORDER BY id DESC limit 1;";
 $statement = $conn->prepare($sql)->execute();
 
 

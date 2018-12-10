@@ -34,7 +34,12 @@ $reports = $reports_st->rowCount();
     });
     </script>
   </div>
+<<<<<<< HEAD
+  <div class="col-3 options">
+    <?php if (isset($title_options)) {echo($title_options);} ?>
+=======
   <div class="col-3">
+>>>>>>> master
   </div>
   <div class="col-2 notifications">
 

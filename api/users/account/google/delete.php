@@ -9,27 +9,6 @@ require(__DIR__ . "/../../../include/sql/sql.php");
 //
 // Verify password if its not a google account
 //
-if ($_SESSION["account_type"] !== "google") {
-  if (!isset($_POST["password"])) {
-    die("[ERROR] Invalid Password");
-  }
-
-  $password = $_POST["password"];
-
-  //
-  // Get current password
-  //
-  $query = "SELECT password FROM users WHERE id = ?";
-  $statement = $conn->prepare($query);
-  $result = $statement->execute([$_SESSION["id"]]);
-
-  //Check if password matches
-  $checked = password_verify($password, $statement->fetch()->password);
-
-  if ($checked === False) {
-    die("[ERROR] Invalid Password");
-  }
-} else {
   if (!isset($_GET["code"])) {
     die("No google account token provided");
   }
@@ -72,7 +51,6 @@ if ($_SESSION["account_type"] !== "google") {
   if (!isset($info[0])) {
     die("Invalid login");
   }
-}
 
 
 //

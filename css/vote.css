@@ -1,0 +1,31 @@
+.user-perspective {
+  transition: all 0.2s ease-in-out;
+  border-radius: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.user-perspective p {
+  margin-bottom: 0px;
+}
+
+.user-perspective:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.user-perspective .perspective-report {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.00);
+  margin-left: auto;
+}
+
+.user-perspective:hover .perspective-report:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.user-perspective:hover .perspective-report {
+color: rgba(0, 0, 0, 0.15);
+}

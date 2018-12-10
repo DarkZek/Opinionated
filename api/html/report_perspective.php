@@ -4,11 +4,8 @@ if (!isset($_SESSION["xsrf_token"])) {
   require("./login_page.php");
   die();
 }
-$title = "REPORT POLL";
-$content = "../../include/html/dialogues/report_poll.php";
-<<<<<<< HEAD
+$title = "REPORT PERSPECTIVE";
+$content = "../../include/html/dialogues/report_perspective.php";
 $settings->style = "width: 35%;";
-=======
->>>>>>> master
 require("../../include/html/dialogue.php");
 ?>

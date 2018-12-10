@@ -5,40 +5,36 @@ if (xsrf == "") {
 }
 </script>
     <div class="container report-div animated">
-      <a>Please select the reason for reporting this poll.</a>
+      <a>Please select the reason for reporting this perspective.</a>
       <form action="/api/polls/report" method="POST">
         <input type="text" name="id" value="" hidden>
         <div class="form-check">
           <input class="form-check-input" name="reason" checked type="radio" value="1" id="reason1">
           <label class="form-check-label" for="defaultCheck1">
-            Its not a poll
+            Its not a perspective
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" name="reason" type="radio" value="2" id="reason1">
           <label class="form-check-label" for="defaultCheck2">
-            The poll is biased
+            The perspective is unnecessarily offensive
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" name="reason" type="radio" value="3" id="reason1">
           <label class="form-check-label" for="defaultCheck2">
-            The poll is unnecessarily offensive
+            Malicious Links
           </label>
         </div>
         <div class="form-check">
           <input class="form-check-input" name="reason" type="radio" value="4" id="reason1">
           <label class="form-check-label" for="defaultCheck2">
-            Malicious Links
+            Other
           </label>
         </div>
         <br>
         <div class="form-group">
-<<<<<<< HEAD
-          <input type="submit" onclick="SubmitReport('/api/polls/reports/submit');return false;" class="btn form-control-lg form-control" value="SUBMIT REPORT">
-=======
-          <input type="submit" onclick="SubmitReport();return false;" class="btn form-control-lg form-control" value="SUBMIT REPORT">
->>>>>>> master
+          <input type="submit" onclick="SubmitReport('/api/polls/perspectives/reports/submit');return false;" class="btn form-control-lg form-control" value="SUBMIT REPORT">
         </div>
       </form>
     </div>
