@@ -58,11 +58,7 @@ if (count($result) == 0) {
 $row = $result[0];
 
 //Get perspectives
-<<<<<<< HEAD
 $p_query = "SELECT UNIX_TIMESTAMP(poll_perspectives.created) as created,poll_perspectives.id,poll_id,display_name,upvotes,content FROM poll_perspectives JOIN users ON users.id=user_id WHERE poll_id = ? LIMIT 15;";
-=======
-$p_query = "SELECT poll_perspectives.created,poll_id,display_name,upvotes,content FROM poll_perspectives JOIN users ON users.id=user_id WHERE poll_id = ? LIMIT 15;";
->>>>>>> master
 $p_statement = $conn->prepare($p_query);
 $p_statement->execute([$row->id]);
 $p_results = $p_statement->fetchAll();
@@ -82,7 +78,6 @@ function httpLinks($link) {
   return "https://" . $link;
 }
 
-<<<<<<< HEAD
 
 
 
@@ -91,13 +86,6 @@ function httpLinks($link) {
 // Groups
 //
 
-=======
-
-//
-// Groups
-//
-
->>>>>>> master
 function yourPerspective() {
   ?>
   <form class="your-perspective vote">
@@ -147,18 +135,12 @@ function showPerspective() {
 
   $perspective = $p_results[$p_number];
   ?>
-<<<<<<< HEAD
   <div class="container user-perspective">
     <div class="row">
       <a><b href="/user?id=<?php echo($p_number); ?>" class="cursor"><?php echo($perspective->display_name); ?></b> <time value="<?php echo($perspective->created); ?>"></time></a>
       <div class="perspective-report justify-content-end">
         <i class="material-icons perspective-report" onclick="currentReportId = '<?php echo($perspective->id); ?>'; showDialogue('/api/html/report_perspective');">report</i>
       </div>
-=======
-  <div id="" class="container vote">
-    <div class="row">
-      <a><b href="/user?id=<?php echo($p_number); ?>" class="blue cursor"><?php echo($perspective->display_name); ?></b> <?php echo($perspective->created); ?></a>
->>>>>>> master
     </div>
     <div class="row">
       <p><?php echo($perspective->content); ?></p>
@@ -168,7 +150,6 @@ function showPerspective() {
   $p_number++;
 }
 
-<<<<<<< HEAD
 
 
 
@@ -178,10 +159,6 @@ function showPerspective() {
 //Return the posts in HTML form
 ?>
 <link href="/css/vote.css" rel="stylesheet">
-=======
-//Return the posts in HTML
-?>
->>>>>>> master
 <script>
 //Adjust the url
 window.history.pushState("", "", window.location.origin + window.location.pathname + "?id=<?php echo($row->id); ?>");

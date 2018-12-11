@@ -2,9 +2,14 @@
 //Start the session
 session_start();
 
-require(__DIR__ . "/../../../include/permissions/check_xsrf.php");
-require(__DIR__ . "/../../../include/permissions/user_only.php");
-require(__DIR__ . "/../../../include/sql/sql.php");
+//Check XSRF
+if ($_GET["state"] !== $_SESSION["xsrf_token"]) {
+  die("Invalid xsrf token");
+}
+
+require(__DIR__ . "/../../../../include/permissions/user_only.php");
+require(__DIR__ . "/../../../../include/sql/sql.php");
+require(__DIR__ . "/../../../../vendor/autoload.php");
 
 //
 // Verify password if its not a google account
@@ -19,13 +24,13 @@ require(__DIR__ . "/../../../include/sql/sql.php");
     $g_client->setClientId("594557677828-ecb05iv4dfhepddc1sg0ovq8ohlq2iod.apps.googleusercontent.com");
     $client_secret = trim(file_get_contents("../../../../docs/accounts/google_secret.txt"));
     $g_client->setClientSecret($client_secret);
-    $g_client->setRedirectUri("https://" . $_SERVER['SERVER_NAME'] . "/api/users/account/google/login");
+    $g_client->setRedirectUri("https://" . $_SERVER['SERVER_NAME'] . "/api/users/account/google/delete");
     $g_client->setScopes(Google_Service_Plus::PLUS_ME);
 
     try {
       $token = $g_client->fetchAccessTokenWithAuthCode($_GET['code']);
       $g_client->setAccessToken($token);
-    }catch (Exception $e){
+    } catch (Exception $e){
       die("Error checking authentication");
     }
 
@@ -67,5 +72,7 @@ session_destroy();
 
 session_start();
 $_SESSION["error"] = "Deleted Account";
-
-die("Success");
+?>
+<script>
+window.location = "/";
+</script>

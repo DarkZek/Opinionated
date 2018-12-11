@@ -25,7 +25,12 @@ if (isset($_SESSION["display_name"])) {
               <li class="nav-item <?php if ($NAV_TAB == "ABOUT") {echo ("active");} ?>">
                 <a class="nav-link" href="/about">About Us</a>
               </li>
+              <div class="mobile-only">
+                <?php require(__DIR__ . "/user-dropdown.php"); ?>
+              </div>
           </ul>
     </div>
-    <?php require(__DIR__ . "/user-dropdown.php"); ?>
+    <div class="desktop-only">
+      <?php require(__DIR__ . "/user-dropdown.php"); ?>
+    </div>
 </nav>

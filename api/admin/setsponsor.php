@@ -25,13 +25,10 @@ if (!isset($_POST["content"])) {
   die("No input content");
 }
 
-<<<<<<< HEAD
 if (!strlen($_POST["content"]) > 200) {
   die("Content length too long");
 }
 
-=======
->>>>>>> master
 //Create sql query
 $query = "UPDATE sponsor_spots SET image_url = ?, message = ?, title = ? WHERE id = ?;";
 $statement = $conn->prepare($query);

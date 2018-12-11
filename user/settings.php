@@ -31,12 +31,6 @@ $user = $user_statement->fetch();
       <div class="row menu-item perspective-menu-item" onclick="showSettings('#user', this);">
         <a>Account Settings</a>
       </div>
-      <div class="row menu-item perspective-menu-item" onclick="showSettings('#perspective', this);">
-        <a>Perspective Settings</a>
-      </div>
-      <div class="row menu-item poll-menu-item" onclick="showSettings('#poll', this);">
-        <a>Poll Settings</a>
-      </div>
       <div class="row menu-item request-menu-item" onclick="showSettings('#request', this);">
         <a>Request Help</a>
       </div>
@@ -79,38 +73,6 @@ $user = $user_statement->fetch();
             <input class="btn btn-primary form-control" type="submit" onclick="" value="APPLY CHANGES">
           <form>
         </div>
-        <br>
-      </div>
-      <div id="user" style="display: none;">
-        <br>
-        <h1>User Settings</h1>
-        <div class="divider"></div>
-        <div>
-          <label for="username" class="primary">Username</label>
-          <input type="text" class="form-control" disabled name="username" value="<?php echo(htmlspecialchars($user->username)); ?>">
-          <label for="display_name" class="primary">Display Name</label>
-          <input type="text" class="form-control" name="display_name" value="<?php echo(htmlspecialchars($user->display_name)); ?>">
-          <label for="email" class="primary">Email</label>
-          <input type="text" class="form-control" name="email" value="<?php echo(htmlspecialchars($user->email)); ?>">
-
-          <div class="divider"></div>
-          <br>
-
-          <form>
-            <label for="password" class="primary">Password</label>
-            <input type="password" class="form-control" name="password">
-            <br>
-            <input class="btn btn-primary form-control" type="submit" onclick="" value="APPLY CHANGES">
-          <form>
-
-        </div>
-        <br>
-      </div>
-      <div id="perspective" style="display: none;">
-        <br>
-        <h1 class="center">Perspective Settings!</h1>
-        <div class="divider"></div>
-        <a>View all of your perspectives</a>
         <br>
       </div>
       <div id="request" style="display: none;">

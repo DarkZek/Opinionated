@@ -21,6 +21,6 @@ $(document).ready(function() {
   if (fragment != "") {
     showSettings("#" + fragment, $("." + fragment + "-menu-item")[0]);
   } else {
-    showSettings("#perspective", $(".perspective-menu-item")[0]);
+    showSettings("#user", $(".perspective-menu-item")[0]);
   }
 });

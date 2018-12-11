@@ -3,7 +3,7 @@
 //Login links
 //
 if (isset($username)) { ?>
-  <li class="nav-item dropdown right mobile-only active">
+  <li class="nav-item dropdown right mobile-only active nav-user-dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
       <?php echo($username); ?>
     </a>
@@ -21,7 +21,7 @@ if (isset($username)) { ?>
 
 <?php
 //
-//Mobile login link
+// Mobile login link
 //
 } else { ?>
 <li class="nav-item mobile-only right active">

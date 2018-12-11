@@ -34,11 +34,7 @@ if (xsrf == "") {
         </div>
         <br>
         <div class="form-group">
-<<<<<<< HEAD
           <input type="submit" onclick="SubmitReport('/api/polls/reports/submit');return false;" class="btn form-control-lg form-control" value="SUBMIT REPORT">
-=======
-          <input type="submit" onclick="SubmitReport();return false;" class="btn form-control-lg form-control" value="SUBMIT REPORT">
->>>>>>> master
         </div>
       </form>
     </div>

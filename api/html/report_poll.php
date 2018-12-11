@@ -6,9 +6,6 @@ if (!isset($_SESSION["xsrf_token"])) {
 }
 $title = "REPORT POLL";
 $content = "../../include/html/dialogues/report_poll.php";
-<<<<<<< HEAD
 $settings->style = "width: 35%;";
-=======
->>>>>>> master
 require("../../include/html/dialogue.php");
 ?>

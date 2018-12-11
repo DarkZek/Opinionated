@@ -98,7 +98,6 @@ body {
 .dashboard-stat {
   height: 100px;
 }
-<<<<<<< HEAD
 
 .made-by {
   position: absolute;
@@ -127,12 +126,4 @@ body {
 
 .options .row {
   height: 100%;
-=======
-
-.made-by {
-  position: absolute;
-  left: 21px;
-  bottom: 50px;
-  font-size: 13px;
->>>>>>> master
 }

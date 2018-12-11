@@ -10,7 +10,7 @@ include("./include/html/default_layout.php");
 <div class="header">
   <div class="container">
     <h1 class="center">DISCOVER NEW POLLS</h1>
-    <p class="center">Submit a poll idea or browse through the polls below and upvote polls based on if you want to see change happen in that area. <br>So get voting!</p>
+    <p class="center desktop-only">Submit a poll idea or browse through the polls below and upvote polls based on if you want to see change happen in that area. <br>So get voting!</p>
   </div>
   <?php if (isset($_SESSION["display_name"])) { ?>
     <h5 class="submit" style="cursor: pointer;" onclick="showDialogue('/api/html/submit_poll');"><i class="material-icons">edit</i> SUBMIT POLL</h5>
