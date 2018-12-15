@@ -6,7 +6,7 @@ require("../../include/permissions/admin_only.php");
 
 $title_options = "
 <div class='row'>
-<div class='nav-button pointer' onclick='window.location = \"./reports\";'>
+<div class='nav-button pointer admin-menu-reports' onclick='window.location = \"./reports\";'>
     <a>Poll Reports</a>
   </div>
   <div class='nav-button pointer' onclick='window.location = \"./perspective_reports\";'>

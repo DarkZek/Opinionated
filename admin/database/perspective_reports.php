@@ -9,7 +9,7 @@ $title_options = "
 <div class='nav-button pointer' onclick='window.location = \"./reports\";'>
     <a>Poll Reports</a>
   </div>
-  <div class='nav-button pointer' onclick='window.location = \"./perspective_reports\";'>
+  <div class='nav-button pointer admin-menu-reports' onclick='window.location = \"./perspective_reports\";'>
     <a>Perspective Reports</a>
   </div>
 </div>";
@@ -54,10 +54,9 @@ require("../../include/sql/sql.php");
 
     //Function to get name of post
     function getName($conn, $id) {
-      //Get 10 posts
       $query = "SELECT content FROM poll_perspectives WHERE id = ?";
       $statement = $conn->prepare($query);
-      $statement->execute([$id]);
+      $statement->execute([$id += 1]);
       return $statement->fetchAll()[0]->content;
     }
 

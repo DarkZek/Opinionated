@@ -54,6 +54,25 @@ $user = $user_statement->fetch();
         <a class="btn b-red white form-control" onclick="showDialogue('/api/html/delete_account');">DELETE ACCOUNT</a>
       </div>
       <div id="user" style="display: none;">
+        <script>
+        function sendUserUpdate() {
+
+          var displayName = $("#display_name")[0].value;
+          var email = $("#email")[0].value;
+          var password = "";
+          if ($("#password").length != 0) {
+            password = $("#password")[0].value;
+          }
+
+          sendRequest("/api/users/account/update", {display_name: displayName, email: email, password: password}, function(data) {
+            if (data == "Success") {
+              showNotification("Successfully changed user settings");
+            } else {
+              showNotification(data);
+            }
+          })
+        }
+        </script>
         <br>
         <h1>User Settings</h1>
         <div class="divider"></div>
@@ -61,16 +80,18 @@ $user = $user_statement->fetch();
           <label for="username" class="primary">Username</label>
           <input type="text" class="form-control" disabled name="username" value="<?php echo(htmlspecialchars($user->username)); ?>">
           <label for="display_name" class="primary">Display Name</label>
-          <input type="text" class="form-control" name="display_name" value="<?php echo(htmlspecialchars($user->display_name)); ?>">
+          <input type="text" class="form-control" name="display_name" id="display_name" value="<?php echo(htmlspecialchars($user->display_name)); ?>">
           <label for="email" class="primary">Email</label>
-          <input type="text" class="form-control" name="email" value="<?php echo(htmlspecialchars($user->email)); ?>">
+          <input type="text" class="form-control" id="email" name="email" value="<?php echo(htmlspecialchars($user->email)); ?>">
           <div class="divider"></div>
           <br>
           <form>
-            <label for="password" class="primary">Password</label>
-            <input type="password" class="form-control" name="password">
-            <br>
-            <input class="btn btn-primary form-control" type="submit" onclick="" value="APPLY CHANGES">
+            <?php if ($_SESSION["account_type"] === "account") { ?>
+              <label for="password" class="primary">Password</label>
+              <input type="password" class="form-control" name="password">
+              <br>
+            <?php } ?>
+            <input class="btn btn-primary form-control" type="submit" onclick="sendUserUpdate();return false;" value="APPLY CHANGES">
           <form>
         </div>
         <br>

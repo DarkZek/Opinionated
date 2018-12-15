@@ -12,8 +12,6 @@ function Load() {
     percentageDownvotes = (downvotes / (upvotes + downvotes)) * 100;
   }
 
-  console.log(downvotes + " " + upvotes);
-
   //No votes yet
   if (percentageDownvotes == 0 && percentageUpvotes == 0) {
     percentageUpvotes = 50;

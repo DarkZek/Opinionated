@@ -138,6 +138,18 @@ if (getCookie("dark-theme") == "true") {
   setDarkTheme(true);
 }
 
+function UpdateThemeNames() {
+  $(document).ready(function() {
+    $(".dark-theme-text").each(function( index ) {
+      if (!darkTheme) {
+        this.textContent = "Dark Theme";
+      } else {
+        this.textContent = "Light Theme";
+      }
+    });
+  });
+}
+
 function setDarkTheme(bool) {
   if (bool) {
     //Make sure its not already dark
@@ -151,7 +163,11 @@ function setDarkTheme(bool) {
   }
 
   darkTheme = bool;
+
+  UpdateThemeNames();
 }
+
+UpdateThemeNames();
 
 
 /*

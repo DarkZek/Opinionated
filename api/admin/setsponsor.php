@@ -32,7 +32,7 @@ if (!strlen($_POST["content"]) > 200) {
 //Create sql query
 $query = "UPDATE sponsor_spots SET image_url = ?, message = ?, title = ? WHERE id = ?;";
 $statement = $conn->prepare($query);
-$result = $statement->execute([$_POST["image"], $_POST["content"], $_POST["title"], $_POST["sponsor"]]);
+$result = $statement->execute([htmlspecialchars($_POST["image"]), htmlspecialchars($_POST["content"]), htmlspecialchars($_POST["title"]), htmlspecialchars($_POST["sponsor"])]);
 
 if ($result !== True) {
   die("Could not complete the action");

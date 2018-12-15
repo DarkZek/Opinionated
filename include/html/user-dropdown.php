@@ -9,9 +9,8 @@ if (isset($username)) { ?>
     </a>
     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
       <?php if (isset($_SESSION["rank"]) && $_SESSION["rank"] > 0) { echo("<a class=\"dropdown-item\" href=\"/admin/\">Administration Panel</a>"); } ?>
-      <a class="dropdown-item" href="/user">Profile Information</a>
       <a class="dropdown-item" href="/user/settings">Settings</a>
-      <a class="dropdown-item cursor" onclick="setDarkTheme(!darkTheme);">Dark Theme</a>
+      <a class="dropdown-item cursor dark-theme-text" onclick="setDarkTheme(!darkTheme);">Dark Theme</a>
       <div class="dropdown-divider"></div>
       <a class="dropdown-item" href="#" onclick="sendRequest('/api/users/account/logout', {}, function(data) {document.location = '/';} );">Log Out</a>
     </div>
@@ -39,9 +38,8 @@ if (isset($username)) { ?>
   </a>
   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
     <?php if (isset($_SESSION["rank"]) && $_SESSION["rank"] > 0) { echo("<a class=\"dropdown-item\" href=\"/admin/\">Administration Panel</a>"); } ?>
-    <a class="dropdown-item" href="/user">Profile Information</a>
     <a class="dropdown-item" href="/user/settings">Settings</a>
-    <a class="dropdown-item cursor" onclick="setDarkTheme(!darkTheme);">Dark Theme</a>
+    <a class="dropdown-item cursor dark-theme-text" onclick="setDarkTheme(!darkTheme);">Dark Theme</a>
     <div class="dropdown-divider"></div>
     <a class="dropdown-item" href="#" onclick="sendRequest('/api/users/account/logout', {}, function(data) {document.location = '/';} );">Log Out</a>
   </div>
