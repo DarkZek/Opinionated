@@ -158,6 +158,10 @@ function showPerspective() {
 
 //Return the posts in HTML form
 ?>
+<meta property="og:title" content="Opinionated | <?php echo(htmlspecialchars($row->name)); ?>" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="<?php echo(htmlspecialchars($row->description)); ?>" />
+<meta property="og:url" content="<?php echo("http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]); ?>"/>
 <link href="/css/vote.css" rel="stylesheet">
 <script>
 //Adjust the url

@@ -2,10 +2,8 @@ TODO LIST (ORDERED)
 TODO: Finish admin options
 TODO: Finish about page
 TODO: Allow people to change username and passwords
-TODO: Add user update info in the settings menu
 TODO: Allow admins to edit peeps stuff
 TODO: MOBILE
 TODO: Finish just about everything else
-TODO: https://neilpatel.com/blog/open-graph-meta-tags/
 TODO: Allow people to recover accounts
 TODO: Implement email verification when you change emails

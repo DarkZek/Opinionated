@@ -7,10 +7,10 @@ if (isset($_SESSION["display_name"])) {
   $username = $_SESSION["display_name"];
 }
 
-$reports_q = "SELECT * FROM poll_reports;";
+$reports_q = "SELECT ( SELECT COUNT(*) FROM poll_reports ) + ( SELECT COUNT(*) FROM perspective_reports ) as count;";
 $reports_st = $conn->prepare($reports_q);
 $reports_st->execute([$id]);
-$reports = $reports_st->rowCount();
+$reports = $reports_st->fetch()->count;
 
 //Nav bar
 ?>
