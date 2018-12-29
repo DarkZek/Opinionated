@@ -28,18 +28,17 @@ if ($_SESSION["account_type"] === "account") {
   if ($result === False) {
     die("Incorrect Password");
   }
+} else {
+  die("Cannot change google accounts password");
 }
 
+$password = password_hash($_POST["newpassword"], PASSWORD_DEFAULT, ['cost' => 12]);
 
 //
 // Update data
 //
-$query = "UPDATE users SET email = ?, display_name = ? WHERE id = ?";
+$query = "UPDATE users SET password = ? WHERE id = ?";
 $statement = $conn->prepare($query);
-$statement->execute([htmlspecialchars($_POST["email"]), htmlspecialchars($_POST["display_name"]), $_SESSION["id"]]);
-
-$_SESSION["email"] = htmlspecialchars($_POST["email"]);
-$_SESSION["display_name"] = htmlspecialchars($_POST["display_name"]);
-
+$statement->execute([htmlspecialchars($password), $_SESSION["id"]]);
 
 die("Success");

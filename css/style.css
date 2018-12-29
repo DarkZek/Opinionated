@@ -148,7 +148,7 @@ body {
 }
 
 .error-message {
-  background-color: red;
+  background-color: #ff4d4d;
   width: 75vw;
   text-align: center;
   margin-left: 12.5vw;
@@ -184,7 +184,7 @@ body {
 
 .top-bar {
   width: 100%;
-  background-color: red;
+  background-color: #ff4d4d;
   padding-top: 5px;
   padding-bottom: 5px;
   color: white;
@@ -312,7 +312,7 @@ a {
 */
 .notification {
   width: auto;
-  height: 40px;
+  height: auto;
   position: absolute;
   left: 10px;
   bottom: 40px;

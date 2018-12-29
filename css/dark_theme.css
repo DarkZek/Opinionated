@@ -17,8 +17,16 @@ a {
   color: white !important;
 }
 
-textarea,input[type=text],input[type=submit],input[type=password],input[type=email] {
+textarea,input[type=text],input[type=password],input[type=email] {
   background-color: rgba(0, 0, 0, 0.25) !important;
+  color: white !important;
+  border-color: transparent;
+  border: 1px solid transparent !important;
+  box-shadow: none !important;
+}
+
+input[type=submit] {
+  background-color: rgba(0, 0, 0, 0.25);
   color: white !important;
   border-color: transparent;
   border: 1px solid transparent !important;

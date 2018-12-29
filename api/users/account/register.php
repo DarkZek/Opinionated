@@ -128,7 +128,6 @@ if (count($email_statement->fetchAll()) > 0) {
 //
 // Create new user in database
 //
-//TEMP: MAKE EVERYONE ADMINS
 $query = "INSERT INTO users (username, display_name, email, rank, account_type, password, verified, reports_blocked, seen_post_register) VALUES (?, ?, ?, 10, 'account', ?, 0, 0, 0);";
 $statement = $conn->prepare($query);
 $result = $statement->execute([$username, $display_name, $email, $hash]);
@@ -196,8 +195,7 @@ $_SESSION["display_name"] = $display_name;
 $_SESSION["id"] = $info->id;
 $_SESSION["seen_post_register"] = "0";
 $_SESSION["account_type"] = "account";
-//TEMP: MAKE EVERYONE ADMINS
-$_SESSION["rank"] = 10;
+$_SESSION["rank"] = 0;
 $_SESSION["verified"] = False;
 $_SESSION["xsrf_token"] = md5(uniqid(rand(), true));
 

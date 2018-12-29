@@ -1,9 +1,33 @@
 TODO LIST (ORDERED)
 TODO: Finish admin options
 TODO: Finish about page
-TODO: Allow people to change username and passwords
+TODO: When users change info send email
+TODO: Log everything
+TODO: Make share buttons everywhere
 TODO: Allow admins to edit peeps stuff
 TODO: MOBILE
 TODO: Finish just about everything else
 TODO: Allow people to recover accounts
 TODO: Implement email verification when you change emails
+TODO: Remember me button
+TODO: Fix login animation where stuff is off the dialogue
+TODO: Make emails look decent
+TODO: Make dialogues relevant to the pages autocache at page load
+TODO: Add password requirements
+TODO: Add brute force protection
+
+
+Green is too bight.
+Font is ok, It's sans serif (passable)
+Buttons are way to wide. I would have made them just wide enough that they need to be.
+Just a little bit wider than the text.
+No footer.
+Menu at top is too close to the logo.
+Centred font is garbage on more than one line.  Make it Justified or left/right only.
+
+About us is empty. Apart from one shitty button placement for a tutorial.
+
+Tutorial is too long and way to animated, Just make it a 1 page, with panels for each area, no animation.
+Users actually hate transitions. Impatience.
+
+Home is just the tutorial.! Shite!

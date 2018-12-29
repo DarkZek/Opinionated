@@ -70,11 +70,24 @@ $user = $user_statement->fetch();
             } else {
               showNotification(data);
             }
-          })
+          });
+        }
+
+        function changePassword(obj) {
+          var newPass = obj.parentNode[2].value;
+          var oldPass = obj.parentNode[3].value;
+
+          sendRequest("/api/users/account/change_password", {newpassword: newPass, password: oldPass}, function(data) {
+            if (data == "Success") {
+              showNotification("Successfully changed user password");
+            } else {
+              showNotification(data);
+            }
+          });
         }
         </script>
         <br>
-        <h1>User Settings</h1>
+        <h1>Account Settings</h1>
         <div class="divider"></div>
         <div>
           <label for="username" class="primary">Username</label>
@@ -92,6 +105,23 @@ $user = $user_statement->fetch();
               <br>
             <?php } ?>
             <input class="btn btn-primary form-control" type="submit" onclick="sendUserUpdate();return false;" value="APPLY CHANGES">
+          <form>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h2>Change Password</h2>
+          <div class="divider"></div>
+          <form>
+            <?php if ($_SESSION["account_type"] === "account") { ?>
+              <label for="newpassword" class="primary">New Password</label>
+              <input type="password" class="form-control" name="newpassword">
+                <label for="password" class="primary">Old Password</label>
+                <input type="password" class="form-control" name="password">
+              <br>
+            <?php } ?>
+            <input class="btn btn-primary form-control b-red" type="submit" onclick="changePassword(this);return false;" value="APPLY PASSWORD">
           <form>
         </div>
         <br>

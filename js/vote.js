@@ -88,9 +88,13 @@ function perspectiveFilledOut(object) {
   deletePerspectiveCookie();
 
   sendRequest("/api/polls/perspectives/submit", {poll_id: id, content: text, xsrf: xsrf}, function(data) {
-    var perspective;
-    while ((perspective = $(".your-perspective")).length != 0) {
-      perspective.remove();
+    if (data != "Success") {
+      showNotification(data);
+    } else {
+      var perspective;
+      while ((perspective = $(".your-perspective")).length != 0) {
+        perspective.remove();
+      }
     }
   });
 }

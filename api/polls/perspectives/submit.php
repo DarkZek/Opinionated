@@ -11,27 +11,21 @@ require("../../../include/permissions/check_xsrf.php");
 //Make sure user is logged in
 require("../../../include/permissions/user_only.php");
 
-function Error($error) {
-  $_SESSION["error"] = $error;
-  header("Location: /vote");
-  die();
-}
-
 //Get post content
 if (!isset($_POST["content"])) {
-  Error("[ERROR] No content provided");
+  die("No content provided");
 }
 
 //Get post id
 if (!isset($_POST["poll_id"])) {
-  Error("[ERROR] No post id provided");
+  die("[ERROR] No post id provided");
 }
 
 $content = $_POST["content"];
 $poll_id = $_POST["poll_id"];
 
 if (strlen($content) < 50 || strlen($content) > 500) {
-  Error("[Error] Your post must be 50-500 characters long");
+  die("Your post must be 50-500 characters long");
 }
 
 #Load MySQL connection
