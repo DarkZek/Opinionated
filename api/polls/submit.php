@@ -14,6 +14,9 @@ require("../../include/permissions/check_xsrf.php");
 //Make sure user is logged in
 require("../../include/permissions/user_only.php");
 
+#Logger
+require("../../include/permissions/Logger.php");
+
 function Error($error) {
   $_SESSION["error"] = $error;
   header("Location: /user/polls/submit");
@@ -78,4 +81,6 @@ if ($result === False) {
   echo("There was an error submitting your poll");
 }
 
-var_dump($result->fetch());
+Logger::Log($conn, $_SESSION["id"], "SUBMIT_POLL", $name);
+
+die("Success");

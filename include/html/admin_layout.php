@@ -9,7 +9,7 @@ if (isset($_SESSION["display_name"])) {
 
 $reports_q = "SELECT ( SELECT COUNT(*) FROM poll_reports ) + ( SELECT COUNT(*) FROM perspective_reports ) as count;";
 $reports_st = $conn->prepare($reports_q);
-$reports_st->execute([$id]);
+$reports_st->execute();
 $reports = $reports_st->fetch()->count;
 
 //Nav bar
@@ -79,6 +79,9 @@ $reports = $reports_st->fetch()->count;
     </div>
     <div class="row white menu-item admin-menu-sponsors" onclick="document.location = '/admin/sponsors';">
       <a>Sponsors</a>
+    </div>
+    <div class="row white menu-item admin-menu-audit" onclick="document.location = '/admin/audit';">
+      <a>Audit Log</a>
     </div>
   </div>
   <div class="col-10 admin-content" style="overflow: auto;height: 95vh;">

@@ -5,6 +5,7 @@ session_start();
 require(__DIR__ . "/../../../include/permissions/check_xsrf.php");
 require(__DIR__ . "/../../../include/permissions/user_only.php");
 require(__DIR__ . "/../../../include/sql/sql.php");
+require(__DIR__ . "/../../../include/permissions/Logger.php");
 
 
 //Verify password
@@ -40,5 +41,7 @@ $password = password_hash($_POST["newpassword"], PASSWORD_DEFAULT, ['cost' => 12
 $query = "UPDATE users SET password = ? WHERE id = ?";
 $statement = $conn->prepare($query);
 $statement->execute([htmlspecialchars($password), $_SESSION["id"]]);
+
+Logger::Log($conn, $_SESSION["id"] . "", "CHANGE_PASSWORD");
 
 die("Success");

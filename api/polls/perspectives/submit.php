@@ -11,6 +11,12 @@ require("../../../include/permissions/check_xsrf.php");
 //Make sure user is logged in
 require("../../../include/permissions/user_only.php");
 
+//Make sure user is logged in
+require("../../../include/permissions/Logger.php");
+
+#Logger
+require("../../include/permissions/Logger.php");
+
 //Get post content
 if (!isset($_POST["content"])) {
   die("No content provided");
@@ -40,6 +46,7 @@ $statement = $conn->prepare($sql);
 $result = $statement->execute([$content, $_SESSION["id"], $poll_id]);
 
 if ($result === True) {
+  Logger::Log($conn, $_SESSION["id"], "SUBMIT_PERSPECTIVE");
   echo("Success");
 } else {
   echo("There was an error submitting your poll perspective");

@@ -60,8 +60,8 @@ $user = $user_statement->fetch();
           var displayName = $("#display_name")[0].value;
           var email = $("#email")[0].value;
           var password = "";
-          if ($("#password").length != 0) {
-            password = $("#password")[0].value;
+          if ($("#update-password").length != 0) {
+            password = $("#update-password")[0].value;
           }
 
           sendRequest("/api/users/account/update", {display_name: displayName, email: email, password: password}, function(data) {
@@ -101,7 +101,7 @@ $user = $user_statement->fetch();
           <form>
             <?php if ($_SESSION["account_type"] === "account") { ?>
               <label for="password" class="primary">Password</label>
-              <input type="password" class="form-control" name="password">
+              <input type="password" class="form-control" id="update-password" name="password">
               <br>
             <?php } ?>
             <input class="btn btn-primary form-control" type="submit" onclick="sendUserUpdate();return false;" value="APPLY CHANGES">
