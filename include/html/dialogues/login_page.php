@@ -20,7 +20,7 @@ $auth_url = $g_client->createAuthUrl();
 var loginWithGoogle = "<?php echo($auth_url); ?>";
 </script>
 
-<div class="login-page animated">
+<div class="anim-fast login-page animated">
  <form class="normal-login">
   <input id="account_type" name="account_type" value="account" hidden=""/>
   <div class="form-group">
@@ -51,7 +51,7 @@ var loginWithGoogle = "<?php echo($auth_url); ?>";
 
 
 
-<div class="register-page animated container">
+<div class="register-page anim-fast animated container">
  <br>
  <form class="normal-login" method="POST">
    <input id="account_type" name="account_type" value="account" hidden>

@@ -5,17 +5,17 @@ TODO: When users change info send email
 TODO: Make share buttons everywhere
 TODO: Allow admins to edit peeps stuff
 TODO: MOBILE
-TODO: Finish just about everything else
 TODO: Allow people to recover accounts
 TODO: Implement email verification when you change emails
 TODO: Remember me button
-TODO: Fix login animation where stuff is off the dialogue
 TODO: Make emails look decent
 TODO: Make dialogues relevant to the pages autocache at page load
 TODO: Add password requirements
 TODO: Add brute force protection
 TODO: Make admin panel graph actually represent statistics
 TODO: Add password verification
+TODO: Protec against clickjacking via the header 'X-Frame-Options' set to DENY
+TODO: Generic error messages when logging in
 
 
 Green is too bight.

@@ -54,7 +54,7 @@ $sponsors = $st->fetchAll();
       $row = $result[$number];
       ?>
     <tr>
-      <td><a href="/admin/database/user?id=<?php echo($row->user_id); ?>"><?php echo(AuditFormatter::Format($row)); ?></a></td>
+      <td><?php echo(AuditFormatter::Format($row)); ?></a></td>
     </tr>
   <?php $number = $number + 1;
     } ?>

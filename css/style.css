@@ -530,7 +530,7 @@ a {
 }
 
 .anim-fast {
-  animation-duration: 0.4s;
+  animation-duration: 0.4s !important;
 }
 
 .anim-fadeOut {
