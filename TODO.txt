@@ -16,10 +16,10 @@ TODO: Make admin panel graph actually represent statistics
 TODO: Add password verification
 TODO: Protec against clickjacking via the header 'X-Frame-Options' set to DENY
 TODO: Generic error messages when logging in
-
+TODO: Update google signin to not use google+ api
+TODO: implement like you can only create 2 accounts per month
 
 Green is too bight.
-Font is ok, It's sans serif (passable)
 Buttons are way to wide. I would have made them just wide enough that they need to be.
 Just a little bit wider than the text.
 No footer.

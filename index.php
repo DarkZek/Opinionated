@@ -116,8 +116,10 @@ if (isset($poll_data->upvotes)) { ?>
 <div class="mini-container animated anim-fadeUpIn main-vote">
   <div class="row">
     <div class="col-1"></div>
-    <div class="white col-4 card cursor btn-yes" onclick="voteYes();">
-      <h1 class="center">VOTE YES</h1>
+    <div class="col-4">
+      <div class="white card cursor btn-yes" onclick="voteYes();">
+        <h1 class="center">VOTE YES</h1>
+      </div>
     </div>
     <div class="col-2"></div>
     <div class="white col-4 card cursor btn-no" onclick="voteNo();">

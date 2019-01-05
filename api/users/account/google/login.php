@@ -4,9 +4,7 @@ require("/var/www/html/vendor/autoload.php");
 session_start();
 
 if (!isset($_GET["code"])) {
-  $_SESSION["error"] = "[ERROR] No google account token provided";
-  header("Location: /login");
-  die();
+  die("No google account token provided");
 }
 
 if (!isset($pay_load)) {
@@ -70,5 +68,17 @@ $_SESSION["account_type"] = "google";
 $_SESSION["verified"] = True;
 $_SESSION["xsrf_token"] = md5(uniqid(rand(), true));
 $_SESSION["rank"] = $info[0]->rank;
+
+$context = stream_context_create([
+    'http'  =>  [
+        'user_agent'    =>  'OpinionatedSecurityService'
+    ]
+]);
+$data = file_get_contents("https://haveibeenpwned.com/api/v2/breachedaccount/" . $_SESSION["email"], false, $context);
+
+if ($data != "") {
+  header("Location: /user/accountpwned");
+  die();
+}
 
 header("Location: /");

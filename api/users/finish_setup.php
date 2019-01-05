@@ -35,4 +35,20 @@ $stmnt->execute([$_SESSION["id"]]);
 
 $_SESSION["seen_post_register"] = "1";
 
+
+//
+// Notify user they've been pwned
+//
+if ($_SESSION["account_type"] === "account") {
+  $context = stream_context_create([
+      'http'  =>  [
+          'user_agent'    =>  'OpinionatedSecurityService'
+      ]
+  ]);
+  $data = file_get_contents("https://haveibeenpwned.com/api/v2/breachedaccount/" . $_SESSION["email"], false, $context);
+
+  if ($data != "") {
+    die("PwnedAccountSuccess");
+  }
+}
 die("Success");

@@ -14,7 +14,15 @@ function finishRegister() {
      return;
   }
 
-  sendRequest("/api/users/finish_setup", {email: $("#email")[0].checked});
+  sendRequest("/api/users/finish_setup", {email: $("#email")[0].checked}, function(data) {
+    if (data == "PwnedAccountSuccess") {
+      window.open("/user/accountpwned",'_blank');
+      return;
+    }
+    if (data != "Success") {
+      showNotification(data);
+    }
+  });
   var blackout = $(".backout")[0];
 
   //Update animations

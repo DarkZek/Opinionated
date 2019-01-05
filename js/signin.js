@@ -96,9 +96,8 @@ function sendRegister(obj) {
 
     data = data.trim();
 
-    if (data.toUpperCase() == "SUCCESS") {
+    if (data == "Success") {
       document.location = "/user/verify_email";
-      console.log("moving");
       return;
     }
     switch(data) {

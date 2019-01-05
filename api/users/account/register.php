@@ -111,7 +111,7 @@ $email_statement = $conn->prepare($email_query);
 $emails = $email_statement->execute([$username]);
 
 if (count($email_statement->fetchAll()) > 0) {
-  die("[ERROR] An account with that email address already exists!");
+  die("An account with that email address already exists!");
 }
 
 //
@@ -122,7 +122,7 @@ $email_statement = $conn->prepare($email_query);
 $emails = $email_statement->execute([$email]);
 
 if (count($email_statement->fetchAll()) > 0) {
-  die("[ERROR] An account with that username already exists!");
+  die("An account with that username already exists!");
 }
 
 //
@@ -162,7 +162,7 @@ $message = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"h
 "        </style>".
 "    </head>".
 "    <body yahoo bgcolor=\"#f6f8f1\">".
-"        <div style='width: 100%; background-color: #57BF37;'>".
+"        <div style='width: 100%; background-color: #60cf5b;'>".
 "          <h1 class='center' style='color:white;'>WELCOME TO OPINIONATED!</h1>".
 "        </div>".
 "        <a class='center'>To verify your account please navigate to</a>".
@@ -199,6 +199,5 @@ $_SESSION["rank"] = 0;
 $_SESSION["verified"] = False;
 $_SESSION["xsrf_token"] = md5(uniqid(rand(), true));
 
-//Redirect
 ?>
 Success

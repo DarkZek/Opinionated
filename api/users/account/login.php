@@ -2,18 +2,18 @@
 session_start();
 
 if (!isset($_POST["username"])) {
-  die("No user with that username/email");
+  die("We cant find an account with that username and password");
   die();
 }
 if (!isset($_POST["password"])) {
-  die("Incorrect Password");
+  die("We cant find an account with that username and password");
 }
 
 $username = htmlspecialchars($_POST["username"]);
 $password = $_POST["password"];
 
 if ($username === "") {
-  die("No user with that username/email");
+  die("We cant find an account with that username and password");
 }
 
 //Connect to mysql database
@@ -34,18 +34,18 @@ $statement->execute([$username]);
 $result = $statement->fetchAll();
 
 if (count($result) == 0) {
-  die("No user with that username/email");
+  die("We cant find an account with that username and password");
 }
 
 //Check if its a google account
 if ($result[0]->account_type === "google") {
-  die("Your account is a google account");
+  die("We cant find an account with that username and password");
 }
 
 $checked = password_verify($password, $result[0]->password);
 
 if ($checked === False) {
-  die("Incorrect Password");
+  die("We cant find an account with that username and password");
 }
 
 if ($result[0]->banned == "1") {

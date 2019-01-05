@@ -171,7 +171,7 @@ body {
 
 .header {
   width: 100%;
-  background-color: #57BF37 !important;
+  background-color: #60cf5b !important;
   color: white;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -209,26 +209,22 @@ textarea {
   Website theme colors
 */
 .primary {
-  color: #57BF37 !important;
+  color: #60cf5b !important;
 }
 
 .b-primary {
-  background-color: #57BF37 !important;
+  background-color: #60cf5b !important;
   color: white;
 }
 
 .btn-primary {
-  background-color: #57BF37 !important;
+  background-color: #60cf5b !important;
   border: 0px;
   color: white;
 }
 
 a {
-  color: #57BF37;
-}
-
-.primary-l {
-  color: #AED581 !important;
+  color: #82D769;
 }
 
 .secondary {

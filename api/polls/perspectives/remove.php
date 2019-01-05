@@ -40,7 +40,7 @@ $title = "Your perspective has been removed.";
 $content[0] = new \stdClass();
 $content[0]->content = "<h1 style='color: white;'>Your Perspective Has Been Removed</h1>";
 $content[0]->type = "div";
-$content[0]->style="width: 100%; background-color: #57BF37;";
+$content[0]->style="width: 100%; background-color: #60cf5b;";
 
 $content[1] = new \stdClass();
 $content[1]->content = $reason;

@@ -13,10 +13,10 @@
 .agree .color {
   height: 200px;
   width: 100%;
-  background-color: #57BF37;
+  background-color: #60cf5b;
   position: absolute;
   bottom: 0px;
-  border: #57BF37 solid 3px;
+  border: #60cf5b solid 3px;
   border-right: 0px;
   transition: all .2s ease-in-out;
   border-radius: 10px 0px 0px 10px;
@@ -132,7 +132,7 @@
 
 .btn-yes {
   color: white;
-  background-color: #57BF37;
+  background-color: #60cf5b;
 }
 
 .btn-no {
